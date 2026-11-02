@@ -8,110 +8,117 @@
 </head>
 
 <body>
-    <load="partials /header.html" />
+    <load ="partials/header.html" />
+    <main>
+        <section class="sms">
+            <h1 class="sms-title">SMS-команди для керування монітором медозбору.</h1>
+            <ul class="sms-list">
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        sms
+                    </h4>
+                    <p class="sms-text">
+                        Відправити sms з останніми даними на мобільний номер господаря.
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        tare1
+                    </h4>
+                    <p class="sms-text">
+                        Тарування датчика ваги. При цьому ви вказуєте пристрою, що зараз на вагах порожня тара (вулик).
+                        Значення ваги скидується на нуль.
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        ussd *---#
+                    </h4>
+                    <p class="sms-text">
+                        USSD код вашого GSM оператора для визначення балансу рахунку
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        tel 380xxxxxxxxx
+                    </h4>
+                    <p class="sms-text">
+                        Записати в пам'ять пристрою номер телефону господаря.
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        ascale1 0
+                    </h4>
+                    <p class="sms-text">
+                        Налагоджується виробником пристрою. Без нагальної потреби не використовуйте цю команду. Задати
+                        початкову точку характеристики датчика ваги для його налагодження. При цьому на вагах повинна
+                        бути
+                        пуста тара.
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        ascale1 xxx.xx
+                    </h4>
+                    <p class="sms-text">
+                        Налагоджується виробником пристрою. Без нагальної потреби не використовуйте цю команду. Задати
+                        другу
+                        точку на характеристиці датчика ваги для його налагодження. При цьому на вагах повинна стояти
+                        відома
+                        вага, яку потрібно вказати в SMS в кілограмах.
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        vcc +x.xx
+                    </h4>
+                    <p class="sms-text">
+                        Налагоджується виробником пристрою. Без нагальної потреби не використовуйте цю команду. Корекція
+                        вимірюваного значення напруги живлення, В. Можна вводити як дотатнє так і від'ємне значення.
+                    </p>
+                </li>
+                <li class="sms-item">
+                    <h4 class="sms-sub-title">
+                        d1=10
+                    </h4>
+                    <p class="sms-text">
+                        Період сну в еко-режимі, в хвилинах. (10, 15, 20, 30, 60)
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section class="explanation">
+            <h2 class="explanation-title"></h2>
+            <p class="explanation-text">Власнику приладу будуть надходити smsповідомлення згідно розкладу в 7:00 -
+                ранку,
+                15:00 - дня, 21:00 - вечора.Для запису власного номера в прилад ВН-1, формуємо smsв телефоні на номер
+                приладу, вводимо текст повідомлення <span class="explanation-subtext">tel 380xxxxxxxxx, приклад: (tel
+                    380671111111)</span> , на телефоні натискаємо
+                кнопку надіслати sms.
 
-    <load="partials /footer.html" />
-    <section class="sms">
-        <h1 class="sms-title">SMS-команди для керування монітором медозбору.</h1>
-        <ul class="sms-list">
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    sms
-                </h4>
-                <p class="sms-text">
-                    Відправити sms з останніми даними на мобільний номер господаря.
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    tare1
-                </h4>
-                <p class="sms-text">
-                    Тарування датчика ваги. При цьому ви вказуєте пристрою, що зараз на вагах порожня тара (вулик).
-                    Значення ваги скидується на нуль.
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    ussd *---#
-                </h4>
-                <p class="sms-text">
-                    USSD код вашого GSM оператора для визначення балансу рахунку
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    tel 380xxxxxxxxx
-                </h4>
-                <p class="sms-text">
-                    Записати в пам'ять пристрою номер телефону господаря.
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    ascale1 0
-                </h4>
-                <p class="sms-text">
-                    Налагоджується виробником пристрою. Без нагальної потреби не використовуйте цю команду. Задати
-                    початкову точку характеристики датчика ваги для його налагодження. При цьому на вагах повинна бути
-                    пуста тара.
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    ascale1 xxx.xx
-                </h4>
-                <p class="sms-text">
-                    Налагоджується виробником пристрою. Без нагальної потреби не використовуйте цю команду. Задати другу
-                    точку на характеристиці датчика ваги для його налагодження. При цьому на вагах повинна стояти відома
-                    вага, яку потрібно вказати в SMS в кілограмах.
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    vcc +x.xx
-                </h4>
-                <p class="sms-text">
-                    Налагоджується виробником пристрою. Без нагальної потреби не використовуйте цю команду. Корекція
-                    вимірюваного значення напруги живлення, В. Можна вводити як дотатнє так і від'ємне значення.
-                </p>
-            </li>
-            <li class="sms-item">
-                <h4 class="sms-sub-title">
-                    d1=10
-                </h4>
-                <p class="sms-text">
-                    Період сну в еко-режимі, в хвилинах. (10, 15, 20, 30, 60)
-                </p>
-            </li>
-        </ul>
-    </section>
-    <section class="explanation">
-        <h2 class="explanation-title"></h2>
-        <p class="explanation-text">Власнику приладу будуть надходити smsповідомлення згідно розкладу в 7:00 - ранку,
-            15:00 - дня, 21:00 - вечора.Для запису власного номера в прилад ВН-1, формуємо smsв телефоні на номер
-            приладу, вводимо текст повідомлення <span class="explanation-subtext">tel 380xxxxxxxxx, приклад: (tel
-                380671111111)</span> , на телефоні натискаємо
-            кнопку надіслати sms.
+                Залежно від кліматичної зони можливий вибір часового пояса у власному кабінеті.</p>
+            <img class="explanation-img" src="" alt="">
+            <ul class="explanation-list">
+                <li class="explanation-item">
+                    <p class="explanation-cabinet-text">У власному кабінеті Натискаємо кнопку Контролери(1).</p>
+                </li>
+                <li class="explanation-item">
+                    <p class="explanation-cabinet-text">Вибираємо в підпункті свій часовий пояс (2).</p>
+                </li>
+                <li class="explanation-item">
+                    <p class="explanation-cabinet-text">Натискаємо кнопку Зберегти (3).</p>
+                </li>
+            </ul>
+            <p class="explanation-omission-text">За замовченням ми ці дії перед відправкою приладу до клієнта вже
+                зробили!
+            </p>
+            <h3 class="explanation-message-title">SMS повідомлення</h3>
+            <img class="explanation-message-img" src="" alt="">
+        </section>
+    </main>
+    <load ="partials/footer.html" />
 
-            Залежно від кліматичної зони можливий вибір часового пояса у власному кабінеті.</p>
-        <img class="explanation-img" src="" alt="">
-        <ul class="explanation-list">
-            <li class="explanation-item">
-                <p class="explanation-cabinet-text">У власному кабінеті Натискаємо кнопку Контролери(1).</p>
-            </li>
-            <li class="explanation-item">
-                <p class="explanation-cabinet-text">Вибираємо в підпункті свій часовий пояс (2).</p>
-            </li>
-            <li class="explanation-item">
-                <p class="explanation-cabinet-text">Натискаємо кнопку Зберегти (3).</p>
-            </li>
-        </ul>
-        <p class="explanation-omission-text">За замовченням ми ці дії перед відправкою приладу до клієнта вже зробили!
-        </p>
-        <h3 class="explanation-message-title">SMS повідомлення</h3>
-        <img class="explanation-message-img" src="" alt="">
-    </section>
 </body>
 
 </html>
