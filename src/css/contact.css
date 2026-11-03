@@ -1,170 +1,209 @@
-/* Базові стилі секції */
-.contact {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: #2b2b2b;
+/* Стилізація сторінки контактів BeeHAPPY */
+.beehappy-contacts-section {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #fdfbf7 0%, #f7f3e9 100%);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
-.contact-title {
+.contacts-card {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 50px 60px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(218, 170, 72, 0.12);
+  border: 1px solid rgba(230, 210, 170, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Маленька декоративна смужка зверху в стилі бджолиних сот */
+.contacts-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ffcc00, #ffa500);
+}
+
+.contacts-heading {
+  text-align: center;
   font-size: 32px;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 50px;
-  color: #1a1a1a;
+  color: #2c2519;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
 }
 
-/* Загальні скидання списків */
-.info-list, .contact-list, .support-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Модернова сітка замість старої таблиці */
+.contacts-grid {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Спільна логіка рядків (Флекс або Грід для десктопа) */
-.info-item, .contact-item, .support-item {
+.grid-row {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 30px;
+  grid-template-columns: 350px 1fr;
+  padding: 25px 0;
+  border-bottom: 1px solid #f1ece1;
   align-items: center;
-  padding: 22px 0;
-  border-bottom: 1px solid #eaeaea;
 }
 
-/* Окремі підписи зліва */
-.info-subtitle, .contact-subtitle, .support-subtitle {
+.grid-row:last-child {
+  border-bottom: none;
+}
+
+/* Виділення важливого блоку з телефонами */
+.highlight-row {
+  background-color: #fffdf6;
+  margin: 5px -30px;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #fbf5e1;
+  align-items: flex-start;
+}
+
+.grid-label {
   font-size: 16px;
   font-weight: 600;
-  color: #555;
-  margin: 0;
+  color: #4a3f2c;
+  padding-right: 30px;
   line-height: 1.4;
 }
 
-/* Праві блоки з контентом */
-.info-text, .contact-text, .support-text {
-  font-size: 16px;
-  margin: 0;
+.grid-label .sub-text {
+  display: block;
+  font-size: 13px;
+  font-weight: normal;
+  color: #8c7e69;
+  margin-top: 4px;
 }
 
-/* Стилізація посилань */
-.contact a {
-  color: #222;
+.grid-value {
+  font-size: 16px;
+  color: #2c2519;
+}
+
+/* Красиві посилання */
+.styled-link {
+  color: #d49a00;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom: 1px dashed rgba(212, 154, 0, 0.4);
+  padding-bottom: 2px;
 }
 
-.info-item a, .email-link {
-  color: #0066cc !important;
+.styled-link:hover {
+  color: #a67800;
+  border-bottom-color: #a67800;
+}
+
+.location-text {
   font-weight: 500;
-  border-bottom: 1px dashed transparent;
+  color: #3b3223;
 }
 
-.info-item a:hover, .email-link:hover {
-  color: #004499 !important;
-  border-bottom-color: currentColor;
-}
-
-/* Кнопки-телефони */
-.contact-text a[href^="tel:"], .support-text a[href^="tel:"] {
+/* Розклад роботи */
+.schedule-badge {
   display: inline-block;
-  background: #f7f7f7;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
+  background-color: #f0ebdc;
+  color: #5c4f39;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
-.contact-text a[href^="tel:"]:hover, .support-text a[href^="tel:"]:hover {
-  background: #efefef;
-  border-color: #cccccc;
+/* Список телефонів */
+.phone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Теги месенджерів */
-.messenger {
-  display: inline-block;
+.phone-item, .tester-zone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.operator {
   font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9c8e77;
+  background: #f7f5ee;
+  padding: 3px 8px;
+  border-radius: 4px;
+  min-width: 65px;
+  text-align: center;
+}
+
+.phone-number {
+  font-size: 17px;
   font-weight: 600;
-  color: #6b7280;
-  background: #f3f4f6;
+  color: #2c2519;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.phone-number:hover {
+  color: #ffa500;
+}
+
+/* Бейджики для месенджерів */
+.badge {
+  font-size: 11px;
+  font-weight: 600;
   padding: 3px 10px;
-  border-radius: 20px;
-  margin-left: 10px;
-  border: 1px solid #e5e7eb;
-}
-
-/* Стилізація блоку замовлень */
-.order-block {
-  margin: 40px 0;
-  background: #fffcf0;
-  border: 1px solid #fbe7a1;
   border-radius: 12px;
-  padding: 30px;
+  color: #fff;
 }
 
-.order-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 25px;
-  color: #332600;
-  line-height: 1.3;
+.viber-badge { background-color: #735f92; }
+.wa-badge { background-color: #25d366; }
+
+.bee-icon {
+  font-size: 18px;
+  animation: hoverBee 2s infinite ease-in-out;
 }
 
-/* Особливе правило для режиму роботи всередині блоку */
-.contact-item.schedule {
-  background: #fff5cc;
-  margin: -10px -10px 15px -10px;
-  padding: 12px 15px;
-  border-radius: 8px;
-  border: none;
-}
-.contact-item.schedule .contact-subtitle {
-  color: #664d03;
-}
-.contact-item.schedule .contact-text {
-  font-weight: 700;
-  color: #664d03;
+/* Легка анімація для бджоли */
+@keyframes hoverBee {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
-.order-block .contact-item:last-child {
-  border-bottom: none;
-}
-
-/* Прибираємо нижню лінію у останнього елемента секції */
-.support-item:last-child {
-  border-bottom: none;
-}
-
-/* Адаптивність для планшетів та смартфонів */
+/* Адаптивність для мобільних екранів */
 @media (max-width: 768px) {
-  .contact {
-      margin: 40px auto;
+  .contacts-card {
+      padding: 30px 20px;
+      border-radius: 16px;
   }
   
-  .contact-title {
-      font-size: 26px;
-      margin-bottom: 30px;
-  }
-
-  .info-item, .contact-item, .support-item {
+  .grid-row {
       grid-template-columns: 1fr;
-      gap: 8px;
-      padding: 18px 0;
+      gap: 12px;
+      padding: 20px 0;
   }
-
-  .order-block {
-      padding: 20px 15px;
+  
+  .highlight-row {
+      margin: 10px 0;
+      padding: 20px;
   }
-
-  .contact-item.schedule {
-      margin: 0 0 10px 0;
+  
+  .grid-label {
+      padding-right: 0;
   }
-
-  .messenger {
-      display: block;
-      width: max-content;
-      margin-left: 0;
-      margin-top: 8px;
+  
+  .styled-link {
+      word-break: break-all;
   }
 }
