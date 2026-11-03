@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
     <title>Document</title>
+  <link rel="stylesheet" href="/bee-in-ua/assets/contacts-54c31ebf.css">
 </head>
 
 <body>
-    <header class="main-header">
+    <link rel="stylesheet" href="../css/styles.css">
+<header class="main-header">
     <div class="container">
         <!-- Логотип (замініть вміст або залиште для іконки) -->
         <div class="logo">
@@ -37,71 +41,89 @@
         <!-- Авторизація -->
         <ul class="auth-buttons">
             <li class="auth-item"><a class="btn-login" href="../cabinet.html">Увійти</a></li>
-            <li class="auth-item"><a class="btn-register" href="../register.html">Реєстрація</a></li>
+            <li class="auth-item"><a class="btn-register" href="../register.html">Зареєструватися</a></li>
         </ul>
     </div>
 </header>
 
 
     <main>
-        <section class="contact">
-            <h1 class="contact-title">Наші контакти</h1>
-
-            <ul class="info-list">
-                <li class="info-item">
-                    <h3 class="info-subtitle">Група Facebook</h3>
-                    <a href="https://www.facebook.com/groups/beehappy01" target="_blank" rel="noopener">Facebook</a>
-                </li>
-                <li class="info-item">
-                    <h3 class="info-subtitle">Канал Youtube</h3>
-                    <a href="https://www.youtube.com/channel/UCkMTjq_5VmOyk9w4IkCGn8A" target="_blank" rel="noopener">Youtube</a>
-                </li>
-                <li class="info-item">
-                    <h3 class="info-subtitle">Місто розташування команди розробників</h3>
-                    <p class="info-text">м. Київ</p>
-                </li>
-            </ul>
-
-            <div class="order-block">
-                <h2 class="order-title">Замовлення пристрою можна здійснити за телефонами</h2>
-                <ul class="contact-list">
-                    <li class="contact-item schedule">
-                        <h3 class="contact-subtitle">Режим роботи</h3>
-                        <p class="contact-text">з 9:00 до 20:00 Пн-Сб</p>
-                    </li>
-                    <li class="contact-item">
-                        <h3 class="contact-subtitle">Lifecell</h3>
-                        <p class="contact-text"><a href="tel:+380930509782">+38(093)050 97 82</a></p>
-                    </li>
-                    <li class="contact-item">
-                        <h3 class="contact-subtitle">Kyivstar</h3>
-                        <p class="contact-text"><a href="tel:+380672879895">+38(067)287 98 95</a> <span
-                                class="messenger">Viber</span></p>
-                    </li>
-                    <li class="contact-item">
-                        <h3 class="contact-subtitle">Lifecell</h3>
-                        <p class="contact-text"><a href="tel:+380934158245">+38(093)415 82 45</a> <span
-                                class="messenger">Viber, WhatsApp</span></p>
-                    </li>
-                </ul>
+        <section class="beehappy-contacts-section">
+            <div class="contacts-card">
+                <h1 class="contacts-heading">Наші контакти</h1>
+                
+                <div class="contacts-grid">
+                    <!-- Соціальні мережі -->
+                    <div class="grid-row">
+                        <div class="grid-label">Група Facebook</div>
+                        <div class="grid-value">
+                            <a href="https://www.facebook.com/groups/beehappy01" target="_blank" class="styled-link fb-link">facebook.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-row">
+                        <div class="grid-label">Канал Youtube</div>
+                        <div class="grid-value">
+                            <a href="https://www.youtube.com/channel/UCkMTjq_5VmOyk9w4IkCGn8A" target="_blank" class="styled-link yt-link">youtube.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Локація -->
+                    <div class="grid-row">
+                        <div class="grid-label">Місто розташування <span class="sub-text">команди розробників</span></div>
+                        <div class="grid-value location-text">📍 м. Київ</div>
+                    </div>
+                    
+                    <!-- Блок замовлень -->
+                    <div class="grid-row highlight-row">
+                        <div class="grid-label">Замовлення пристрою <span class="sub-text">можна здійснити за телефонами</span></div>
+                        <div class="grid-value">
+                            <div class="schedule-badge">🕒 Режим роботи: з 9:00 до 20:00 Пн-Сб</div>
+                            
+                            <div class="phone-list">
+                                <div class="phone-item">
+                                    <span class="operator">Lifecell</span>
+                                    <a href="tel:+380930509782" class="phone-number">+38 (093) 050-97-82</a>
+                                </div>
+                                <div class="phone-item">
+                                    <span class="operator">Kyivstar</span>
+                                    <a href="tel:+380672879895" class="phone-number">+38 (067) 287-98-95</a>
+                                    <span class="badge viber-badge">Viber</span>
+                                </div>
+                                <div class="phone-item">
+                                    <span class="operator">Lifecell</span>
+                                    <a href="tel:+380934158245" class="phone-number">+38 (093) 415-82-45</a>
+                                    <span class="badge viber-badge">Viber</span>
+                                    <span class="badge wa-badge">WhatsApp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тестувальник -->
+                    <div class="grid-row">
+                        <div class="grid-label">Поставити питання <span class="sub-text">до нашого головного тестувальника пасічника можна за телефоном</span></div>
+                        <div class="grid-value tester-zone">
+                            <span class="operator">Kyivstar</span>
+                            <a href="tel:+380672879895" class="phone-number">+38 (067) 287-98-95</a>
+                            <span class="bee-icon">🐝</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Пошта -->
+                    <div class="grid-row">
+                        <div class="grid-label">Email</div>
+                        <div class="grid-value">
+                            <a href="mailto:info@bee.in.ua" class="styled-link email-link">info@bee.in.ua</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <ul class="support-list">
-                <li class="support-item">
-                    <h3 class="support-subtitle">
-                        Поставити питання до нашого головного тестувальника пасічника можна за телефоном
-                    </h3>
-                    <p class="support-text">Kyivstar <a href="tel:+380672879895">+38(067)287 98 95</a></p>
-                </li>
-                <li class="support-item">
-                    <h3 class="support-subtitle">Email</h3>
-                    <p class="support-text"><a href="mailto:info@bee.in.ua" class="email-link">info@bee.in.ua</a></p>
-                </li>
-            </ul>
         </section>
     </main>
-    <footer>
-    <p>Copyright © BeeHAPPY since 2018</p>
+    <link rel="stylesheet" href="../css/footer.css">
+<footer>
+    <p>Copyright © BeeHAPPY since 2018-2026</p>
 </footer>
 
 </body>
