@@ -207,3 +207,62 @@
       word-break: break-all;
   }
 }
+/* Базовый стиль для интерактивных пульсирующих кнопок-ссылок */
+.pulse-link {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.pulse-link:active {
+  transform: scale(0.98);
+}
+
+/* Пульсация и цвет для Facebook */
+.fb-pulse {
+  background-color: #1877f2; /* Оригинальный синий цвет Facebook */
+  animation: fb-wave 2s infinite ease-in-out;
+}
+.fb-pulse:hover {
+  background-color: #166fe5;
+}
+
+/* Пульсация и цвет для YouTube */
+.yt-pulse {
+  background-color: #ff0000; /* Оригинальный красный цвет YouTube */
+  animation: yt-wave 2s infinite ease-in-out;
+}
+.yt-pulse:hover {
+  background-color: #cc0000;
+}
+
+/* Анимация волны (тени) для Facebook */
+@keyframes fb-wave {
+  0% {
+      box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.5);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(24, 119, 242, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(24, 119, 242, 0);
+  }
+}
+
+/* Анимация волны (тени) для YouTube */
+@keyframes yt-wave {
+  0% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.5);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
+}
