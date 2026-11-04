@@ -1,0 +1,183 @@
+.article-page {
+  width: 100%;
+  padding: 40px 20px 70px;
+  background: #ffffff;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
+
+.article-page__container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  color: #888888;
+  font-size: 14px;
+}
+
+.breadcrumbs a {
+  color: #777777;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #d99b24;
+}
+
+.article {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.article__header {
+  margin-bottom: 42px;
+}
+
+.article__title {
+  margin: 0 0 24px;
+  color: #252525;
+  font-size: 36px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.article__intro {
+  margin: 0 0 18px;
+  color: #555555;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.article__section {
+  margin-bottom: 38px;
+}
+
+.article__heading {
+  margin: 0 0 20px;
+  color: #292929;
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.article__subsection {
+  margin-bottom: 24px;
+}
+
+.article__subheading {
+  margin: 0 0 12px;
+  color: #333333;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.article__text {
+  margin: 0 0 16px;
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.article__text strong {
+  color: #333333;
+}
+
+.article__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 18px 0 22px;
+  padding-left: 24px;
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.article__list li {
+  padding-left: 5px;
+}
+
+.article__list li::marker {
+  color: #d99b24;
+}
+
+/* Таблиця */
+.article__table-wrapper {
+  width: 100%;
+  margin: 24px 0;
+  overflow-x: auto;
+  border: 1px solid #eee5d5;
+  border-radius: 8px;
+}
+
+.article__table {
+  width: 100%;
+  min-width: 550px;
+  border-collapse: collapse;
+  color: #555555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.article__table th,
+.article__table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #eee5d5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article__table th {
+  background: #fff8eb;
+  color: #333333;
+  font-weight: 700;
+}
+
+.article__table tr:last-child td {
+  border-bottom: none;
+}
+
+.article__table tbody tr:hover {
+  background: #fdfbf7;
+}
+
+/* Інформаційний блок */
+.article__tip {
+  margin: 26px 0;
+  padding: 22px 24px;
+  border-left: 4px solid #d99b24;
+  border-radius: 6px;
+  background: #fff8eb;
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.article__tip strong {
+  color: #333333;
+}
+
+/* Висновок */
+.article__section--conclusion {
+  margin-top: 45px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #faf7f0;
+}
+
+.article__section--conclusion .article__heading {
+  color: #292929;
+}
+
+.article__section--conclusion .article__text:last-child {
+  margin-bottom: 0;
+}

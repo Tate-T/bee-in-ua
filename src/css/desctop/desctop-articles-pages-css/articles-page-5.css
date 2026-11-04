@@ -1,0 +1,198 @@
+.main {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.main__container {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #f2eadb;
+    border-radius: 28px;
+    padding: 45px 55px 60px;
+}
+
+/* Gold top line */
+
+.main__container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+        90deg,
+        #ffd000,
+        #ff9800
+    );
+}
+
+/* =========================
+   BREADCRUMBS
+========================= */
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    color: #999999;
+}
+
+.breadcrumbs__link {
+    color: #999999;
+    text-decoration: none;
+}
+
+.breadcrumbs__link:hover {
+    color: #d99a00;
+}
+
+.breadcrumbs__separator {
+    color: #cccccc;
+}
+
+.breadcrumbs__current {
+    color: #555555;
+}
+
+/* =========================
+   ARTICLE
+========================= */
+
+.article {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.article__title {
+    text-align: center;
+    font-size: 38px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #292929;
+    margin-bottom: 30px;
+}
+
+.article__intro {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #666666;
+    margin-bottom: 35px;
+}
+
+/* =========================
+   ARTICLE SECTIONS
+========================= */
+
+.article-section {
+    padding: 30px 0;
+    border-bottom: 1px solid #eee8dc;
+}
+
+.article-section:last-child {
+    border-bottom: none;
+}
+
+.article-section__title {
+    font-size: 25px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #292929;
+    margin-bottom: 20px;
+}
+
+.article-section__text {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   SUBSECTIONS
+========================= */
+
+.article-subsection {
+    margin-bottom: 25px;
+}
+
+.article-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.article-subsection__title {
+    font-size: 19px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.article-subsection__text {
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.8;
+}
+
+/* =========================
+   LISTS
+========================= */
+
+.number-list,
+.article-list {
+    padding-left: 25px;
+    margin: 15px 0 20px;
+}
+
+.number-list__item,
+.article-list__item {
+    padding-left: 5px;
+    margin-bottom: 9px;
+    color: #555555;
+    line-height: 1.7;
+}
+
+.number-list__item::marker,
+.article-list__item::marker {
+    color: #e5a000;
+    font-weight: 600;
+}
+
+/* =========================
+   NOTE BLOCK
+========================= */
+
+.article-note {
+    background: #fffdf7;
+    border: 1px solid #f5ecd8;
+    border-radius: 18px;
+    padding: 22px 25px;
+    margin: 25px 0;
+}
+
+.article-note__text {
+    color: #665c48;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =========================
+   CODE BLOCK
+========================= */
+
+.article-code {
+    display: inline-block;
+    background: #f5f2e9;
+    border: 1px solid #eee5d4;
+    border-radius: 10px;
+    padding: 12px 22px;
+    margin: 10px 0 20px;
+    font-family: monospace;
+    font-size: 17px;
+    color: #bd8500;
+}

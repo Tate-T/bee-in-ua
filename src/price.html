@@ -4,14 +4,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/desctop/prise-desctop.css">
     <title>Document</title>
 </head>
 
 <body>
     <load ="partials/header.html" />
-<main>
-    
+
+<main class="buy-page">
+
+  <section class="buy-hero">
+    <div class="container">
+      <h1>Купити пасічні ваги BH-1</h1>
+
+      <div class="notice">
+        Зараз можливі затримки з відправкою замовлення —
+        в середньому 2–3 тижні.
+      </div>
+
+      <button class="quick-order-btn" type="button">
+        Замовити в один клік
+      </button>
+    </div>
+  </section>
+
+  <section class="quick-order">
+    <div class="container">
+      <div class="quick-order-box">
+        <h2>Замовити в один клік</h2>
+
+        <form class="quick-order-form">
+          <div class="form-group">
+            <label for="customer-name">Ім'я*</label>
+            <input
+              type="text"
+              id="customer-name"
+              name="name"
+              placeholder="Ваше ім'я"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="customer-phone">Номер телефону*</label>
+            <input
+              type="tel"
+              id="customer-phone"
+              name="phone"
+              placeholder="+380"
+              required
+            >
+          </div>
+
+          <button type="submit" class="submit-order">
+            Відправити замовлення
+          </button>
+        </form>
+
+        <button type="button" class="close-order">
+          Закрити
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="container">
+
+      <h2 class="section-title">Каталог товарів</h2>
+
+      <div class="products-table-wrapper">
+        <table class="products-table">
+          <thead>
+            <tr>
+              <th>Найменування</th>
+              <th>Модель</th>
+              <th>Кількість</th>
+              <th>Ціна</th>
+              <th>Разом</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Монітор медозбору на 1 вулик</strong>
+                  <p>
+                    Комплект: прилад, зарядний пристрій,
+                    антена, SIM-карта.
+                  </p>
+                  <p>
+                    Можна підключити один внутрішній датчик
+                    температури та вологості, один зовнішній
+                    датчик температури та 1 датчик ваги.
+                  </p>
+                </div>
+              </td>
+              <td>BH_01</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>6450 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Монітор медозбору на 4 вулики</strong>
+                  <p>
+                    Комплект: прилад, зарядний пристрій,
+                    антена, SIM-карта.
+                  </p>
+                  <p>
+                    Можна підключити один внутрішній датчик
+                    температури та вологості, один зовнішній
+                    датчик температури та 4 датчики ваги.
+                  </p>
+                </div>
+              </td>
+              <td>BH-04</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>7250 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Датчик температури та вологості всередині вулика</strong>
+                  <p>Довжина кабелю 1,5 м.</p>
+                </div>
+              </td>
+              <td>BH-STH1</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>350 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Датчик температури ззовні</strong>
+                  <p>Довжина кабелю 1 м.</p>
+                </div>
+              </td>
+              <td>BH-ST1</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>220 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Вагова платформа з тензодатчиком 200 кг</strong>
+                  <p>Габаритні розміри: 440 × 500 × 125 мм.</p>
+                  <p>Довжина кабелю 1,5 м.</p>
+                </div>
+              </td>
+              <td>BH-SM1</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>4750 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Тензодатчик 200 кг з кріпленням та регульованими ніжками</strong>
+                  <p>Довжина кабелю 1,5 м.</p>
+                </div>
+              </td>
+              <td>BH-SM3</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>2750 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Датчик ваги 200 кг</strong>
+                  <span class="product-unavailable">Знятий з виробництва!</span>
+                </div>
+              </td>
+              <td>BH-SM2</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input" disabled>
+              </td>
+              <td>0 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="product-name">
+                  <strong>Сонячна батарея 4,2 Вт</strong>
+                  <p>Розміри: 120 × 200 мм.</p>
+                </div>
+              </td>
+              <td>AX-10P</td>
+              <td>
+                <input type="number" min="0" value="0" class="quantity-input">
+              </td>
+              <td>600 грн.</td>
+              <td class="product-total">0 грн.</td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="4" class="total-label">Всього</td>
+              <td class="total-price">0 грн.</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="order-actions">
+        <button type="button" class="checkout-btn">
+          Оформити замовлення
+        </button>
+      </div>
+
+    </div>
+  </section>
+
 </main>
+
     <load ="partials/footer.html" />
 </body>
 
