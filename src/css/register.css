@@ -1,0 +1,170 @@
+/* Стилі для сторінки реєстрації BeeHAPPY з покращеннями */
+.auth-container {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    box-sizing: border-box;
+}
+
+.auth-card {
+    max-width: 450px;
+    width: 100%;
+    padding: 35px 30px;
+    border: 1px solid #eeeeee;
+    /* Заокруглюємо кути вікна */
+    border-radius: 12px; 
+    background-color: #fafafa;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Фірмова жовта смуга зверху картки */
+.auth-yellow-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #f5a623;
+}
+
+.auth-title {
+    font-size: 24px;
+    font-weight: normal;
+    color: #333333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.auth-subtitle {
+    font-size: 13px;
+    color: #777777;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Елементи форми */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555555;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.1s ease;
+}
+
+.form-field input:focus {
+    border-color: #f5a623;
+    box-shadow: 0 0 3px rgba(245, 166, 35, 0.3);
+}
+
+/* Помаранчева кнопка реєстрації */
+.btn-submit-reg {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #f5a623;
+    border: 1px solid #f5a623;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.1s ease, border-color 0.1s ease;
+}
+
+.btn-submit-reg:hover {
+    background-color: #e09216;
+    border-color: #e09216;
+}
+
+/* Нижній блок картки */
+.auth-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 13px;
+    color: #666666;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.auth-switch-text {
+    font-size: 13px;
+}
+
+.auth-link {
+    color: #f5a623;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+    color: #e09216;
+}
+
+/* Контейнер посилання для логотипу */
+.auth-logo-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+/* Ефект наведення на логотип (плавно збільшується і перекидає) */
+.auth-logo-link:hover {
+    transform: scale(1.06);
+}
+
+/* Стилізація логотипу внизу форми */
+.auth-footer-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* Адаптивність */
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 30px 15px;
+    }
+    .auth-card {
+        padding: 25px 20px;
+    }
+    .auth-title {
+        font-size: 21px;
+    }
+}
