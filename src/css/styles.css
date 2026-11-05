@@ -113,6 +113,9 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .hero-item {
@@ -122,6 +125,9 @@ h1, h2, h3, h4 {
   border-radius: 16px;
   border-top: 4px solid #d99b24;
   transition: 0.3s ease;
+  /* max-width: 300px; */
+  flex-grow: 1;
+  flex-basis: calc((100% - 40px) / 3);
 }
 
 .hero-item:hover {
