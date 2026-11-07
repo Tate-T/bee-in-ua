@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-  <link rel="stylesheet" href="/bee-in-ua/assets/sms-793f7904.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeeHAPPY — SMS-команди</title>
+  
+  <script type="module" crossorigin src="/bee-in-ua/assets/main-03eec6d9.js"></script>
+  <link rel="stylesheet" href="/bee-in-ua/assets/sms-0aa86ba4.css">
   <link rel="stylesheet" href="/bee-in-ua/assets/footer-90857717.css">
 </head>
 
 <body>
-    
+
+  
 <header class="main-header">
     <div class="container">
         <!-- Логотип -->
@@ -54,154 +56,282 @@
 </header>
 
 
-<main class="sms-page">
+  <main class="main-content">
+    <section class="bh-sms-wrapper">
+      <h1 class="bh-title">SMS-команди для керування монітором медозбору</h1>
 
-  <section class="sms">
-    <div class="container">
+      <!-- Таблиця SMS-команд -->
+      <div class="bh-table-container">
+        <table class="bh-table">
+          <thead>
+            <tr>
+              <th>Команда</th>
+              <th>Опис та призначення</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Команда"><code class="bh-code">sms</code></td>
+              <td data-label="Опис">Відправити SMS з останніми даними на мобільний номер господаря.</td>
+            </tr>
+            <tr>
+              <td data-label="Команда"><code class="bh-code">tare1</code></td>
+              <td data-label="Опис">Тарування датчика ваги. Вказує пристрою, що на вагах порожня тара (вулик), і скидає
+                значення на нуль.</td>
+            </tr>
+            <tr>
+              <td data-label="Команда"><code class="bh-code">ussd *---#</code></td>
+              <td data-label="Опис">USSD-код вашого GSM-оператора для перевірки балансу рахунку.</td>
+            </tr>
+            <tr>
+              <td data-label="Команда"><code class="bh-code">tel 380xxxxxxxxx</code></td>
+              <td data-label="Опис">Записати в пам'ять пристрою номер телефону господаря.</td>
+            </tr>
+            <tr>
+              <td data-label="Команда"><code class="bh-code">d1=10</code></td>
+              <td data-label="Опис">Період сну в еко-режимі, у хвилинах (доступні значення: <strong>10, 15, 20, 30,
+                  60</strong>).</td>
+            </tr>
+            <!-- Сервісні команди -->
+            <tr class="bh-row-warning">
+              <td data-label="Команда"><code class="bh-code">ascale1 0</code></td>
+              <td data-label="Опис">
+                <span class="bh-badge-warn">Сервісна команда</span>
+                Задати початкову точку характеристики датчика ваги (на вагах має бути порожня тара). Без нагальної
+                потреби не використовуйте.
+              </td>
+            </tr>
+            <tr class="bh-row-warning">
+              <td data-label="Команда"><code class="bh-code">ascale1 xxx.xx</code></td>
+              <td data-label="Опис">
+                <span class="bh-badge-warn">Сервісна команда</span>
+                Задати другу точку характеристики датчика ваги (на вагах має стояти відома вага в кг). Без нагальної
+                потреби не використовуйте.
+              </td>
+            </tr>
+            <tr class="bh-row-warning">
+              <td data-label="Команда"><code class="bh-code">vcc +x.xx</code></td>
+              <td data-label="Опис">
+                <span class="bh-badge-warn">Сервісна команда</span>
+                Корекція вимірюваного значення напруги живлення, В (додатнє або від'ємне значення). Без нагальної
+                потреби не використовуйте.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h1 class="sms-title">
-        SMS-команди для керування монітором медозбору.
-      </h1>
+      <!-- Блок з інструкцією та макетом особистого кабінету -->
+      <div class="bh-info-box">
+        <h2>Пояснення SMS-повідомлень з приладу ВН-1</h2>
+        <p>
+          Власнику приладу надходять SMS згідно з розкладом: <strong>07:00</strong> (ранок), <strong>15:00</strong>
+          (день), <strong>21:00</strong> (вечір).
+          Для запису власного номера надішліть на номер приладу SMS формату <code
+            class="bh-code">tel 380671111111</code>.
+        </p>
 
-      <ul class="sms-list">
+        <h3>Налаштування часового поясу у власному кабінеті:</h3>
+        <ol class="bh-steps">
+          <li>Натисніть кнопку <strong>Контролери</strong> (1).</li>
+          <li>Виберіть у підпункті свій <strong>часовий пояс</strong> (2).</li>
+          <li>Натисніть кнопку <strong>Зберегти</strong> (3).</li>
+        </ol>
+        <p class="bh-note">* За замовчуванням ці налаштування вже виконані перед відправкою приладу клієнту.</p>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">sms</h4>
-          <p class="sms-text">
-            Відправити sms з останніми даними на мобільний номер господаря.
-          </p>
-        </li>
+        <!-- HTML-макет інтерфейсу особистого кабінету -->
+        <div class="bh-ui-mockup">
+          <aside class="bh-ui-sidebar">
+            <div class="bh-ui-logo">
+              <span class="bh-ui-logo-icon">🐝</span>
+              <div>
+                <strong>BeeHAPPY</strong>
+                <small>МОНІТОРИНГ МЕДОЗБОРУ</small>
+              </div>
+            </div>
+            <div class="bh-ui-user">
+              <span>Вітаємо</span>
+              <strong>demo</strong>
+            </div>
+            <ul class="bh-ui-menu">
+              <li>📄 Сторінки</li>
+              <li>📍 Об'єкти</li>
+              <li class="is-active">
+                <span>🎛️ Контролери</span>
+                <span class="bh-step-pin">1</span>
+              </li>
+              <li>📝 Редактор сторінок</li>
+              <li>🍯 Медозбори</li>
+            </ul>
+          </aside>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">tare1</h4>
-          <p class="sms-text">
-            Тарування датчика ваги. При цьому ви вказуєте пристрою,
-            що зараз на вагах порожня тара (вулик). Значення ваги
-            скидується на нуль.
-          </p>
-        </li>
+          <div class="bh-ui-main">
+            <div class="bh-ui-topbar">
+              <span>☰</span>
+              <div class="bh-ui-top-icons">
+                <span class="bh-ui-bell">🔔 <i>0</i></span>
+                <span>👤 ▾</span>
+              </div>
+            </div>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">ussd *---#</h4>
-          <p class="sms-text">
-            USSD код вашого GSM оператора для визначення балансу рахунку.
-          </p>
-        </li>
+            <div class="bh-ui-body">
+              <div class="bh-ui-page-title">Контролери</div>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">tel 380xxxxxxxxx</h4>
-          <p class="sms-text">
-            Записати в пам'ять пристрою номер телефону господаря.
-          </p>
-        </li>
+              <div class="bh-ui-card">
+                <div class="bh-ui-card-header">📝 Мої контролери</div>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">ascale1 0</h4>
-          <p class="sms-text">
-            Налагоджується виробником пристрою. Без нагальної потреби
-            не використовуйте цю команду. Задати початкову точку
-            характеристики датчика ваги для його налагодження.
-            При цьому на вагах повинна бути пуста тара.
-          </p>
-        </li>
+                <div class="bh-ui-table-scroll">
+                  <table class="bh-ui-table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>IMEI</th>
+                        <th>Назва</th>
+                        <th>Об'єкт</th>
+                        <th>Тип</th>
+                        <th>Часовий пояс</th>
+                        <th colspan="3">Дії</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td><input type="text" class="bh-ui-input bh-w-imei" readonly></td>
+                        <td><input type="text" class="bh-ui-input bh-w-name" readonly></td>
+                        <td><select class="bh-ui-select">
+                            <option>Пасіка1</option>
+                          </select></td>
+                        <td><select class="bh-ui-select">
+                            <option>-</option>
+                          </select></td>
+                        <td><select class="bh-ui-select">
+                            <option>Europe/Kiev</option>
+                          </select></td>
+                        <td colspan="3">
+                          <span class="bh-ui-btn bh-ui-btn-green">Створити</span>
+                        </td>
+                      </tr>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">ascale1 xxx.xx</h4>
-          <p class="sms-text">
-            Налагоджується виробником пристрою. Без нагальної потреби
-            не використовуйте цю команду. Задати другу точку на
-            характеристиці датчика ваги для його налагодження.
-            При цьому на вагах повинна стояти відома вага, яку потрібно
-            вказати в SMS в кілограмах.
-          </p>
-        </li>
+                      <tr>
+                        <td>246</td>
+                        <td><input type="text" class="bh-ui-input bh-w-imei" value="0000000000" readonly></td>
+                        <td><input type="text" class="bh-ui-input bh-w-name" value="Вулик1" readonly></td>
+                        <td><select class="bh-ui-select">
+                            <option>Пасіка1</option>
+                          </select></td>
+                        <td class="bh-ui-nowrap">ВН-01</td>
+                        <td class="bh-ui-tz-cell">
+                          <div class="bh-ui-dropdown-wrap">
+                            <span class="bh-step-pin bh-pin-tz">2</span>
+                            <div class="bh-ui-select-active">
+                              <span>Europe/Kiev</span>
+                              <span>▾</span>
+                            </div>
+                            <ul class="bh-ui-dropdown-list">
+                              <li>Europe/Athens</li>
+                              <li>Europe/Berlin</li>
+                              <li>Europe/Bucharest</li>
+                              <li>Europe/Chisinau</li>
+                              <li>Europe/Istanbul</li>
+                              <li class="is-selected">Europe/Kiev</li>
+                            </ul>
+                          </div>
+                        </td>
+                        <td><span class="bh-ui-btn bh-ui-btn-light">Теги</span></td>
+                        <td class="bh-ui-save-cell">
+                          <span class="bh-step-pin bh-pin-save">3</span>
+                          <span class="bh-ui-btn bh-ui-btn-cyan">Зберегти</span>
+                        </td>
+                        <td><span class="bh-ui-btn bh-ui-btn-red">Видалити</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">vcc +x.xx</h4>
-          <p class="sms-text">
-            Налагоджується виробником пристрою. Без нагальної потреби
-            не використовуйте цю команду. Корекція вимірюваного
-            значення напруги живлення, В. Можна вводити як додатнє,
-            так і від'ємне значення.
-          </p>
-        </li>
+      <!-- Візуальна схема розшифровки SMS з поясненнями -->
+      <!-- Візуальна схема розшифровки SMS з поясненнями -->
+      <div class="bh-sms-scheme">
+        <h3 class="bh-scheme-title">Приклад розшифровки SMS-повідомлення</h3>
 
-        <li class="sms-item">
-          <h4 class="sms-sub-title">d1=10</h4>
-          <p class="sms-text">
-            Період сну в еко-режимі, в хвилинах. (10, 15, 20, 30, 60)
-          </p>
-        </li>
+        <div class="bh-sms-raw">
+          <span class="bh-hl bh-hl-in">#1 H=52.62% t=23.02*C</span>
+          <span class="bh-hl bh-hl-out">t2=23.56*C</span>
+          <span class="bh-hl bh-hl-weight">m=2.00kg,</span>
+          <span class="bh-hl bh-hl-gsm">GSM=52%,</span>
+          <span class="bh-hl bh-hl-bat">U=88%,</span>
+          <span class="bh-hl bh-hl-day">dm=-0.00kg,</span>
+          <span class="bh-hl bh-hl-bal">8.00grn.</span>
+        </div>
 
-      </ul>
-    </div>
-  </section>
+        <div class="bh-scheme-grid">
+          <div class="bh-scheme-item bh-hl-in">
+            <span class="bh-scheme-icon">🌡️</span>
+            <div class="bh-scheme-text">
+              <strong>Всередині: 23°C (52.6%)</strong>
+              <span><code>#1 H=... t=...</code> — температура і вологість у вулику</span>
+            </div>
+          </div>
 
-  <section class="explanation">
-    <div class="container">
+          <div class="bh-scheme-item bh-hl-out">
+            <span class="bh-scheme-icon">🌤️</span>
+            <div class="bh-scheme-text">
+              <strong>Вулиця: 23.5°C</strong>
+              <span><code>t2=...</code> — температура навколишнього середовища</span>
+            </div>
+          </div>
 
-      <h2 class="explanation-title">
-        Налаштування SMS-повідомлень
-      </h2>
+          <div class="bh-scheme-item bh-hl-weight">
+            <span class="bh-scheme-icon">⚖️</span>
+            <div class="bh-scheme-text">
+              <strong>Вага: 2 кг</strong>
+              <span><code>m=...</code> — загальна вага вулика на вагах</span>
+            </div>
+          </div>
 
-      <p class="explanation-text">
-        Власнику приладу будуть надходити sms-повідомлення згідно
-        розкладу в 7:00 — ранку, 15:00 — дня, 21:00 — вечора.
-        Для запису власного номера в прилад ВН-1, формуємо sms
-        в телефоні на номер приладу, вводимо текст повідомлення
-        <span class="explanation-subtext">
-          tel 380xxxxxxxxx, приклад: (tel 380671111111)
-        </span>,
-        на телефоні натискаємо кнопку надіслати sms.
+          <div class="bh-scheme-item bh-hl-gsm">
+            <span class="bh-scheme-icon">📶</span>
+            <div class="bh-scheme-text">
+              <strong>GSM: 52%</strong>
+              <span><code>GSM=...</code> — рівень сигналу мобільної мережі</span>
+            </div>
+          </div>
 
-        Залежно від кліматичної зони можливий вибір часового пояса
-        у власному кабінеті.
-      </p>
+          <div class="bh-scheme-item bh-hl-bat">
+            <span class="bh-scheme-icon">🔋</span>
+            <div class="bh-scheme-text">
+              <strong>АКБ: 88%</strong>
+              <span><code>U=...</code> — рівень заряду акумулятора</span>
+            </div>
+          </div>
 
-      <ul class="explanation-list">
+          <div class="bh-scheme-item bh-hl-day">
+            <span class="bh-scheme-icon">📈</span>
+            <div class="bh-scheme-text">
+              <strong>Доба: 0.00 кг</strong>
+              <span><code>dm=...</code> — зміна ваги (привіс) за добу</span>
+            </div>
+          </div>
 
-        <li class="explanation-item">
-          <span class="step-number">01</span>
-          <p class="explanation-cabinet-text">
-            У власному кабінеті натискаємо кнопку Контролери.
-          </p>
-        </li>
-
-        <li class="explanation-item">
-          <span class="step-number">02</span>
-          <p class="explanation-cabinet-text">
-            Вибираємо в підпункті свій часовий пояс.
-          </p>
-        </li>
-
-        <li class="explanation-item">
-          <span class="step-number">03</span>
-          <p class="explanation-cabinet-text">
-            Натискаємо кнопку Зберегти.
-          </p>
-        </li>
-
-      </ul>
-
-      <p class="explanation-omission-text">
-        За замовченням ми ці дії перед відправкою приладу
-        до клієнта вже зробили!
-      </p>
-
-      <h3 class="explanation-message-title">
-        SMS повідомлення
-      </h3>
-
-    </div>
-  </section>
-
-</main>
-
+          <div class="bh-scheme-item bh-hl-bal">
+            <span class="bh-scheme-icon">💰</span>
+            <div class="bh-scheme-text">
+              <strong>Баланс: 8 грн</strong>
+              <span><code>8.00grn</code> — залишок коштів на SIM-картці</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     
 <footer>
     <p>Copyright © BeeHAPPY since 2018-2026</p>
 </footer>
-
+  
 </body>
 
 </html>
