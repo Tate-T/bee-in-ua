@@ -1,48 +1,139 @@
-/* Оригінальні стилі для демо-секції BeeHAPPY */
-.demo-section {
-    padding: 100px 20px;
-    background-color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+/* ==========================================================================
+   1. Базова структура сторінки, Соняшники та Притиснутий футер
+   ========================================================================== */
+   html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Відступ зверху компенсує висоту вашого фіксованого хедера (65px - 70px),
+       щоб центральна біла картка не заїжджала під шапку сайту */
+    padding-top: 70px; 
+    box-sizing: border-box;
+
+    /* Створення гнучкого Flexbox-контейнера для притискання футера (Sticky Footer) */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+
+    /* Тимчасовий теплий фон на час завантаження картинки */
+    background-color: #fcf6e8; 
+
+    /* НАДІЙНИЙ ШЛЯХ ДЛЯ VITE: Шукає файл Foto_fon.jpg строго всередині папки public/img/fon/
+       Завдяки слішу на початку шлях не зламається ні на localhost, ні на GitHub Pages */
+       background-image: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), 
+       url('../img/fon/Foto_fon.jpg');
+
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed; /* Задній фон застигає на місці й не рухається при скролі */
+    background-repeat: no-repeat;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   2. Головний контент (Виштовхує футер до низу екрана)
+   ========================================================================== */
+.main-content {
+    /* Головне правило Sticky Footer: забирає весь вільний простір по вертикалі */
+    flex: 1 0 auto; 
+    display: flex;
     align-items: center;
-    min-height: 40vh;
+    justify-content: center;
+    padding: 60px 20px;
     box-sizing: border-box;
 }
 
-/* Стилізація оригінальної помаранчевої кнопки-посилання */
-.demo-section .demo-link {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
+/* Стилі для вашого футера (підтягнуться до тегу з partials/footer.html) */
+footer, .main-footer, [load*="footer"] {
+    flex-shrink: 0; /* Забороняє футеру стискатися чи деформуватися */
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.96); /* Сучасний темний футер */
     color: #ffffff;
-    text-decoration: none;
-    padding: 10px 25px;
-    background-color: #f5a623; /* Фірмовий колір BeeHAPPY */
-    border: 1px solid #f5a623;
-    border-radius: 4px;
-    transition: background-color 0.1s ease, border-color 0.1s ease;
+    padding: 24px 0;
     text-align: center;
+    box-sizing: border-box;
+    border-top: 3px solid #ffbe00; /* Яскрава медова лінія під колір бренду BeeHAPPY */
 }
 
-/* Ефект при наведенні курсору */
-.demo-section .demo-link:hover {
-    background-color: #e09216;
-    border-color: #e09216;
-    text-decoration: none;
+/* ==========================================================================
+   3. Центрована картка та Пульсуюча кнопка-посилання
+   ========================================================================== */
+.demo-section {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.93); /* Напівпрозора біла плашка під контент */
+    padding: 55px 45px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(255, 190, 0, 0.25);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Адаптивність для мобільних телефонів */
-@media (max-width: 480px) {
-    .demo-section {
-        padding: 60px 15px;
+/* Трансформація звичайного посилання у велику 3D-кнопку */
+.demo-link {
+    display: inline-block;
+    padding: 16px 36px;
+    background-color: #ffbe00; /* Фірмовий колір з вашого логотипу */
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px; /* Кругла форма кнопки */
+    box-shadow: 0 0 0 0 rgba(255, 190, 0, 0.7);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+    /* Підключення безкінечної анімації пульсації */
+    animation: beePulse 2s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+/* Ефекти при наведенні курсору на кнопку */
+.demo-link:hover {
+    background-color: #e0a600; /* Темніший медовий відтінок */
+    animation-play-state: paused; /* Пульсація зупиняється, щоб користувачу було комфортно клікати */
+    transform: scale(1.02);
+}
+
+/* Ефект пульсуючої енергетичної хвилі (тіні розходяться та тануть) */
+@keyframes beePulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 190, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.04); /* Кнопка злегка "дихає", збільшуючись у розмірі */
+        box-shadow: 0 0 0 20px rgba(255, 190, 0, 0); /* Радіусна хвиля плавно зникає */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 190, 0, 0);
+    }
+}
+
+/* ==========================================================================
+   4. Адаптивність під мобільні телефони
+   ========================================================================== */
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px; /* Трохи зменшуємо відступ під нижчу мобільну шапку */
     }
     
-    .demo-section .demo-link {
-        display: block;
-        width: 100%;
+    .main-content {
+        padding: 30px 15px;
+    }
+
+    .demo-section {
+        padding: 35px 20px;
+    }
+
+    .demo-link {
+        padding: 14px 24px;
+        font-size: 15px; /* Адаптуємо розмір шрифту під екран смартфона */
+        width: 100%;    /* Кнопка розтягується на всю ширину мобільного екрана */
         box-sizing: border-box;
-        padding: 12px 15px;
-        font-size: 15px;
     }
 }
