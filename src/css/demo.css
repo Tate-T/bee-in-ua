@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. Базова структура сторінки, Соняшники та Притиснутий футер
+   1. Структура сторінки та Притиснутий футер
    ========================================================================== */
    html, body {
     height: 100%;
@@ -8,44 +8,36 @@
 }
 
 body {
-    /* Відступ зверху компенсує висоту вашого фіксованого хедера (65px - 70px),
-       щоб центральна біла картка не заїжджала під шапку сайту */
     padding-top: 70px; 
     box-sizing: border-box;
-
-    /* Створення гнучкого Flexbox-контейнера для притискання футера (Sticky Footer) */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
-    /* Тимчасовий теплий фон на час завантаження картинки */
-    background-color: #fcf6e8; 
-
-    /* НАДІЙНИЙ ШЛЯХ ДЛЯ VITE: Шукає файл Foto_fon.jpg строго всередині папки public/img/fon/
-       Завдяки слішу на початку шлях не зламається ні на localhost, ні на GitHub Pages */
-       background-image: linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)), 
-       url('../img/fon/Foto_fon.jpg');
-
-    background-size: cover;
-    background-position: center bottom;
-    background-attachment: fixed; /* Задній фон застигає на місці й не рухається при скролі */
-    background-repeat: no-repeat;
-    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* ==========================================================================
-   2. Головний контент (Виштовхує футер до низу екрана)
+   2. Головний контент + Гарантований фон із соняшниками
    ========================================================================== */
 .main-content {
-    /* Головне правило Sticky Footer: забирає весь вільний простір по вертикалі */
     flex: 1 0 auto; 
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 60px 20px;
     box-sizing: border-box;
+    width: 100%;
+
+    /* Перебиваємо будь-які білі фони інших файлів стилів за допомогою !important */
+    background-color: #fcf6e8 !important;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), 
+                      url('../img/fon/Foto_fon.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
 }
+
 
 /* Стилі для вашого футера (підтягнуться до тегу з partials/footer.html) */
 footer, .main-footer, [load*="footer"] {
@@ -64,7 +56,7 @@ footer, .main-footer, [load*="footer"] {
    ========================================================================== */
 .demo-section {
     text-align: center;
-    background: rgba(255, 255, 255, 0.93); /* Напівпрозора біла плашка під контент */
+    background: rgba(255, 255, 255, 0.5); /* Напівпрозора біла плашка під контент */
     padding: 55px 45px;
     border-radius: 16px;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
