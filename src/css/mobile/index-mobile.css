@@ -1,0 +1,199 @@
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .hero {
+    padding: 18px 0 48px;
+  }
+
+  .hero-listzsy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 34px;
+  }
+
+  .hero-zsy {
+    font-size: 12px;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 9vw, 42px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+    margin-bottom: 28px;
+  }
+
+  .hero-4g {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .hero-list,
+  .information-list,
+  .sensor-list,
+  .trend-list,
+  .gps-list,
+  .graphik-list,
+  .energy-list,
+  .management-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-item,
+  .advantages-item,
+  .information-item,
+  .sensor-item,
+  .trend-item,
+  .gps-item,
+  .graphik-item,
+  .energy-item,
+  .management-item {
+    padding: 20px;
+  }
+
+  .advantages,
+  .information,
+  .sensor,
+  .form,
+  .instrument,
+  .trend,
+  .gps,
+  .graphik,
+  .energy,
+  .management {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .advantages-title,
+  .information-title,
+  .form-title,
+  .instrument-title,
+  .gps-title,
+  .energy-title,
+  .trend-title,
+  .graphik-title,
+  .sensor-title,
+  .management-title {
+    font-size: 27px;
+    line-height: 1.2;
+    text-align: left;
+    margin-bottom: 18px;
+  }
+
+  .advantages-text,
+  .form-text {
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .advantages-item {
+    min-height: auto;
+  }
+
+  .advantages-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 28px;
+  }
+
+  .advantages-button a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 18px;
+  }
+
+  .advantages-btn {
+    font-size: 13px;
+  }
+
+  .sensor-title,
+  .management-title {
+    margin-bottom: 25px;
+  }
+
+  .instrument-cont,
+  .gps-list,
+  .energy-list {
+    margin-top: 25px;
+  }
+
+  .trend-title,
+  .graphik-title {
+    margin-bottom: 22px;
+  }
+
+  .trend-other-list,
+  .gps-sublist,
+  .graphik-sublist {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .graphik-sublist {
+    padding: 20px;
+  }
+
+  /* Таблица с горизонтальной прокруткой */
+  .table {
+    margin-right: -2px;
+    border-radius: 12px;
+  }
+
+  .table-header,
+  .table-row {
+    min-width: 850px;
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .table-row button {
+    min-width: 145px;
+    padding: 11px 12px;
+  }
+}
+
+/* Очень маленькие телефоны */
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .hero-title {
+    font-size: 31px;
+  }
+
+  .hero-4g {
+    font-size: 22px;
+  }
+
+  .advantages-title,
+  .information-title,
+  .form-title,
+  .instrument-title,
+  .gps-title,
+  .energy-title,
+  .trend-title,
+  .graphik-title,
+  .sensor-title,
+  .management-title {
+    font-size: 24px;
+  }
+
+  .hero-item,
+  .advantages-item,
+  .information-item,
+  .sensor-item,
+  .trend-item,
+  .gps-item,
+  .graphik-item,
+  .energy-item,
+  .management-item {
+    padding: 17px;
+  }
+}
