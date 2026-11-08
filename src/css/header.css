@@ -1,214 +1,338 @@
 /* ==========================================================================
-   СТИЛИ ШАПКИ (В отдельный файл хедера)
+   БАЗОВІ СТИЛІ (Мобільні пристрої від 320px)
    ========================================================================== */
-   .main-header {
-    position: fixed;         /* ИСПРАВЛЕНО: Меняем sticky на fixed, чтобы не ломать слои фона */
-    top: 0;                  /* Прижимаем к самому верху окна */
+   body {
+    margin: 0;
+    padding-top: 65px; /* Відступ під фіксовану шапку, щоб контент не ховався під нею */
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
     left: 0;
-    z-index: 1000;           /* Поднимаем шапку над всем остальным контентом */
-    
+    z-index: 1000;
     width: 100%;
-    height: 65px;            /* Задаем стабильную фиксированную высоту шапки */
+    height: 65px;
     background-color: #ffffff;
     border-bottom: 1px solid #f0f0f0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    
     display: flex;
-    align-items: center;     /* Центрируем элементы внутри хедера по вертикали */
+    align-items: center;
     box-sizing: border-box;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .main-header .container {
-    max-width: 1140px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 10px;
+    padding: 0 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
 }
 
-/* Блок логотипа */
+/* Логотип */
 .main-header .logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .main-header .heder-logo {
-    height: 40px;
+    height: 30px;
     width: auto;
     display: block;
 }
 
-/* Переключатель языков */
+/* Перемикач мов */
 .main-header .lang-switcher {
     display: flex;
     list-style: none;
-    margin: 0 0 0 25px;
+    margin: 0 8px 0 auto;
     padding: 0;
-    gap: 8px;
+    gap: 6px;
 }
 
 .main-header .lang-btn {
     background: transparent;
     border: none;
-    padding: 0;
-    font-size: 13px;
+    padding: 4px 2px;
+    font-size: 12px;
     color: #999999;
     cursor: pointer;
     font-family: inherit;
+    transition: color 0.3s ease;
 }
 
-.main-header .lang-btn.active, 
+.main-header .lang-btn.active,
 .main-header .lang-btn:hover {
-    color: #333333;
-    font-weight: bold;
-}
-
-/* Главная навигация */
-.main-header .main-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-}
-
-.main-header .main-link {
-    font-size: 14px;
-    color: #555555;
-    text-decoration: none;
-    transition: color 0.1s ease;
-}
-
-.main-header .main-link:hover,
-.main-header .main-item:last-child .main-link { 
-    color: #000000;
-}
-
-/* Кнопки авторизации */
-.main-header .auth-buttons {
-    display: flex;
-    list-style: none;
-    margin: 0 0 0 25px;
-    padding: 0;
-    gap: 10px;
-    align-items: center;
-}
-
-.main-header .btn-login {
-    font-size: 13px;
     color: #f5a623;
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid #f5a623;
-    border-radius: 4px;
-    background-color: transparent;
-    display: inline-block;
-    transition: background-color 0.1s ease;
+    font-weight: 700;
 }
 
-.main-header .btn-login:hover {
-    background-color: #fdfaf4;
-}
-
-.main-header .btn-register {
-    font-size: 13px;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 9px 18px;
-    background-color: #f5a623;
-    border-radius: 4px;
-    display: inline-block;
-    transition: background-color 0.1s ease;
-}
-
-.main-header .btn-register:hover {
-    background-color: #e09216;
-}
-
-/* Изначально скрываем кнопку бургера на десктопе */
+/* Кнопка бургер-меню */
 .main-header .burger-btn {
-    display: none;
+    display: flex;
     background: transparent;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
     flex-direction: column;
-    gap: 6px;
-    padding: 10px;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+    margin-right: -8px;
     z-index: 1001;
+    transition: background-color 0.3s ease;
 }
 
+.main-header .burger-btn:hover {
+    background-color: #fdf8ee;
+}
+
+/* Смужки бургера */
 .main-header .burger-btn span {
     display: block;
     width: 24px;
     height: 2px;
     background-color: #333333;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
-/* Анимация бургера */
-.main-header .burger-btn.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.main-header .burger-btn.open span:nth-child(2) { opacity: 0; }
-.main-header .burger-btn.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+.main-header .burger-btn:hover span {
+    background-color: #f5a623;
+}
 
-/* Адаптивная шторка хедера */
-@media (max-width: 920px) {
+/* Анімація бургера у хрестик */
+.main-header .burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.main-header .burger-btn.open span:nth-child(2) { opacity: 0; }
+.main-header .burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Випадаюча шторка меню (320px - 1199px) */
+.main-header .header-menu-wrapper {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease, visibility 0.35s ease;
+}
+
+.main-header .header-menu-wrapper.open {
+    max-height: calc(100vh - 65px);
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+}
+
+/* Список посилань у мобільному меню */
+.main-header .main-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+}
+
+.main-header .main-item {
+    width: 100%;
+    text-align: center;
+}
+
+/* Пункти меню (плавна зміна кольору тексту та фону при наведенні) */
+.main-header .main-link {
+    display: block;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #444444;
+    text-decoration: none;
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.main-header .main-link:hover,
+.main-header .main-link:focus {
+    color: #f5a623;
+    background-color: #fdf8ee;
+}
+
+/* Кнопки авторизації всередині шторки (на 320px стоять стовпчиком) */
+.main-header .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 16px 20px 24px;
+    gap: 10px;
+    border-top: 1px solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.main-header .auth-item {
+    width: 100%;
+}
+
+.main-header .btn-login,
+.main-header .btn-register {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.main-header .btn-login {
+    color: #f5a623;
+    border: 1px solid #f5a623;
+    background-color: transparent;
+}
+
+.main-header .btn-login:hover {
+    background-color: #fdf8ee;
+}
+
+.main-header .btn-register {
+    color: #ffffff;
+    background-color: #f5a623;
+    border: 1px solid #f5a623;
+}
+
+.main-header .btn-register:hover {
+    background-color: #e09216;
+    border-color: #e09216;
+}
+
+
+/* ==========================================================================
+   ПЛАНШЕТНА ВЕРСІЯ (від 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
     .main-header .container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0;
+        max-width: 740px;
+        padding: 0 20px;
     }
 
-    .main-header .burger-btn { display: flex; }
+    .main-header .heder-logo {
+        height: 38px;
+    }
 
     .main-header .lang-switcher {
-        margin-left: auto;
-        margin-right: 15px;
+        margin-right: 20px;
+        gap: 10px;
     }
 
-    .main-header .main-nav {
-        position: absolute;
-        top: 65px;               /* ИСПРАВЛЕНО: Открывается ровно под границей хедера */
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
-        border-bottom: 1px solid #f0f0f0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    .main-header .lang-btn {
+        font-size: 13px;
     }
 
-    .main-header .main-nav.open { max-height: 400px; }
-
-    .main-header .main-list {
-        flex-direction: column;
-        gap: 0;
-        padding: 15px 0;
-    }
-
-    .main-header .main-item { width: 100%; text-align: center; }
-    .main-header .main-link { display: block; padding: 12px 0; font-size: 16px; }
-
+    /* На планшеті кнопки входу та реєстрації у шторці стають у рядок */
     .main-header .auth-buttons {
-        margin: 0;
-        padding: 15px 20px;
+        flex-direction: row;
         justify-content: center;
-        width: 100%;
-        box-sizing: border-box;
-        border-top: 1px solid #f9f9f9;
+        gap: 15px;
+    }
+
+    .main-header .auth-item {
+        width: auto;
+    }
+
+    .main-header .btn-login,
+    .main-header .btn-register {
+        min-width: 160px;
+    }
+}
+
+
+/* ==========================================================================
+   ДЕСКТОПНА ВЕРСІЯ (від 1200px)
+   ========================================================================== */
+@media (min-width: 1200px) {
+    .main-header .container {
+        max-width: 1140px;
+        padding: 0 15px;
+    }
+
+    .main-header .heder-logo {
+        height: 40px;
+    }
+
+    /* Ховаємо бургер */
+    .main-header .burger-btn {
         display: none;
     }
 
-    .main-header .main-nav.open + .auth-buttons {
+    /* Перемикач мов одразу після логотипа */
+    .main-header .lang-switcher {
+        margin: 0 0 0 25px;
+        gap: 8px;
+    }
+
+    /* Розгортаємо шторку у горизонтальне головне меню */
+    .main-header .header-menu-wrapper {
+        position: static;
+        width: auto;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        overflow: visible;
+        background-color: transparent;
+        border-bottom: none;
+        box-shadow: none;
+        margin-left: auto;
         display: flex;
-        position: absolute;
-        top: calc(65px + 270px); /* ИСПРАВЛЕНО: Смещение под fixed-высоту */
-        left: 0;
-        background: #fff;
-        border-bottom: 1px solid #f0f0f0;
+        align-items: center;
+    }
+
+    .main-header .main-list {
+        flex-direction: row;
+        padding: 0;
+        gap: 22px;
+    }
+
+    .main-header .main-item {
+        width: auto;
+    }
+
+    /* Головне меню: плавна зміна кольору при наведенні на десктопі */
+    .main-header .main-link {
+        padding: 8px 4px;
+        font-size: 14px;
+        color: #555555;
+        background-color: transparent;
+        transition: color 0.3s ease;
+    }
+
+    .main-header .main-link:hover,
+    .main-header .main-link:focus {
+        color: #f5a623;
+        background-color: transparent;
+    }
+
+    /* Кнопки авторизації в рядок праворуч */
+    .main-header .auth-buttons {
+        margin: 0 0 0 28px;
+        padding: 0;
+        border-top: none;
+        gap: 10px;
+    }
+
+    .main-header .btn-login,
+    .main-header .btn-register {
+        min-width: auto;
+        font-size: 13px;
+        padding: 8px 16px;
     }
 }
