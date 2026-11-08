@@ -1,296 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Document</title>
-  <link rel="stylesheet" href="/bee-in-ua/assets/price-b50a8f99.css">
-  <link rel="stylesheet" href="/bee-in-ua/assets/footer-90857717.css">
+    
+    <title>Ціни | BeeHAPPY</title>
+  <script type="module" crossorigin src="/bee-in-ua/assets/main-cff9130e.js"></script>
+  <link rel="stylesheet" href="/bee-in-ua/assets/price-040215d7.css">
+  <link rel="stylesheet" href="/bee-in-ua/assets/styles-743aef29.css">
 </head>
 
 <body>
-    
-<header class="main-header">
+    <header class="main-header">
     <div class="container">
         <!-- Логотип -->
-        <div class="logo">
-            <img class="heder-logo" src="https://bee.in.ua/bootstrap/img/logo.png" alt="BeeHAPPY Логотип">
-        </div>
+        <a href="./index.html" class="logo">
+            <img class="heder-logo" src="../img/fon/logo_bee_in_ua.png" alt="BeeHAPPY Логотип">
+        </a>
 
-        <!-- Перемикач мов -->
+        <!-- Перемикач мов (видимий на всіх екранах) -->
         <ul class="lang-switcher">
             <li class="leng-item"><button class="lang-btn active">UA</button></li>
             <li class="leng-item"><button class="lang-btn">RU</button></li>
             <li class="leng-item"><button class="lang-btn">EN</button></li>
         </ul>
 
-        <!-- Кнопка бургер-меню (появляется только на мобильных) -->
-        <button class="burger-btn" aria-label="Открыть меню">
+        <!-- Кнопка бургер-меню (для 320px і 768px) -->
+        <button class="burger-btn" aria-label="Відкрити меню" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- Головна навігація -->
-        <nav class="main-nav">
-            <ul class="main-list">
-                <li class="main-item"><a class="main-link" href="./index.html">Головна</a></li>
-                <li class="main-item"><a class="main-link" href="./price.html">Ціни</a></li>
-                <li class="main-item"><a class="main-link" href="./sms.html">SMS-команди</a></li>
-                <li class="main-item"><a class="main-link" href="./articles.html">Статті</a></li>
-                <li class="main-item"><a class="main-link" href="./demo.html">Демо</a></li>
-                <li class="main-item"><a class="main-link" href="./contacts.html">Контакти</a></li>
-            </ul>
-        </nav>
+        <!-- Єдиний блок меню (випадає на мобільних/планшетах, в рядок на десктопі) -->
+        <div class="header-menu-wrapper">
+            <nav class="main-nav">
+                <ul class="main-list">
+                    <li class="main-item"><a class="main-link" href="./index.html">Головна</a></li>
+                    <li class="main-item"><a class="main-link" href="./price.html">Ціни</a></li>
+                    <li class="main-item"><a class="main-link" href="./sms.html">SMS-команди</a></li>
+                    <li class="main-item"><a class="main-link" href="./articles.html">Статті</a></li>
+                    <li class="main-item"><a class="main-link" href="./demo.html">Демо</a></li>
+                    <li class="main-item"><a class="main-link" href="./contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
 
-        <!-- Авторизація -->
-        <ul class="auth-buttons">
-            <li class="auth-item"><a class="btn-login" href="./cabinet.html">Увійти</a></li>
-            <li class="auth-item"><a class="btn-register" href="./register.html">Зареєструватися</a></li>
-        </ul>
+            <ul class="auth-buttons">
+                <li class="auth-item"><a class="btn-login" href="./cabinet.html">Увійти</a></li>
+                <li class="auth-item"><a class="btn-register" href="./register.html">Зареєструватися</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 
 
-<main class="buy-page">
-
-  <section class="buy-hero">
-    <div class="container">
-      <h1>Купити пасічні ваги BH-1</h1>
-
-      <div class="notice">
-        Зараз можливі затримки з відправкою замовлення —
-        в середньому 2–3 тижні.
-      </div>
-
-      <button class="quick-order-btn" type="button">
-        Замовити в один клік
-      </button>
-    </div>
-  </section>
-
-  <section class="quick-order">
-    <div class="container">
-      <div class="quick-order-box">
-        <h2>Замовити в один клік</h2>
-
-        <form class="quick-order-form">
-          <div class="form-group">
-            <label for="customer-name">Ім'я*</label>
-            <input
-              type="text"
-              id="customer-name"
-              name="name"
-              placeholder="Ваше ім'я"
-              required
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="customer-phone">Номер телефону*</label>
-            <input
-              type="tel"
-              id="customer-phone"
-              name="phone"
-              placeholder="+380"
-              required
-            >
-          </div>
-
-          <button type="submit" class="submit-order">
-            Відправити замовлення
-          </button>
-        </form>
-
-        <button type="button" class="close-order">
-          Закрити
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section class="products-section">
-    <div class="container">
-
-      <h2 class="section-title">Каталог товарів</h2>
-
-      <div class="products-table-wrapper">
-        <table class="products-table">
-          <thead>
-            <tr>
-              <th>Найменування</th>
-              <th>Модель</th>
-              <th>Кількість</th>
-              <th>Ціна</th>
-              <th>Разом</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Монітор медозбору на 1 вулик</strong>
-                  <p>
-                    Комплект: прилад, зарядний пристрій,
-                    антена, SIM-карта.
-                  </p>
-                  <p>
-                    Можна підключити один внутрішній датчик
-                    температури та вологості, один зовнішній
-                    датчик температури та 1 датчик ваги.
-                  </p>
+    <main class="price-page">
+        <div class="price-container">
+            <div class="price-header">
+                <h1 class="price-title">Купити пасічні ваги BH-1</h1>
+                <div class="price-notice">
+                    Зараз можливі затримки з відправкою замовлення — в середньому 2–3 тижні.
                 </div>
-              </td>
-              <td>BH_01</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>6450 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Монітор медозбору на 4 вулики</strong>
-                  <p>
-                    Комплект: прилад, зарядний пристрій,
-                    антена, SIM-карта.
-                  </p>
-                  <p>
-                    Можна підключити один внутрішній датчик
-                    температури та вологості, один зовнішній
-                    датчик температури та 4 датчики ваги.
-                  </p>
+                <div class="price-top-actions">
+                    <button type="button" class="price-btn" id="openQuickOrderBtn">Замовити в один клік</button>
                 </div>
-              </td>
-              <td>BH-04</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>7250 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
+            </div>
 
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Датчик температури та вологості всередині вулика</strong>
-                  <p>Довжина кабелю 1,5 м.</p>
+            <div class="price-table-header">
+                <div>Фото</div>
+                <div>Найменування</div>
+                <div>Модель</div>
+                <div>Кількість</div>
+                <div>Ціна</div>
+                <div style="text-align: right;">Разом</div>
+            </div>
+
+            <div class="price-product-list" id="productList"></div>
+
+            <div class="price-summary-bar">
+                <div class="price-summary-inner">
+                    <div>
+                        <div class="price-total-label">Всього до сплати (<span id="totalItems">0</span> шт.):</div>
+                        <div class="price-total-amount"><span id="grandTotal">0</span> грн.</div>
+                    </div>
+                    <button type="button" class="price-btn" id="checkoutBtn" disabled>Оформити замовлення</button>
                 </div>
-              </td>
-              <td>BH-STH1</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>350 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
+            </div>
+        </div>
 
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Датчик температури ззовні</strong>
-                  <p>Довжина кабелю 1 м.</p>
-                </div>
-              </td>
-              <td>BH-ST1</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>220 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
+        <!-- Модальне вікно "Замовити в один клік" -->
+        <div class="price-modal" id="quickOrderModal" aria-hidden="true">
+            <div class="price-modal-content">
+                <button type="button" class="price-modal-close" id="closeQuickOrderBtn" aria-label="Закрити">&times;</button>
+                <h2 class="price-modal-title">Замовити в один клік</h2>
+                <form id="quickOrderForm" class="price-modal-form">
+                    <label class="price-form-label">
+                        Ім'я*
+                        <input type="text" name="name" class="price-form-input" required placeholder="Ваше ім'я">
+                    </label>
+                    <label class="price-form-label">
+                        Номер телефону*
+                        <input type="tel" name="phone" class="price-form-input" required placeholder="+38 (0__) ___-__-__">
+                    </label>
+                    <button type="submit" class="price-btn">Підтверджую замовлення</button>
+                </form>
+            </div>
+        </div>
+    </main>
 
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Вагова платформа з тензодатчиком 200 кг</strong>
-                  <p>Габаритні розміри: 440 × 500 × 125 мм.</p>
-                  <p>Довжина кабелю 1,5 м.</p>
-                </div>
-              </td>
-              <td>BH-SM1</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>4750 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Тензодатчик 200 кг з кріпленням та регульованими ніжками</strong>
-                  <p>Довжина кабелю 1,5 м.</p>
-                </div>
-              </td>
-              <td>BH-SM3</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>2750 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Датчик ваги 200 кг</strong>
-                  <span class="product-unavailable">Знятий з виробництва!</span>
-                </div>
-              </td>
-              <td>BH-SM2</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input" disabled>
-              </td>
-              <td>0 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
-
-            <tr>
-              <td>
-                <div class="product-name">
-                  <strong>Сонячна батарея 4,2 Вт</strong>
-                  <p>Розміри: 120 × 200 мм.</p>
-                </div>
-              </td>
-              <td>AX-10P</td>
-              <td>
-                <input type="number" min="0" value="0" class="quantity-input">
-              </td>
-              <td>600 грн.</td>
-              <td class="product-total">0 грн.</td>
-            </tr>
-          </tbody>
-
-          <tfoot>
-            <tr>
-              <td colspan="4" class="total-label">Всього</td>
-              <td class="total-price">0 грн.</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-
-      <div class="order-actions">
-        <button type="button" class="checkout-btn">
-          Оформити замовлення
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-</main>
-
-    
-<footer>
+    <footer>
     <p>Copyright © BeeHAPPY since 2018-2026</p>
 </footer>
+    
 </body>
 
 </html>
