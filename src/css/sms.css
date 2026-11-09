@@ -1,5 +1,8 @@
-/* Розблокування повної висоти та прокрутки сторінки */
-html {
+/* =========================================================
+   ЧАСТИНА 1: БАЗОВІ СТИЛІ (Mobile First: від 320px і вище)
+   ========================================================= */
+
+   html {
     height: auto !important;
     min-height: 100% !important;
     overflow-y: auto !important;
@@ -16,135 +19,138 @@ html {
     margin: 0;
   }
   
-  /* Відступ зверху, щоб заголовок не заїжджав під фіксований хедер */
   .main-content {
     flex: 1 0 auto !important;
     height: auto !important;
     max-height: none !important;
     overflow: visible !important;
-    padding-top: 90px !important; /* Якщо хедер вищий/нижчий — змініть це число */
-    padding-bottom: 40px !important;
+    padding-top: 75px !important;
+    padding-bottom: 30px !important;
   }
   
   .bh-sms-wrapper {
-    max-width: 1040px;
-    margin: 20px auto 40px auto;
-    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 12px auto 30px auto;
+    padding: 0 12px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: #2c251d;
     line-height: 1.5;
   }
   
   .bh-title {
-    font-size: 28px;
+    font-size: 21px;
+    line-height: 1.3;
     font-weight: 700;
     margin-top: 0;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     color: #f59e0b;
-    
   }
   
-  /* Контейнер таблиці SMS-команд */
+  /* --- Таблиця SMS-команд (на 320px відображається як картки) --- */
   .bh-table-container {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid #ece6dc;
-    overflow: hidden;
-    margin-bottom: 36px;
+    background: transparent;
+    margin-bottom: 28px;
   }
   
-  .bh-table {
+  .bh-table,
+  .bh-table tbody,
+  .bh-table tr,
+  .bh-table td {
+    display: block;
     width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+    box-sizing: border-box;
   }
   
-  .bh-table th {
-    background-color: #fbf7f0;
-    color: #5c4b37;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    padding: 16px 20px;
-    border-bottom: 2px solid #f0e6d6;
+  .bh-table thead {
+    display: none;
   }
   
-  .bh-table th:first-child {
-    width: 220px;
+  .bh-table tr {
+    background: #ffffff;
+    border: 1px solid #ece6dc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    margin-bottom: 12px;
+    padding: 12px 14px;
+  }
+  
+  .bh-table tr.bh-row-warning {
+    background-color: #fffaf5;
+    border-color: #fed7aa;
   }
   
   .bh-table td {
-    padding: 16px 20px;
-    border-bottom: 1px solid #f2ede4;
-    vertical-align: middle;
-    font-size: 15px;
-  }
-  
-  .bh-table tbody tr:last-child td {
+    padding: 4px 0;
     border-bottom: none;
+    font-size: 14px;
+    text-align: left;
   }
   
-  .bh-table tbody tr:hover {
-    background-color: #fffdf9;
+  .bh-table td:first-child {
+    margin-bottom: 6px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #ece6dc;
   }
   
-  /* Виділення коду команди */
   .bh-code {
     display: inline-block;
     background-color: #fff3cd;
     color: #7a5200;
     font-family: "Courier New", Courier, monospace;
     font-weight: 700;
-    font-size: 15px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 4px 8px;
     border-radius: 6px;
     border: 1px solid #ffe08a;
-    white-space: nowrap;
-  }
-  
-  /* Сервісні команди */
-  .bh-row-warning {
-    background-color: #fffaf5;
+    word-break: break-word;
   }
   
   .bh-badge-warn {
     display: inline-block;
     background-color: #fee2e2;
     color: #991b1b;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    padding: 2px 8px;
+    padding: 2px 7px;
     border-radius: 4px;
     margin-right: 6px;
+    margin-bottom: 4px;
     vertical-align: middle;
   }
   
-  /* Інформаційний блок */
+  /* --- Інформаційний блок --- */
   .bh-info-box {
     background-color: #fbf7f0;
     border-left: 4px solid #f59e0b;
     border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 32px;
+    padding: 16px 14px;
+    margin-bottom: 24px;
   }
   
   .bh-info-box h2 {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .bh-info-box h3 {
+    font-size: 15px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .bh-info-box p {
+    font-size: 14px;
     margin-top: 0;
     margin-bottom: 12px;
   }
   
-  .bh-info-box h3 {
-    font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  
   .bh-steps {
-    margin: 0 0 14px 20px;
+    margin: 0 0 12px 18px;
     padding: 0;
+    font-size: 14px;
   }
   
   .bh-steps li {
@@ -152,220 +158,143 @@ html {
   }
   
   .bh-note {
-    font-size: 14px;
+    font-size: 13px;
     color: #6b5e51;
     margin: 0;
   }
   
-  /* Макет інтерфейсу кабінету BeeHAPPY */
+  /* --- Макет демо-кабінету BeeHAPPY (мобільна версія) --- */
   .bh-ui-mockup {
     display: flex;
-    margin-top: 22px;
+    flex-direction: column;
+    margin-top: 18px;
     border: 1px solid #d2d6de;
     border-radius: 10px;
     overflow: hidden;
     background: #ecf0f5;
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     color: #333333;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   }
   
   .bh-ui-sidebar {
-    width: 158px;
-    flex-shrink: 0;
+    width: 100%;
     background: #222d32;
     color: #b8c7ce;
-    display: flex;
-    flex-direction: column;
   }
   
   .bh-ui-logo {
     background: #1a2226;
-    padding: 10px;
+    padding: 8px 12px;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     border-bottom: 1px solid #2c3b41;
   }
   
-  .bh-ui-logo-icon {
-    font-size: 16px;
-  }
+  .bh-ui-logo-icon { font-size: 18px; }
+  .bh-ui-logo strong { display: block; color: #f59e0b; font-size: 14px; line-height: 1.1; }
+  .bh-ui-logo small { display: block; font-size: 8px; color: #8aa4af; }
   
-  .bh-ui-logo strong {
-    display: block;
-    color: #f59e0b;
-    font-size: 13px;
-    line-height: 1.1;
-  }
-  
-  .bh-ui-logo small {
-    display: block;
-    font-size: 7px;
-    color: #8aa4af;
-    letter-spacing: 0.02em;
-  }
-  
-  .bh-ui-user {
-    text-align: center;
-    padding: 10px 8px;
-    border-bottom: 1px solid #2c3b41;
-  }
-  
-  .bh-ui-user span {
-    display: block;
-    font-size: 10px;
-    color: #8aa4af;
-  }
-  
-  .bh-ui-user strong {
-    color: #ffffff;
-    font-size: 12px;
+  .bh-ui-user,
+  .bh-ui-topbar {
+    display: none;
   }
   
   .bh-ui-menu {
     list-style: none;
     margin: 0;
-    padding: 6px 0;
+    padding: 8px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
   
   .bh-ui-menu li {
-    padding: 8px 10px;
-    font-size: 11px;
+    padding: 5px 9px;
+    font-size: 12px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-left: 3px solid transparent;
+    gap: 6px;
+    border-radius: 4px;
+    background: #2c3b41;
   }
   
   .bh-ui-menu li.is-active {
     background: #1e282c;
     color: #ffffff;
-    border-left-color: #f59e0b;
+    border: 1px solid #f59e0b;
     font-weight: 600;
   }
   
-  .bh-ui-main {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .bh-ui-topbar {
-    background: #ffffff;
-    height: 36px;
-    padding: 0 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #d2d6de;
-    color: #555555;
-  }
-  
-  .bh-ui-top-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .bh-ui-bell i {
-    font-style: normal;
-    background: #00a65a;
-    color: #ffffff;
-    font-size: 10px;
-    padding: 1px 4px;
-    border-radius: 4px;
-  }
-  
-  .bh-ui-body {
-    padding: 12px;
-  }
-  
-  .bh-ui-page-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: #333333;
-  }
+  .bh-ui-body { padding: 12px; }
+  .bh-ui-page-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #333333; }
   
   .bh-ui-card {
     background: #ffffff;
-    border-top: 3px solid #d2d6de;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-    padding: 8px;
+    border-top: 3px solid #f59e0b;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding: 12px;
   }
   
   .bh-ui-card-header {
-    font-size: 12px;
-    color: #444444;
-    padding-bottom: 6px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid #f4f4f4;
-  }
-  
-  .bh-ui-table-scroll {
-    overflow-x: auto;
-    padding-top: 10px;
-    padding-bottom: 4px;
-  }
-  
-  .bh-ui-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 11px;
-  }
-  
-  .bh-ui-table th,
-  .bh-ui-table td {
-    border: 1px solid #e5e7eb;
-    padding: 4px 5px;
-    text-align: left;
-    vertical-align: top;
-  }
-  
-  .bh-ui-table th {
-    background: #f9fafb;
+    font-size: 13px;
     font-weight: 600;
-    color: #374151;
-    white-space: nowrap;
+    color: #444444;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
   }
   
-  .bh-ui-nowrap {
-    white-space: nowrap;
+  .bh-ui-table-scroll { overflow: visible; padding: 0; }
+  
+  .bh-ui-table,
+  .bh-ui-table tbody,
+  .bh-ui-table tr,
+  .bh-ui-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
   }
+  
+  .bh-ui-table thead,
+  .bh-ui-table tbody tr:first-child {
+    display: none;
+  }
+  
+  /* Ховаємо другорядні технічні колонки на 320px */
+  .bh-ui-table td:nth-child(1),
+  .bh-ui-table td:nth-child(2),
+  .bh-ui-table td:nth-child(4),
+  .bh-ui-table td:nth-child(5) {
+    display: none;
+  }
+  
+  .bh-ui-table td { padding: 6px 0; font-size: 13px; }
+  .bh-ui-table td:nth-child(3)::before { content: "Контролер:"; display: block; font-size: 11px; color: #666; margin-bottom: 2px; }
+  .bh-ui-table td:nth-child(6)::before { content: "Часовий пояс:"; display: block; font-size: 12px; font-weight: 600; color: #2c251d; margin-bottom: 4px; }
   
   .bh-ui-input,
   .bh-ui-select {
-    width: 100%;
-    box-sizing: border-box;
+    width: 100% !important;
+    padding: 6px 8px;
+    font-size: 13px;
     border: 1px solid #d2d6de;
-    border-radius: 3px;
-    padding: 3px 4px;
-    font-size: 10.5px;
-    background: #ffffff;
+    border-radius: 4px;
+    background: #f9fafb;
     color: #333333;
   }
   
-  .bh-w-imei {
-    width: 74px;
-  }
-  
-  .bh-w-name {
-    width: 48px;
-  }
-  
-  .bh-ui-dropdown-wrap {
-    position: relative;
-    min-width: 108px;
-  }
+  .bh-ui-dropdown-wrap { position: relative; width: 100%; margin-top: 4px; }
   
   .bh-ui-select-active {
     border: 2px solid #f59e0b;
-    border-radius: 3px;
-    padding: 2px 4px;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 13px;
     background: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -377,34 +306,27 @@ html {
     margin: 2px 0 0 0;
     padding: 0;
     border: 1px solid #b5bbc8;
+    border-radius: 4px;
     background: #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
   }
   
-  .bh-ui-dropdown-list li {
-    padding: 2px 5px;
-    color: #333333;
-  }
-  
-  .bh-ui-dropdown-list li.is-selected {
-    background: #1d70b8;
-    color: #ffffff;
-    font-weight: 600;
-  }
+  .bh-ui-dropdown-list li { padding: 5px 10px; font-size: 12.5px; }
+  .bh-ui-dropdown-list li.is-selected { background: #1d70b8; color: #ffffff; font-weight: 600; }
   
   .bh-ui-btn {
     display: inline-block;
-    padding: 3px 6px;
-    border-radius: 3px;
-    font-size: 10.5px;
-    font-weight: 500;
-    white-space: nowrap;
-    text-align: center;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-top: 4px;
+    margin-right: 4px;
   }
   
   .bh-ui-btn-green { background: #00a65a; color: #ffffff; }
   .bh-ui-btn-light { background: #f4f4f4; color: #444444; border: 1px solid #dddddd; }
-  .bh-ui-btn-cyan  { background: #5bc0de; color: #ffffff; outline: 2px solid #f59e0b; outline-offset: 1px; }
+  .bh-ui-btn-cyan  { background: #5bc0de; color: #ffffff; outline: 2px solid #f59e0b; outline-offset: 2px; }
   .bh-ui-btn-red   { background: #dd4b39; color: #ffffff; }
   
   .bh-step-pin {
@@ -417,42 +339,329 @@ html {
     background: #f59e0b;
     color: #ffffff;
     font-weight: 700;
-    font-size: 11px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     flex-shrink: 0;
   }
   
-  .bh-pin-tz {
-    position: absolute;
-    top: -10px;
-    right: -7px;
-    z-index: 2;
-  }
+  .bh-pin-tz { position: absolute; top: -10px; right: -6px; z-index: 2; }
   
-  .bh-ui-save-cell {
-    position: relative;
+  /* =========================================================
+   ЧАСТИНА 2: ПЛАНШЕТИ (від 768px) ТА ДЕСКТОП (від 1200px)
+   ========================================================= */
+
+@media screen and (min-width: 768px) {
+  .main-content {
+    padding-top: 90px !important;
+    padding-bottom: 40px !important;
   }
-  
-  .bh-pin-save {
-    position: absolute;
-    top: -9px;
-    right: -3px;
-    z-index: 2;
+
+  .bh-sms-wrapper {
+    max-width: 740px;
+    margin: 20px auto 40px auto;
+    padding: 0 20px;
   }
-  
-  /* Візуальна схема SMS з поясненнями */
-  /* Візуальна схема SMS з поясненнями */
-.bh-sms-scheme {
+
+  .bh-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  /* Повертаємо класичний вигляд таблиці SMS-команд */
+  .bh-table-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #ece6dc;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .bh-table {
+    display: table;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .bh-table thead { display: table-header-group; }
+  .bh-table tbody { display: table-row-group; }
+
+  .bh-table tr {
+    display: table-row;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .bh-table tr.bh-row-warning { background-color: #fffaf5; }
+  .bh-table tbody tr:hover { background-color: #fffdf9; }
+
+  .bh-table th {
+    background-color: #fbf7f0;
+    color: #5c4b37;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 14px 16px;
+    border-bottom: 2px solid #f0e6d6;
+  }
+
+  .bh-table th:first-child { width: 200px; }
+
+  .bh-table td {
+    display: table-cell;
+    width: auto;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f2ede4;
+    vertical-align: middle;
+    font-size: 14.5px;
+  }
+
+  .bh-table td:first-child {
+    margin-bottom: 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f2ede4;
+  }
+
+  .bh-table tbody tr:last-child td { border-bottom: none; }
+
+  .bh-code {
+    white-space: nowrap;
+    font-size: 14.5px;
+    padding: 5px 10px;
+  }
+
+  /* Інформаційний блок */
+  .bh-info-box {
+    padding: 22px;
+    margin-bottom: 32px;
+  }
+
+  .bh-info-box h2 { font-size: 20px; }
+  .bh-info-box h3 { font-size: 16px; }
+  .bh-info-box p, .bh-steps { font-size: 15px; }
+
+  /* Повертаємо повний вигляд демо-кабінету */
+  .bh-ui-mockup {
+    flex-direction: row;
+    margin-top: 22px;
+    font-size: 11px;
+  }
+
+  .bh-ui-sidebar {
+    width: 150px;
+    flex-shrink: 0;
+  }
+
+  .bh-ui-user {
+    display: block;
+    text-align: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #2c3b41;
+  }
+
+  .bh-ui-user span { display: block; font-size: 10px; color: #8aa4af; }
+  .bh-ui-user strong { color: #ffffff; font-size: 12px; }
+
+  .bh-ui-topbar {
+    display: flex;
+    background: #ffffff;
+    height: 36px;
+    padding: 0 12px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d2d6de;
+    color: #555555;
+  }
+
+  .bh-ui-top-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bh-ui-bell i {
+    font-style: normal;
+    background: #00a65a;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+
+  .bh-ui-menu {
+    display: block;
+    padding: 6px 0;
+  }
+
+  .bh-ui-menu li {
+    padding: 8px 10px;
+    font-size: 11px;
+    justify-content: space-between;
+    border-radius: 0;
+    background: transparent;
+    border-left: 3px solid transparent;
+  }
+
+  .bh-ui-menu li.is-active {
+    background: #1e282c;
+    border: none;
+    border-left: 3px solid #f59e0b;
+  }
+
+  .bh-ui-body { padding: 12px; }
+  .bh-ui-page-title { font-size: 16px; }
+
+  .bh-ui-card {
+    border-top-color: #d2d6de;
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  .bh-ui-card-header {
+    font-size: 12px;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* Повертаємо табличну верстку та всі приховані колонки всередині кабінету */
+  .bh-ui-table-scroll {
+    overflow-x: auto;
+    padding-top: 10px;
+    padding-bottom: 4px;
+  }
+
+  .bh-ui-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+
+  .bh-ui-table thead { display: table-header-group; }
+  .bh-ui-table tbody { display: table-row-group; }
+
+  .bh-ui-table tr,
+  .bh-ui-table tbody tr:first-child {
+    display: table-row;
+  }
+
+  .bh-ui-table th,
+  .bh-ui-table td,
+  .bh-ui-table td:nth-child(1),
+  .bh-ui-table td:nth-child(2),
+  .bh-ui-table td:nth-child(4),
+  .bh-ui-table td:nth-child(5) {
+    display: table-cell;
+    width: auto;
+    border: 1px solid #e5e7eb;
+    padding: 4px 5px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 11px;
+  }
+
+  .bh-ui-table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #374151;
+    white-space: nowrap;
+  }
+
+  /* Вимикаємо мобільні підписи перед полями */
+  .bh-ui-table td::before { content: none !important; }
+
+  .bh-ui-nowrap { white-space: nowrap; }
+
+  .bh-ui-input,
+  .bh-ui-select {
+    padding: 3px 4px;
+    font-size: 10.5px;
+    border-radius: 3px;
+    background: #ffffff;
+  }
+
+  .bh-w-imei { width: 74px !important; }
+  .bh-w-name { width: 48px !important; }
+
+  .bh-ui-dropdown-wrap {
+    min-width: 108px;
+    margin-top: 0;
+  }
+
+  .bh-ui-select-active {
+    padding: 2px 4px;
+    font-size: 11px;
+    border-radius: 3px;
+  }
+
+  .bh-ui-dropdown-list li {
+    padding: 2px 5px;
+    font-size: 11px;
+  }
+
+  .bh-ui-btn {
+    padding: 3px 6px;
+    font-size: 10.5px;
+    border-radius: 3px;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
+/* =========================================================
+   ДЕСКТОП (від 1200px і вище)
+   ========================================================= */
+@media screen and (min-width: 1200px) {
+  .bh-sms-wrapper {
+    max-width: 1140px;
+    padding: 0 24px;
+  }
+
+  .bh-title { font-size: 30px; }
+
+  .bh-table th {
+    font-size: 14px;
+    padding: 16px 20px;
+  }
+
+  .bh-table th:first-child { width: 240px; }
+
+  .bh-table td {
+    padding: 16px 20px;
+    font-size: 15.5px;
+  }
+
+  .bh-code { font-size: 15px; }
+
+  .bh-info-box { padding: 28px 32px; }
+
+  .bh-ui-sidebar { width: 165px; }
+}
+/* =========================================================
+   ВІЗУАЛЬНА СХЕМА SMS З ПОЯСНЕННЯМИ (Mobile First: від 320px)
+   ========================================================= */
+
+   .bh-sms-scheme {
+    box-sizing: border-box;
+    width: calc(100% - 24px);
+    margin: 0 auto 30px auto;
     background: #ffffff;
     border: 1px solid #ece6dc;
     border-radius: 12px;
-    padding: 22px;
+    padding: 16px 14px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
   
   .bh-scheme-title {
-    margin: 0 0 14px 0;
-    font-size: 18px;
+    margin: 0 0 12px 0;
+    font-size: 17px;
+    line-height: 1.3;
     color: #1f1912;
   }
   
@@ -460,22 +669,24 @@ html {
     background: #1f1912;
     color: #ffffff;
     font-family: "Courier New", Courier, monospace;
-    font-size: 15px;
-    padding: 14px 16px;
+    font-size: 13px;
+    padding: 10px 12px;
     border-radius: 8px;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 18px;
-    line-height: 1.6;
+    gap: 6px;
+    margin-bottom: 14px;
+    line-height: 1.5;
   }
   
   .bh-hl {
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 700;
+    word-break: break-word;
   }
   
+  /* Кольори підсвічування */
   .bh-hl-in { background: rgba(239, 68, 68, 0.14); border-left: 3px solid #ef4444; }
   .bh-sms-raw .bh-hl-in { background: rgba(239, 68, 68, 0.25); color: #fca5a5; border: none; }
   
@@ -497,40 +708,40 @@ html {
   .bh-hl-bal { background: rgba(234, 179, 8, 0.14); border-left: 3px solid #eab308; }
   .bh-sms-raw .bh-hl-bal { background: rgba(234, 179, 8, 0.25); color: #fde047; border: none; }
   
+  /* Сітка розшифровки: 1 колонка на мобільному */
   .bh-scheme-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
   }
   
   .bh-scheme-item {
-    flex: 1 1 calc(33.333% - 12px);
-    min-width: 240px;
+    width: 100%;
     box-sizing: border-box;
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    padding: 12px 14px;
+    padding: 10px 12px;
     border-radius: 8px;
   }
   
   .bh-scheme-icon {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.2;
     flex-shrink: 0;
   }
   
   .bh-scheme-text strong {
     display: block;
-    font-size: 14px;
+    font-size: 13.5px;
     color: #1f1912;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   
   .bh-scheme-text span {
     display: block;
-    font-size: 12.5px;
+    font-size: 12px;
     color: #5c4b37;
     line-height: 1.4;
   }
@@ -539,5 +750,73 @@ html {
     font-family: "Courier New", Courier, monospace;
     font-weight: 700;
     color: #1f1912;
+  }
+  
+  
+  /* =========================================================
+     ПЛАНШЕТИ (від 768px і вище) — 2 колонки
+     ========================================================= */
+  @media screen and (min-width: 768px) {
+    .bh-sms-scheme {
+      width: auto;
+      max-width: 700px; /* Вирівнювання по ширині контенту всередині .bh-sms-wrapper */
+      margin: 0 auto 40px auto;
+      padding: 22px;
+    }
+  
+    .bh-scheme-title {
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+  
+    .bh-sms-raw {
+      font-size: 14.5px;
+      padding: 14px 16px;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+  
+    .bh-scheme-grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  
+    .bh-scheme-item {
+      width: calc(50% - 6px);
+      padding: 12px 14px;
+    }
+  
+    .bh-scheme-icon {
+      font-size: 20px;
+    }
+  
+    .bh-scheme-text strong {
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+  
+    .bh-scheme-text span {
+      font-size: 12.5px;
+    }
+  }
+  
+  
+  /* =========================================================
+     ДЕСКТОП (від 1200px і вище) — 3 колонки
+     ========================================================= */
+  @media screen and (min-width: 1200px) {
+    .bh-sms-scheme {
+      max-width: 1092px; /* Точно збігається з шириною таблиці (1140px - 48px padding) */
+      padding: 26px 30px;
+    }
+  
+    .bh-sms-raw {
+      font-size: 15px;
+    }
+  
+    .bh-scheme-item {
+      width: calc(33.333% - 8px);
+    }
   }
   
