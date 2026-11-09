@@ -1,62 +1,70 @@
-@media (max-width: 768px) {
-  .container {
-    width: calc(100% - 32px);
-  }
+@media (min-width: 481px) and (max-width: 1023px) {
 
-  .hero-listzsy {
-    justify-content: flex-start;
-    gap: 10px 22px;
-    margin-bottom: 40px;
-  }
+    .main .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 
-  .hero-title {
-    font-size: clamp(34px, 7vw, 48px);
-    letter-spacing: -1px;
-  }
+    .main .hero-title,
+    .main .advantages-title,
+    .main .information-title,
+    .main .sensor-title,
+    .main .form-title,
+    .main .instrument-title,
+    .main .trend-title,
+    .main .gps-title,
+    .main .graphik-title,
+    .main .energy-title,
+    .main .management-title {
+        font-size: 30px;
+    }
 
-  .advantages-box {
-    grid-template-columns: 1fr;
-  }
+    .main .hero-box {
+        padding: 25px;
+    }
 
-  .information-list,
-  .sensor-list,
-  .trend-list,
-  .gps-list,
-  .management-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .main .hero-list,
+    .main .information-list,
+    .main .sensor-list,
+    .main .instrument-list,
+    .main .trend-list,
+    .main .gps-list,
+    .main .energy-list,
+    .main .management-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
 
-  .instrument-list,
-  .graphik-list,
-  .energy-list {
-    grid-template-columns: 1fr;
-  }
+    .main .advantages-box {
+        grid-template-columns: 1fr;
+    }
 
-  .instrument-item:first-child {
-    grid-column: auto;
-  }
+    .main .advantages-list,
+    .main .advantages-lists {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  .table {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+    .main .graphik-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  .table-header,
-  .table-row {
-    min-width: 900px;
-    padding: 16px;
-  }
+    .main .trend-other-list,
+    .main .gps-sublist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  .advantages-title,
-  .information-title,
-  .form-title,
-  .instrument-title,
-  .gps-title,
-  .energy-title,
-  .trend-title,
-  .graphik-title,
-  .sensor-title,
-  .management-title {
-    font-size: clamp(26px, 4.5vw, 34px);
-  }
+    .main .information-item,
+    .main .sensor-item,
+    .main .instrument-item,
+    .main .trend-item,
+    .main .gps-item,
+    .main .energy-item,
+    .main .management-item {
+        padding: 20px;
+    }
+
+    .main .table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
 }
