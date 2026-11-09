@@ -752,6 +752,7 @@
     color: #1f1912;
   }
   
+
   
   /* =========================================================
      ПЛАНШЕТИ (від 768px і вище) — 2 колонки
@@ -820,3 +821,586 @@
     }
   }
   
+=======
+/* =========================================
+   BEEHAPPY — FULL RESPONSIVE FIX
+   Desktop / Laptop / Tablet / Mobile
+========================================= */
+
+/* Защита от горизонтальной прокрутки */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+/* Сетка из двух колонок — используется в GRAPHICS */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* Карточки не должны сжимать содержимое */
+.card,
+.product-card,
+.advantage-card,
+.hero-feature {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.card p,
+.product-card p,
+.advantage-card p {
+    overflow-wrap: anywhere;
+}
+
+/* Иконки информационных карточек */
+.information-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 27px;
+}
+
+.information-card .card-icon {
+    position: static;
+    flex-shrink: 0;
+    margin: 0 0 18px;
+}
+
+.information-card h3 {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Кнопки */
+.btn {
+    max-width: 100%;
+    text-align: center;
+    white-space: normal;
+}
+
+/* =========================================
+   LARGE LAPTOP — до 1200px
+========================================= */
+
+@media (max-width: 1200px) {
+    .container {
+        width: calc(100% - 50px);
+    }
+
+    .hero-content {
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: clamp(40px, 5vw, 58px);
+    }
+
+    .grid-4,
+    .advantages-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   TABLET — до 900px
+========================================= */
+
+@media (max-width: 900px) {
+    section {
+        padding: 65px 0;
+    }
+
+    .hero {
+        padding: 30px 0 65px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(38px, 5.5vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+    }
+
+    .honey-circle {
+        width: min(260px, 90%);
+        font-size: 85px;
+    }
+
+    .floating-note {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .note-one {
+        left: -5px;
+    }
+
+    .note-two {
+        right: -5px;
+    }
+
+    .hero-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 45px;
+    }
+
+    .hero-features .hero-feature:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .grid-3,
+    .trend-other-list,
+    .gps-sublist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-4,
+    .advantages-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 15px;
+    }
+
+    .advantages-bottom {
+        align-items: flex-start;
+    }
+
+    .section-title {
+        font-size: clamp(28px, 4vw, 36px);
+    }
+}
+
+/* =========================================
+   SMALL TABLET — до 700px
+========================================= */
+
+@media (max-width: 700px) {
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        width: 100%;
+    }
+
+    .hero-visual {
+        min-height: 270px;
+        margin-top: 10px;
+    }
+
+    .honey-circle {
+        width: 220px;
+        font-size: 75px;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-features .hero-feature:last-child {
+        grid-column: auto;
+    }
+
+    .grid-3,
+    .grid-4,
+    .grid-2,
+    .advantages-box,
+    .product-list,
+    .trend-other-list,
+    .gps-sublist {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-notices {
+        justify-content: flex-start;
+        margin-bottom: 35px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 200px;
+    }
+
+    .product-card .btn {
+        width: 100%;
+    }
+
+    .advantages-bottom {
+        flex-direction: column;
+    }
+
+    .advantages-bottom .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   MOBILE — до 480px
+========================================= */
+
+@media (max-width: 480px) {
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    .hero {
+        padding: 20px 0 45px;
+    }
+
+    .hero-notices {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 32px;
+    }
+
+    .notice {
+        max-width: 100%;
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .section-label {
+        padding: 6px 11px;
+        font-size: 11px;
+    }
+
+    .section-title {
+        font-size: 27px;
+        line-height: 1.2;
+        margin-bottom: 14px;
+    }
+
+    .section-description {
+        font-size: 15px;
+        line-height: 1.55;
+        margin-bottom: 25px;
+    }
+
+    .hero-title {
+        font-size: clamp(34px, 10vw, 43px);
+        line-height: 1.08;
+        letter-spacing: -1px;
+        margin-bottom: 17px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        flex: auto;
+    }
+
+    .hero-visual {
+        min-height: 230px;
+        overflow: hidden;
+    }
+
+    .honey-circle {
+        width: 185px;
+        border-width: 8px;
+        font-size: 65px;
+    }
+
+    .honey-circle::before,
+    .honey-circle::after {
+        font-size: 55px;
+    }
+
+    .honey-circle::before {
+        right: -35px;
+    }
+
+    .honey-circle::after {
+        left: -35px;
+    }
+
+    .floating-note {
+        font-size: 10px;
+        padding: 8px 10px;
+    }
+
+    .note-one {
+        top: 10px;
+        left: 0;
+    }
+
+    .note-two {
+        right: 0;
+        bottom: 10px;
+    }
+
+    .hero-features {
+        margin-top: 25px;
+        gap: 12px;
+    }
+
+    .hero-feature {
+        padding: 19px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 17px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+        line-height: 1.35;
+    }
+
+    .card p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .card-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 15px;
+        font-size: 23px;
+    }
+
+    .information-card {
+        padding: 20px;
+    }
+
+    .information-card .card-icon {
+        position: static;
+        margin-bottom: 14px;
+    }
+
+    .information-card h3 {
+        font-size: 19px;
+    }
+
+    .advantage-card {
+        padding: 19px;
+    }
+
+    .advantage-card p {
+        font-size: 14px;
+    }
+
+    .stats {
+        padding: 35px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 10px;
+    }
+
+    .stat-number {
+        font-size: 29px;
+    }
+
+    .stat-label {
+        display: block;
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-card h3 {
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .product-price {
+        font-size: 25px;
+    }
+
+    .product-details {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .product-card .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .trend-other-item,
+    .gps-subitem {
+        padding: 17px;
+    }
+
+    .graphik-sublist {
+        padding: 19px;
+    }
+
+    .faq-question {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .faq-answer p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .final-cta {
+        padding: 45px 0;
+    }
+
+    .final-cta h2 {
+        font-size: 27px;
+    }
+
+    .final-cta p {
+        font-size: 14px;
+    }
+
+    .final-cta .btn {
+        width: 100%;
+    }
+
+    .back-top {
+        right: 12px;
+        bottom: 12px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* =========================================
+   VERY SMALL MOBILE — до 360px
+========================================= */
+
+@media (max-width: 360px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .hero-title {
+        font-size: 33px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .card,
+    .product-card,
+    .information-card {
+        padding: 16px;
+    }
+
+    .card h3,
+    .product-card h3 {
+        font-size: 17px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .stat-number {
+        font-size: 25px;
+    }
+
+    .honey-circle {
+        width: 165px;
+    }
+
+    .floating-note {
+        font-size: 9px;
+        padding: 7px 8px;
+    }
+}
+
+/* =========================================
+   HOVER ONLY ON DEVICES THAT SUPPORT IT
+========================================= */
+
+@media (hover: none) {
+    .card:hover,
+    .product-card:hover,
+    .advantage-card:hover,
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}

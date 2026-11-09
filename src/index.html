@@ -7,518 +7,1916 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BeeHAPPY — максимум продуктивності</title>
   <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/tablet/index-tablet.css">
+  <link rel="stylesheet" href="./css/mobile/index-mobile.css">
   <link rel="icon" type="image/png" href="https://bee.in.ua">
 </head>
 
 <body>
   <load ="partials/header.html" />
 
+  <style>
+    /* ==============================
+   BEEHAPPY — DESIGN SYSTEM
+============================== */
 
-  <main class="main">
-  <section class="hero">
-    <div class="container">
-      <ul class="hero-listzsy">
-        <h4 class="hero-zsy">Віримо в перемогу ЗСУ!</h4>
-        <h4 class="hero-zsy">Працюємо з 09:00 до 18:00 Пн-Пт.</h4>
-        <h4 class="hero-zsy">Зараз можливі затримки з відправкою замовлення - в середньому 2-3 тиждні.</h4>
-      </ul>
+    :root {
+      --yellow: #FFC21A;
+      --yellow-dark: #E9A900;
+      --yellow-light: #FFF0BD;
+      --cream: #FFF9ED;
+      --cream-2: #F8EEDB;
+      --white: #FFFFFF;
+      --brown: #57432B;
+      --brown-light: #806C52;
+      --border: #EFDFC0;
+      --shadow: 0 12px 35px rgba(117, 81, 20, .09);
+      --radius: 22px;
+    }
 
-      <h1 class="hero-title">Медозбір як на долонях!</h1>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      <div class="hero-box">
-        <div class="hero-subbox">
-          <h2 class="hero-4g">Пасічні ваги 4G LTE та Wi-Fi купити в Україні</h2>
-          <ul class="hero-list">
-            <li class="hero-item">
-              <h3 class="hero-subtitle">Збір і передача параметрів</h3>
-              <p class="hero-text">
-                Наші пристрої BH-01 (для одного вулика) та BH-04 (для чотирьох
-                вуликів) дозволяють у реальному часі фіксувати вагу, температуру
-                та інші параметри пасіки. Дані автоматично передаються на веб-сервер
-                bee.in.ua через 4G LTE або Wi-Fi, щоб ви могли стежити за медозбором
-                онлайн. Інструкція >
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 30px;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    section {
+      position: relative;
+      padding: 90px 0;
+      overflow: hidden;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      margin-bottom: 18px;
+      background: var(--yellow-light);
+      border: 1px solid #F5D98D;
+      border-radius: 30px;
+      color: #966700;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .section-label::before {
+      content: "✦";
+      color: var(--yellow-dark);
+    }
+
+    .section-title {
+      max-width: 800px;
+      margin-bottom: 18px;
+      color: var(--brown);
+      font-size: clamp(27px, 4vw, 42px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    .section-description {
+      max-width: 760px;
+      margin-bottom: 38px;
+      color: var(--brown-light);
+      font-size: 17px;
+    }
+
+    .accent {
+      color: #D99B00;
+    }
+
+    .highlight {
+      background: linear-gradient(transparent 60%, #FFE49A 60%);
+    }
+
+    .card {
+      min-width: 0;
+      padding: 27px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #F0C45B;
+      box-shadow: 0 18px 40px rgba(117, 81, 20, .13);
+    }
+
+    .card h3 {
+      margin-bottom: 13px;
+      color: var(--brown);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .card p {
+      color: var(--brown-light);
+      font-size: 15px;
+    }
+
+    .card-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      background: var(--yellow-light);
+      border-radius: 15px;
+      font-size: 25px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 13px 24px;
+      background: var(--yellow);
+      border: 1px solid var(--yellow-dark);
+      border-radius: 12px;
+      color: #493500;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--yellow-dark);
+      box-shadow: 0 8px 20px rgba(220, 157, 0, .22);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: var(--yellow-light);
+      color: var(--brown);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    /* ==============================
+   TOP PROGRESS
+============================== */
+
+    .progress-bar {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background: var(--yellow);
+    }
+
+    /* ==============================
+   HERO
+============================== */
+
+    .hero {
+      padding: 30px 0 90px;
+      background:
+        radial-gradient(circle at 85% 15%, #FFE9A9 0, transparent 25%),
+        linear-gradient(135deg, #FFF9ED, #FFF1CE);
+    }
+
+    .hero-notices {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 65px;
+    }
+
+    .notice {
+      padding: 9px 15px;
+      background: rgba(255, 255, 255, .75);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      color: var(--brown-light);
+      font-size: 13px;
+    }
+
+    .hero-content {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-title {
+      max-width: 700px;
+      margin-bottom: 23px;
+      color: var(--brown);
+      font-size: clamp(40px, 6vw, 67px);
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .hero-title span {
+      color: #E6A600;
+    }
+
+    .hero-description {
+      max-width: 580px;
+      margin-bottom: 30px;
+      color: var(--brown-light);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+    }
+
+    .honey-circle {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: min(310px, 80vw);
+      aspect-ratio: 1;
+      background: linear-gradient(145deg, #FFD65B, #F5AD00);
+      border: 12px solid rgba(255, 255, 255, .65);
+      border-radius: 50%;
+      box-shadow: 0 25px 60px rgba(191, 133, 0, .22);
+      font-size: 105px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .honey-circle::before,
+    .honey-circle::after {
+      content: "⬡";
+      position: absolute;
+      color: rgba(255, 255, 255, .45);
+      font-size: 85px;
+    }
+
+    .honey-circle::before {
+      top: 5px;
+      right: -60px;
+    }
+
+    .honey-circle::after {
+      bottom: 5px;
+      left: -55px;
+    }
+
+    .floating-note {
+      position: absolute;
+      padding: 13px 18px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      color: var(--brown);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .note-one {
+      top: 40px;
+      left: 0;
+    }
+
+    .note-two {
+      right: 0;
+      bottom: 45px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-13px);
+      }
+    }
+
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 75px;
+    }
+
+    .hero-feature {
+      padding: 24px;
+      background: rgba(255, 255, 255, .85);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .hero-feature h3 {
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .hero-feature p {
+      color: var(--brown-light);
+      font-size: 14px;
+    }
+
+    /* ==============================
+   ADVANTAGES
+============================== */
+
+    .advantages {
+      background: var(--white);
+    }
+
+    .advantages-box {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .advantage-card {
+      padding: 23px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      transition: .25s;
+    }
+
+    .advantage-card:hover {
+      background: var(--yellow-light);
+      transform: translateY(-4px);
+    }
+
+    .advantage-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--brown);
+    }
+
+    .advantage-card p {
+      color: var(--brown-light);
+      font-size: 14px;
+    }
+
+    .advantages-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 35px;
+      padding: 25px;
+      background: var(--yellow-light);
+      border-radius: 18px;
+    }
+
+    .advantages-bottom p {
+      max-width: 600px;
+      color: var(--brown);
+    }
+
+    /* ==============================
+   STATISTICS
+============================== */
+
+    .stats {
+      padding: 55px 0;
+      background: var(--yellow);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .stat {
+      text-align: center;
+      color: #493500;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 38px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    .stat-label {
+      font-size: 14px;
+    }
+
+    /* ==============================
+   INFORMATION
+============================== */
+
+   .information {
+    background: var(--cream);
+}
+
+.information-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 27px;
+}
+
+/* Иконка теперь находится в обычном потоке */
+.information-card .card-icon {
+    position: static;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 20px;
+}
+
+/* Заголовок */
+.information-card h3 {
+    position: static;
+    width: 100%;
+    margin: 0 0 13px;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+}
+
+/* Текст */
+.information-card p {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 600px) {
+    .information-card {
+        padding: 21px;
+    }
+
+    .information-card .card-icon {
+        margin-bottom: 15px;
+    }
+
+    .information-card h3 {
+        font-size: 19px;
+    }
+
+    .information-card p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+}
+    /* ==============================
+   SENSOR
+============================== */
+
+    .sensor {
+      background: #FFF1CE;
+    }
+
+    .sensor .card {
+      border-top: 4px solid var(--yellow);
+    }
+
+    /* ==============================
+   TABLE / PRODUCTS
+============================== */
+
+    .form {
+      background: var(--white);
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--cream);
+      transition: .25s;
+    }
+
+    .product-card:hover {
+      border-color: var(--yellow-dark);
+      box-shadow: var(--shadow);
+    }
+
+    .product-card h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .product-price {
+      margin: 15px 0;
+      color: #B77A00;
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    .product-details {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: var(--brown-light);
+      font-size: 14px;
+    }
+
+    .product-details span::before {
+      content: "✓ ";
+      color: #D99B00;
+      font-weight: 900;
+    }
+
+    /* ==============================
+   PARAMETERS
+============================== */
+
+    .instrument {
+      background: var(--cream);
+    }
+
+    .instrument .card {
+      border-bottom: 4px solid var(--yellow);
+    }
+
+    /* ==============================
+   TREND
+============================== */
+
+    .trend {
+      background: #FFF1CE;
+    }
+
+    .trend-other-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .trend-other-item {
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: 14px;
+    }
+
+    /* ==============================
+   GPS
+============================== */
+
+    .gps {
+      background: var(--white);
+    }
+
+    .gps-sublist {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .gps-subitem {
+      padding: 20px;
+      background: var(--yellow-light);
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    /* ==============================
+   GRAPHICS
+============================== */
+
+    .graphik {
+      background: var(--cream);
+    }
+
+    .graphik-sublist {
+      margin-top: 25px;
+      padding: 25px;
+      background: var(--yellow-light);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .graphik-sublist h3 {
+      margin-bottom: 15px;
+    }
+
+    .graphik-sublist li {
+      padding: 9px 0;
+      border-bottom: 1px solid #EBD8AE;
+    }
+
+    .graphik-sublist li:last-child {
+      border-bottom: 0;
+    }
+
+    /* ==============================
+   ENERGY
+============================== */
+
+    .energy {
+      background: #FFF1CE;
+    }
+
+    .energy .card {
+      background: white;
+    }
+
+    /* ==============================
+   MANAGEMENT
+============================== */
+
+    .management {
+      background: var(--white);
+    }
+
+    /* ==============================
+   FAQ
+============================== */
+
+    .faq {
+      background: var(--cream);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      max-width: 850px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      padding: 20px;
+      background: transparent;
+      border: 0;
+      color: var(--brown);
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .faq-question span:last-child {
+      color: #C18A00;
+      font-size: 23px;
+      transition: transform .25s;
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .3s;
+    }
+
+    .faq-answer>div {
+      overflow: hidden;
+    }
+
+    .faq-answer p {
+      padding: 0 20px 20px;
+      color: var(--brown-light);
+      font-size: 15px;
+    }
+
+    .faq-item.active .faq-answer {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-item.active .faq-question span:last-child {
+      transform: rotate(45deg);
+    }
+
+    /* ==============================
+   FINAL CTA
+============================== */
+
+    .final-cta {
+      padding: 75px 0;
+      background: linear-gradient(135deg, #FFD95D, #F5B900);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      max-width: 750px;
+      margin: 0 auto 15px;
+      color: #493500;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.2;
+    }
+
+    .final-cta p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #6E5010;
+    }
+
+    .final-cta .btn {
+      background: white;
+      border-color: white;
+    }
+
+    /* ==============================
+   BACK TO TOP
+============================== */
+
+    .back-top {
+      position: fixed;
+      z-index: 50;
+      right: 22px;
+      bottom: 22px;
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      background: var(--yellow);
+      border: 0;
+      border-radius: 50%;
+      color: var(--brown);
+      font-size: 22px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: .25s;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: var(--yellow-dark);
+    }
+
+    /* ==============================
+   ANIMATION ON SCROLL
+============================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .65s, transform .65s;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==============================
+   TABLET — 768px
+============================== */
+
+    @media (max-width: 900px) {
+      section {
+        padding: 65px 0;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 20px;
+      }
+
+      .hero-title {
+        font-size: 48px;
+      }
+
+      .hero-features {
+        margin-top: 45px;
+      }
+
+      .advantages-box,
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+      }
+
+      .product-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .trend-other-list,
+      .gps-sublist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* ==============================
+   MOBILE — 320px–600px
+============================== */
+
+    @media (max-width: 600px) {
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .section-title {
+        font-size: 27px;
+      }
+
+      .section-description {
+        font-size: 15px;
+        margin-bottom: 25px;
+      }
+
+      .hero {
+        padding: 22px 0 50px;
+      }
+
+      .hero-notices {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 40px;
+      }
+
+      .notice {
+        width: fit-content;
+        max-width: 100%;
+        font-size: 12px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .hero-title {
+        font-size: clamp(36px, 10vw, 48px);
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 250px;
+      }
+
+      .honey-circle {
+        width: 210px;
+        font-size: 75px;
+      }
+
+      .floating-note {
+        padding: 9px 12px;
+        font-size: 11px;
+      }
+
+      .note-one {
+        top: 20px;
+      }
+
+      .note-two {
+        bottom: 20px;
+      }
+
+      .hero-features,
+      .advantages-box,
+      .grid-3,
+      .grid-4,
+      .product-list,
+      .trend-other-list,
+      .gps-sublist {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .hero-features {
+        margin-top: 35px;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .advantages-bottom {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .advantages-bottom .btn {
+        width: 100%;
+      }
+
+      .stats {
+        padding: 38px 0;
+      }
+
+      .stat-number {
+        font-size: 30px;
+      }
+
+      .stat-label {
+        font-size: 12px;
+      }
+
+      .product-card {
+        padding: 20px;
+      }
+
+      .product-price {
+        font-size: 25px;
+      }
+
+      .faq-question {
+        padding: 16px;
+        font-size: 14px;
+      }
+
+      .faq-answer p {
+        padding: 0 16px 16px;
+        font-size: 14px;
+      }
+
+      .final-cta {
+        padding: 55px 0;
+      }
+
+      .final-cta .btn {
+        width: 100%;
+      }
+
+      .back-top {
+        right: 12px;
+        bottom: 12px;
+        width: 43px;
+        height: 43px;
+      }
+    }
+
+    /* ==============================
+   SMALL MOBILE — 320px–360px
+============================== */
+
+    @media (max-width: 360px) {
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      .hero-title {
+        font-size: 34px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .card {
+        padding: 17px;
+        border-radius: 16px;
+      }
+
+      .hero-feature {
+        padding: 18px;
+      }
+
+      .stat-number {
+        font-size: 27px;
+      }
+
+      .honey-circle {
+        width: 185px;
+      }
+    }
+
+    /* Уважение к настройке уменьшения анимации */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+  </head>
+
+  <body>
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <main class="main">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container">
+
+          <div class="hero-notices">
+            <div class="notice">🇺🇦 Віримо в перемогу ЗСУ!</div>
+            <div class="notice">🕘 Працюємо з 09:00 до 18:00 Пн-Пт</div>
+            <div class="notice">📦 Відправка замовлень: 2–3 тижні</div>
+          </div>
+
+          <div class="hero-content">
+            <div class="hero-copy">
+              <div class="section-label">Розумне бджільництво</div>
+
+              <h1 class="hero-title">
+                Медозбір <span>як на долонях!</span>
+              </h1>
+
+              <p class="hero-description">
+                Пасічні ваги 4G LTE та Wi-Fi для дистанційного контролю
+                медозбору, ваги вулика та стану бджолиної сім'ї.
               </p>
-            </li>
 
-            <li class="hero-item">
-              <h3 class="hero-subtitle">Автономність</h3>
-              <p class="hero-text">
-                Пасічні ваги BH-01 і BH-04 спроєктовані для тривалої роботи без
-                постійного обслуговування. Економне енергоспоживання та вбудований
-                акумулятор забезпечують автономність і надійність — пристрій працює
-                тижнями без підзарядки.
-              </p>
-            </li>
+              <div class="hero-actions">
+                <a href="./price.html" class="btn">🍯 Обрати ваги</a>
+                <a href="./demo.html" class="btn btn-outline">Переглянути демо ↗</a>
+              </div>
+            </div>
 
-            <li class="hero-item">
-              <h3 class="hero-subtitle">Віддалений контроль</h3>
-              <p class="hero-text">
-                Підтримка 4G LTE та Wi-Fi дозволяє встановлювати ваги практично в
-                будь-якій точці України. Ви можете залишати вулики без постійної
-                присутності та отримувати дані про стан пасіки з будь-якої країни,
-                де є інтернет.
+            <div class="hero-visual">
+              <div class="honey-circle">🐝</div>
+              <div class="floating-note note-one">📊 Контроль онлайн</div>
+              <div class="floating-note note-two">⚖️ Точні показники</div>
+            </div>
+          </div>
+
+          <div class="hero-features">
+            <article class="hero-feature">
+              <div class="card-icon">📡</div>
+              <h3>Збір і передача даних</h3>
+              <p>
+                BH-01 та BH-04 фіксують вагу, температуру та інші параметри
+                пасіки й передають їх на bee.in.ua через 4G LTE або Wi-Fi.
+                <a href="./instruction">Інструкція →</a>
               </p>
-            </li>
-          </ul>
+            </article>
+
+            <article class="hero-feature">
+              <div class="card-icon">🔋</div>
+              <h3>Автономність</h3>
+              <p>
+                Економне енергоспоживання та акумулятор забезпечують
+                тривалу роботу без постійного обслуговування.
+              </p>
+            </article>
+
+            <article class="hero-feature">
+              <div class="card-icon">🌍</div>
+              <h3>Віддалений контроль</h3>
+              <p>
+                Переглядайте дані про стан пасіки з будь-якої країни,
+                де є доступ до інтернету.
+              </p>
+            </article>
+          </div>
+
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="advantages">
-    <div class="container">
-      <h2 class="advantages-title">Що ви отримуєте з пасічними вагами BeeHappy</h2>
-      <p class="advantages-text">
-        Не просто “ваги”, а зрозумілий контроль медозбору та стану бджолосім’ї —
-        онлайн і без зайвих поїздок на пасіку.
-      </p>
+      <!-- ADVANTAGES -->
+      <section class="advantages">
+        <div class="container">
 
-      <div class="advantages-box">
-        <ul class="advantages-list">
-          <li class="advantages-item">
-            <p class="advantages-subtext text1">
+          <div class="section-label">Ваші переваги</div>
+          <h2 class="section-title">
+            Що ви отримуєте з пасічними вагами <span class="accent">BeeHappy</span>
+          </h2>
+          <p class="section-description">
+            Не просто ваги, а зрозумілий контроль медозбору та стану
+            бджолосім'ї — онлайн і без зайвих поїздок на пасіку.
+          </p>
+
+          <div class="advantages-box">
+            <article class="advantage-card">
+              <div class="card-icon">📈</div>
               <strong>Бачите реальний взяток щодня</strong>
-              — графік ваги показує динаміку медозбору в реальному часі.
-            </p>
-          </li>
-          <li class="advantages-item">
-            <p class="advantages-subtext text2">
+              <p>Графік ваги показує динаміку медозбору в реальному часі.</p>
+            </article>
+
+            <article class="advantage-card">
+              <div class="card-icon">⛽</div>
               <strong>Економите час і пальне</strong>
-              — менше “холостих” поїздок, виїжджаєте тільки коли є сенс.
-            </p>
-          </li>
-          <li class="advantages-item">
-            <p class="advantages-subtext text3">
+              <p>Менше зайвих поїздок — виїжджаєте тільки коли є сенс.</p>
+            </article>
+
+            <article class="advantage-card">
+              <div class="card-icon">📅</div>
               <strong>Плануєте роботи на пасіці</strong>
-              — кочівля, розширення, відбір меду — на основі даних, а не здогадок.
-            </p>
-          </li>
-          <li class="advantages-item">
-            <p class="advantages-subtext text4">
+              <p>Кочівля, розширення та відбір меду на основі даних.</p>
+            </article>
+
+            <article class="advantage-card">
+              <div class="card-icon">🌡️</div>
               <strong>Контролюєте мікроклімат</strong>
-              — температура/вологість допомагають вчасно помітити проблему.
-            </p>
-          </li>
-        </ul>
+              <p>Температура та вологість допомагають вчасно помітити проблему.</p>
+            </article>
 
-        <ul class="advantages-lists">
-          <li class="advantages-item">
-            <p class="advantages-subtext text5">
+            <article class="advantage-card">
+              <div class="card-icon">🔔</div>
               <strong>Отримуєте сповіщення</strong>
-              — дані доступні у веб-кабінеті, а ключові події можна контролювати дистанційно.
-            </p>
-          </li>
-          <li class="advantages-item">
-            <p class="advantages-subtext text6">
+              <p>Ключові події можна контролювати дистанційно.</p>
+            </article>
+
+            <article class="advantage-card">
+              <div class="card-icon">🔋</div>
               <strong>Стабільна автономна робота</strong>
-              — ваги спроєктовані для тривалого використання без постійного обслуговування.
-            </p>
-          </li>
-          <li class="advantages-item">
-            <p class="advantages-subtext text7">
-              <strong>Контроль пасіки з будь-якої країни</strong>
-              — доступ до даних з телефону/ПК, де є інтернет.
-            </p>
-          </li>
-          <li class="advantages-item">
-            <p class="advantages-subtext text8">
-              <strong>Розумієте “здоров’я” пасіки</strong>
-              — тренди підказують, коли варто втрутитись.
-            </p>
-          </li>
-        </ul>
-      </div>
+              <p>Пристрої спроєктовані для тривалого використання.</p>
+            </article>
 
-      <ul class="advantages-buttons">
-        <li class="advantages-button">
-          <a href="./price.html" class="advantages-cost">Подивитись ціни</a>
-        </li>
-        <li class="advantages-button">
-          <a href="./demo.html" class="advantages-demo">Подивитись демо</a>
-        </li>
-      </ul>
+            <article class="advantage-card">
+              <div class="card-icon">🌐</div>
+              <strong>Контроль з будь-якої країни</strong>
+              <p>Доступ до даних з телефону або комп'ютера.</p>
+            </article>
 
-      <p class="advantages-btn">
-        Підійде як для стаціонарної пасіки, так і для кочівлі — оберіть комплектацію
-        для 1 або 4 вуликів.
-      </p>
-    </div>
-  </section>
+            <article class="advantage-card">
+              <div class="card-icon">🐝</div>
+              <strong>Розумієте стан пасіки</strong>
+              <p>Тренди допомагають визначити, коли варто втрутитись.</p>
+            </article>
+          </div>
 
-  <section class="information">
-    <div class="container">
-      <h2 class="information-title">Електронні ваги для пасіки купити в Україні</h2>
-      <div class="information-box">
-        <ul class="information-list">
-          <li class="information-item">
-            <h3 class="information-subtitle">Надійна вагова платформа</h3>
-            <p class="information-text information-text1">
-              Платформа розрахована на навантаження до <strong>350 кг</strong> і
-              виготовляється з міцної металевої профільної труби 20×40×2 мм та
-              40×40×2 мм. Конструкція стійка й довговічна, підходить для роботи
-              в умовах пасіки. Для точної установки передбачені регульовані ніжки,
-              що дозволяє виставити ваги по горизонту навіть на нерівній поверхні.
+          <div class="advantages-bottom">
+            <p>
+              Підходить як для стаціонарної пасіки, так і для кочівлі.
+              Оберіть комплектацію для 1 або 4 вуликів.
             </p>
-          </li>
-          <li class="information-item">
-            <h3 class="information-subtitle">Типорозміри</h3>
-            <p class="information-text information-text2">
-              Стандартні габарити вагової рами складають <strong>440×500×125мм</strong>,
-              що робить її універсальною для більшості вуликів.
-            </p>
-          </li>
-          <li class="information-item">
-            <h3 class="information-subtitle">Сумісність з вуликами</h3>
-            <p class="information-text information-text3">
-              Ваги підходять для таких типів вуликів: Рогатий, Рутівський,
-              Багатокорпусний, Лежак Даданівський, Лежак український та інші моделі.
-              Це робить їх універсальним рішенням для більшості пасік.
-            </p>
-          </li>
-          <li class="information-item">
-            <h3 class="information-subtitle">Виготовлення під замовлення</h3>
-            <p class="information-text information-text4">
-              За запитом можлива розробка вагової платформи з індивідуальними
-              розмірами та вантажопідйомністю. Це зручно для пасічників із
-              нестандартними вуликами чи павільйонами.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+            <a href="./price.html" class="btn">Подивитися ціни →</a>
+          </div>
 
-  <section class="sensor">
-    <div class="container sensor-container">
-      <div class="sensor-box">
-        <h2 class="sensor-title">Простий датчик ваги для вулика</h2>
-        <ul class="sensor-list">
-          <li class="sensor-item">
-            <h3 class="sensor-subtitle">Доступне рішення</h3>
-            <p class="sensor-text">
-              Для пасічників, яким не потрібна повноцінна металева платформа,
-              ваги BH-01 можна укомплектувати <strong>простим датчиком ваги</strong>.
-              Це компактне та більш економічне рішення для контролю медозбору.
-            </p>
-          </li>
-          <li class="sensor-item">
-            <h3 class="sensor-subtitle">Особливості та відмінності</h3>
-            <p class="sensor-text">
-              На відміну від вагової платформи, показники спрощеного датчика
-              сильніше залежать від змін температури повітря. Також його
-              встановлення та налаштування по горизонту потребують більшої уваги.
-            </p>
-          </li>
-          <li class="sensor-item">
-            <h3 class="sensor-subtitle">Максимальне навантаження</h3>
-            <p class="sensor-text">
-              Простий датчик ваги розрахований на навантаження <strong>до 200 кг</strong>,
-              що підходить для більшості стандартних вуликів.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="form">
-    <div class="container">
-      <h2 class="form-title">Порівняння моделей пасічних ваг</h2>
-      <p class="form-text">Оберіть потрібний варіант комплектації для вашої пасіки</p>
-
-      <div class="table">
-        <div class="table-header">
-          <div>Модель</div>
-          <div>Кількість вуликів</div>
-          <div>Тип датчика</div>
-          <div>Навантаження</div>
-          <div>Автономність</div>
-          <div>Ціна комплекту</div>
-          <div></div>
         </div>
+      </section>
 
-        <div class="table-row">
-          <div>ВН-01 + платформа</div>
-          <div>1</div>
-          <div>Вагова платформа</div>
-          <div>до 200 кг</div>
-          <div>20+ днів</div>
-          <div>12370 грн</div>
-          <div><button>Оформити замовлення</button></div>
+      <!-- STATS -->
+      <section class="stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat">
+              <span class="stat-number">4G</span>
+              <span class="stat-label">Мобільний зв'язок</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">350 кг</span>
+              <span class="stat-label">Навантаження платформи</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Днів автономної роботи</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Доступ до даних онлайн</span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="table-row">
-          <div>ВН-04 + платформи</div>
-          <div>4</div>
-          <div>Вагові платформи</div>
-          <div>по 200 кг на вулик</div>
-          <div>20+ днів</div>
-          <div>24240 грн</div>
-          <div><button>Оформити замовлення</button></div>
+      <!-- INFORMATION -->
+      <section class="information">
+        <div class="container">
+
+          <div class="section-label">Конструкція</div>
+          <h2 class="section-title">Електронні ваги для пасіки</h2>
+          <p class="section-description">
+            Надійна конструкція, зручні розміри та сумісність
+            із різними типами вуликів.
+          </p>
+
+          <div class="grid-4">
+            <article class="card information-card">
+              <div class="card-icon">⚖️</div>
+              <h3>Надійна вагова платформа</h3>
+              <p>
+                Платформа розрахована на навантаження до
+                <strong>350 кг</strong> та виготовляється з міцної
+                металевої профільної труби 20×40×2 мм і 40×40×2 мм.
+                Регульовані ніжки допомагають виставити ваги по горизонту.
+              </p>
+            </article>
+
+            <article class="card information-card">
+              <div class="card-icon">📐</div>
+              <h3>Типорозміри</h3>
+              <p>
+                Стандартні габарити вагової рами складають
+                <strong>440×500×125 мм</strong>, що робить її
+                універсальною для більшості вуликів.
+              </p>
+            </article>
+
+            <article class="card information-card">
+              <div class="card-icon">🏠</div>
+              <h3>Сумісність з вуликами</h3>
+              <p>
+                Рогатий, Рутівський, багатокорпусний, лежак Даданівський,
+                український лежак та інші моделі.
+              </p>
+            </article>
+
+            <article class="card information-card">
+              <div class="card-icon">🛠️</div>
+              <h3>Виготовлення під замовлення</h3>
+              <p>
+                За запитом можлива розробка платформи з індивідуальними
+                розмірами та вантажопідйомністю.
+              </p>
+            </article>
+          </div>
+
         </div>
+      </section>
 
-        <div class="table-row">
-          <div>ВН-01 + датчик</div>
-          <div>1</div>
-          <div>Датчик ваги</div>
-          <div>до 200 кг</div>
-          <div>20+ днів</div>
-          <div>10370 грн</div>
-          <div><button>Оформити замовлення</button></div>
+      <!-- SENSOR -->
+      <section class="sensor">
+        <div class="container">
+
+          <div class="section-label">Комплектація</div>
+          <h2 class="section-title">Простий датчик ваги для вулика</h2>
+          <p class="section-description">
+            Економічна альтернатива повноцінній металевій платформі.
+          </p>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">💡</div>
+              <h3>Доступне рішення</h3>
+              <p>
+                BH-01 можна укомплектувати простим датчиком ваги.
+                Це компактне та більш економічне рішення для контролю медозбору.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">⚙️</div>
+              <h3>Особливості та відмінності</h3>
+              <p>
+                Показники спрощеного датчика сильніше залежать від температури.
+                Встановлення та налаштування по горизонту потребують уваги.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📦</div>
+              <h3>Максимальне навантаження</h3>
+              <p>
+                Простий датчик ваги розрахований на навантаження
+                <strong>до 200 кг</strong>, що підходить для більшості
+                стандартних вуликів.
+              </p>
+            </article>
+          </div>
+
         </div>
+      </section>
 
-        <div class="table-row">
-          <div>ВН-04 + датчики</div>
-          <div>4</div>
-          <div>Датчики ваги</div>
-          <div>по 200 кг на вулик</div>
-          <div>20+ днів</div>
-          <div>19420 грн</div>
-          <div><button>Оформити замовлення</button></div>
+      <!-- PRODUCTS -->
+      <section class="form">
+        <div class="container">
+
+          <div class="section-label">Моделі та ціни</div>
+          <h2 class="section-title">Оберіть комплект для своєї пасіки</h2>
+          <p class="section-description">
+            Порівняйте комплектації та оберіть потрібну кількість датчиків.
+          </p>
+
+          <div class="product-list">
+
+            <article class="product-card">
+              <div class="card-icon">🐝</div>
+              <h3>BH-01 + платформа</h3>
+              <div class="product-price">12 370 грн</div>
+              <div class="product-details">
+                <span>Для 1 вулика</span>
+                <span>Вагова платформа</span>
+                <span>Навантаження до 200 кг</span>
+                <span>Автономність 20+ днів</span>
+              </div>
+              <a href="./price.html?set=bh01-platform" class="btn">
+                Замовити комплект →
+              </a>
+            </article>
+
+            <article class="product-card">
+              <div class="card-icon">🐝🐝</div>
+              <h3>BH-04 + платформи</h3>
+              <div class="product-price">24 240 грн</div>
+              <div class="product-details">
+                <span>Для 4 вуликів</span>
+                <span>Вагові платформи</span>
+                <span>По 200 кг на вулик</span>
+                <span>Автономність 20+ днів</span>
+              </div>
+              <a href="./price.html?set=bh04-platforms" class="btn">
+                Замовити комплект →
+              </a>
+            </article>
+
+            <article class="product-card">
+              <div class="card-icon">⚖️</div>
+              <h3>BH-01 + датчик</h3>
+              <div class="product-price">10 370 грн</div>
+              <div class="product-details">
+                <span>Для 1 вулика</span>
+                <span>Датчик ваги</span>
+                <span>Навантаження до 200 кг</span>
+                <span>Автономність 20+ днів</span>
+              </div>
+              <a href="./price.html?set=bh01-sensor" class="btn">
+                Замовити комплект →
+              </a>
+
+            </article>
+
+            <article class="product-card">
+              <div class="card-icon">⚖️⚖️</div>
+              <h3>BH-04 + датчики</h3>
+              <div class="product-price">19 420 грн</div>
+              <div class="product-details">
+                <span>Для 4 вуликів</span>
+                <span>Датчики ваги</span>
+                <span>По 200 кг на вулик</span>
+                <span>Автономність 20+ днів</span>
+              </div>
+              <a href="./price.html?set=bh04-sensors" class="btn">
+                Замовити комплект →
+              </a>
+            </article>
+
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="instrument">
-    <div class="container">
-      <h2 class="instrument-title">Які параметри фіксують пасічні ваги</h2>
-      <div class="instrument-cont">
-        <ul class="instrument-list">
-          <li class="instrument-item">
-            <h3 class="instrument-subtitle">Показники всередині вулика</h3>
-            <p class="instrument-text">
-              Розумні пасічні ваги фіксують ключові параметри бджолиної сім'ї
-              в режимі реального часу. Прилад вимірює <strong>вагу вулика</strong>,
-              а також <strong>температуру</strong> і <strong>вологість</strong>
-              повітря всередині. Ці дані допомагають відстежувати процес медозбору
-              та стан бджіл без частих оглядів.
-            </p>
-          </li>
-          <li class="instrument-item">
-            <h3 class="instrument-subtitle">Погодні умови</h3>
-            <p class="instrument-text">
-              Додатково ваги оснащуються <strong>зовнішнім датчиком температури</strong>,
-              що дозволяє дистанційно контролювати мікроклімат та погодні умови
-              в місці розташування пасіки.
-            </p>
-          </li>
-          <li class="instrument-item">
-            <h3 class="instrument-subtitle">Службові параметри</h3>
-            <p class="instrument-text">
-              Для зручності пасічника прилад також передає на веб-сервер:
-              рівень заряду акумулятора, баланс SIM-карти та якість сигналу
-              <strong>GSM</strong> або <strong>Wi-Fi</strong>. Це гарантує
-              стабільну роботу пристрою та своєчасне обслуговування.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <!-- INSTRUMENT -->
+      <section class="instrument">
+        <div class="container">
 
-  <section class="trend">
-    <div class="container trend-container">
-      <div class="trend-subbox">
-        <h2 class="trend-title">Тренд інтенсивності медозбору</h2>
-        <ul class="trend-list">
-          <li class="trend-item">
-            <h3 class="trend-subtitle">Автоматична передача даних</h3>
-            <p class="trend-text">
-              Пасічні ваги регулярно зчитують показання з <strong>датчика ваги вулика</strong>
-              і відправляють їх на сервер <strong>bee.in.ua.</strong> Усі дані надійно
-              зберігаються в базі та доступні для аналізу у будь-який час.
-            </p>
-          </li>
-          <li class="trend-item">
-            <h3 class="trend-subtitle">Зручне відображення онлайн</h3>
-            <p class="trend-text">
-              У особистому кабінеті на сайті ви отримуєте доступ до <strong>графіка ваги</strong>,
-              де дані подані у вигляді тренду. Це наочна статистика, яка допомагає
-              відстежувати динаміку медозбору та стан бджолиної сім’ї.
-            </p>
-          </li>
-          <li class="trend-item">
-            <h3 class="trend-subtitle">Переваги аналізу тренду</h3>
-            <p class="trend-text">
-              Графік дозволяє детально спостерігати за життєвим циклом бджолиної
-              сім’ї та оперативно оцінювати ефективність розташування вуликів.
-              Завдяки цьому ви можете:
-            </p>
-          </li>
-        </ul>
+          <div class="section-label">Вимірювання</div>
+          <h2 class="section-title">Які параметри фіксують пасічні ваги</h2>
 
-        <ul class="trend-other-list">
-          <li class="trend-other-item">
-            <p class="trend-other-text">економити час і пальне, уникаючи зайвих поїздок на пасіку;</p>
-          </li>
-          <li class="trend-other-item">
-            <p class="trend-other-text">вчасно планувати візити до вуликів без зайвого занепокоєння бджіл;</p>
-          </li>
-          <li class="trend-other-item">
-            <p class="trend-other-text">підвищувати урожайність завдяки правильній аналітиці та швидкій реакції.</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">🌡️</div>
+              <h3>Показники всередині вулика</h3>
+              <p>
+                Прилад вимірює вагу вулика, температуру та вологість
+                повітря всередині. Ці дані допомагають відстежувати
+                медозбір і стан бджіл без частих оглядів.
+              </p>
+            </article>
 
-  <section class="gps">
-    <div class="container">
-      <h2 class="gps-title">Визначення місцезнаходження вулика</h2>
-      <ul class="gps-list">
-        <li class="gps-item">
-          <h3 class="gps-subtitle">Використовувана технологія</h3>
-          <p class="gps-text">
-            У пристрої застосовується технологія <strong>GPS-A</strong>, яка
-            визначає приблизні координати за рівнем сигналу від найближчих
-            GSM-базових станцій. Це дозволяє контролювати розташування вуликів
-            навіть без встановлення повноцінного GPS-модуля.
+            <article class="card">
+              <div class="card-icon">☀️</div>
+              <h3>Погодні умови</h3>
+              <p>
+                Зовнішній датчик температури дозволяє дистанційно
+                контролювати мікроклімат і погодні умови
+                в місці розташування пасіки.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📶</div>
+              <h3>Службові параметри</h3>
+              <p>
+                Прилад передає рівень заряду акумулятора, баланс SIM-карти
+                та якість сигналу GSM або Wi-Fi.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- TREND -->
+      <section class="trend">
+        <div class="container">
+
+          <div class="section-label">Аналітика</div>
+          <h2 class="section-title">Тренд інтенсивності медозбору</h2>
+          <p class="section-description">
+            Усі показники зберігаються на сервері та доступні
+            для перегляду й аналізу в особистому кабінеті.
           </p>
-        </li>
-        <li class="gps-item">
-          <h3 class="gps-subtitle">Точність координат</h3>
-          <p class="gps-text">
-            Точність методу нижча, ніж у GPS, і може відрізнятися від фактичної
-            точки на сотні метрів. Результат залежить від якості роботи GSM-мережі
-            та розташування станцій. Тим не менш, цього достатньо, щоб визначити
-            <strong>район знаходження вулика</strong>.
-          </p>
-        </li>
-        <li class="gps-item">
-          <h3 class="gps-subtitle">Користь для пасічника</h3>
-          <p class="gps-text">
-            У особистому кабінеті на сайті <strong>bee.in.ua</strong> ви завжди
-            можете відкрити карту та побачити останнє місцезнаходження ваг і вулика.
-            Це забезпечує:
-          </p>
-        </li>
-      </ul>
 
-      <ul class="gps-sublist">
-        <li class="gps-subitem"><p class="gps-subtext">віддалений контроль за пасікою;</p></li>
-        <li class="gps-subitem"><p class="gps-subtext">додатковий захист від крадіжок і втрат;</p></li>
-        <li class="gps-subitem"><p class="gps-subtext">розуміння географічних умов медозбору.</p></li>
-      </ul>
-    </div>
-  </section>
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">📡</div>
+              <h3>Автоматична передача даних</h3>
+              <p>
+                Ваги регулярно зчитують показання датчика та
+                відправляють їх на сервер bee.in.ua.
+              </p>
+            </article>
 
-  <section class="graphik">
-    <div class="container graphik-container">
-      <div class="subbox">
-        <h2 class="graphik-title">Тренди допоміжних даних</h2>
-        <ul class="graphik-list">
-          <li class="graphik-item">
-            <h3 class="graphik-subtitle">Наглядова аналітика</h3>
-            <p class="graphik-text">
-              Окрім таблиць, усі допоміжні параметри відображаються у вигляді
-              <strong>трендів — часових графіків</strong>.
-            </p>
-          </li>
-          <li class="graphik-item">
-            <h3 class="graphik-subtitle">Що можна відстежувати</h3>
-            <p class="graphik-text">
-              На графіках ви бачите не лише <strong>вагу вулика</strong>, але й
-              <strong>температуру, вологість, заряд акумулятора, рівень сигналу</strong>.
-              Це допомагає комплексно контролювати стан пасіки.
-            </p>
-          </li>
-        </ul>
+            <article class="card">
+              <div class="card-icon">📊</div>
+              <h3>Зручне відображення онлайн</h3>
+              <p>
+                В особистому кабінеті доступний графік ваги,
+                який показує динаміку медозбору та стан бджолиної сім'ї.
+              </p>
+            </article>
 
-        <ul class="graphik-sublist">
-          <h3 class="graphik-subtitle">Переваги графіків</h3>
-          <li class="graphik-subtitle">
-            <p class="graphik-subtext">швидке розуміння загальної картини за обраний період;</p>
-          </li>
-          <li class="graphik-subtitle">
-            <p class="graphik-subtext">виявлення проблем та нестандартних ситуацій за трендами;</p>
-          </li>
-          <li class="graphik-subtitle">
-            <p class="graphik-subtext">зручність аналізу з будь-якого пристрою онлайн.</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+            <article class="card">
+              <div class="card-icon">🔎</div>
+              <h3>Переваги аналізу тренду</h3>
+              <p>
+                Графік допомагає спостерігати за життєвим циклом
+                сім'ї та оцінювати ефективність розташування вуликів.
+              </p>
+            </article>
+          </div>
 
-  <section class="energy">
-    <div class="container energy-container">
-      <h2 class="energy-title">Живлення пасічних ваг</h2>
-      <ul class="energy-list">
-        <li class="energy-item">
-          <h3 class="energy-subtitle">Вбудований літій-іонний акумулятор</h3>
-          <p class="energy-text">
-            Усередині корпусу встановлений надійний літій-іонний акумулятор
-            формату <strong>18650</strong> (4,2 В). Від одного повністю зарядженого
-            елемента ваги здатні працювати понад <strong>20 днів</strong> без
-            підзарядки, забезпечуючи стабільну роботу навіть у віддалених точках пасіки.
-          </p>
-        </li>
-        <li class="energy-item">
-          <h3 class="energy-subtitle">Сонячна підзарядка</h3>
-          <p class="energy-text">
-            Для тривалої автономної роботи можна використовувати
-            <strong>сонячну панель потужністю від 2 Вт</strong> з вихідною
-            напругою 6–18 В. Такий варіант робить ваги повністю незалежними
-            від електромережі.
-          </p>
-        </li>
-        <li class="energy-item">
-          <h3 class="energy-subtitle">Зарядка від мережі 220 В</h3>
-          <p class="energy-text">
-            Пристрій також можна підключати до блоку живлення 9–12 В. Це зручно
-            при стаціонарній установці або у зимовий період поблизу господарських будівель.
-          </p>
-        </li>
-        <li class="energy-item">
-          <h3 class="energy-subtitle">Живлення від кислотного акумулятора</h3>
-          <p class="energy-text">
-            Ваги підтримують підключення до <strong>кислотних акумуляторів</strong>
-            ємністю від 2 А·год і напругою 6–12 В. Наприклад, від акумулятора
-            12 В 7 А·год пристрій автономно працює цілий місяць навіть у холодний зимовий сезон.
-          </p>
-        </li>
-      </ul>
-    </div>
-  </section>
+          <div class="trend-other-list">
+            <div class="trend-other-item">⛽ Економія часу та пального</div>
+            <div class="trend-other-item">📅 Планування візитів до вуликів</div>
+            <div class="trend-other-item">🍯 Аналітика медозбору та швидка реакція</div>
+          </div>
 
-  <section class="management">
-    <div class="container management-container">
-      <div class="management-subbox">
-        <h2 class="management-title">Керування пасічними вагами</h2>
-        <ul class="management-list">
-          <li class="management-item">
-            <h3 class="management-subtitle">Пряме керування на приладі</h3>
-            <p class="management-text">
-              На корпусі пристрою розташовані кнопки для ввімкнення живлення,
-              тарування ваг та перемикання між робочим і налаштувальним режимами.
-              Це дозволяє легко керувати пристроєм прямо на пасіці.
-            </p>
-          </li>
-          <li class="management-item">
-            <h3 class="management-subtitle">Віддалені SMS-команди</h3>
-            <p class="management-text">
-              Усі основні функції доступні через <strong>SMS-команди</strong>.
-              Ви можете віддалено змінювати налаштування і керувати пристроєм
-              з будь-якої точки, де є мобільний зв’язок. Повний список команд
-              доступний на сторінці SMS-команди.
-            </p>
-          </li>
-          <li class="management-item">
-            <h3 class="management-subtitle">Налаштування через Wi-Fi</h3>
-            <p class="management-text">
-              При підключенні до локальної Wi-Fi мережі налаштування легко
-              редагуються через <strong>веб-кабінет</strong>. Керування просте
-              та інтуїтивне, а доступ до веб-порталу повністю безкоштовний.
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</main>
+        </div>
+      </section>
+
+      <!-- GPS -->
+      <section class="gps">
+        <div class="container">
+
+          <div class="section-label">Місцезнаходження</div>
+          <h2 class="section-title">Визначення місцезнаходження вулика</h2>
+          <p class="section-description">
+            Додаткова інформація про розташування пасіки
+            доступна у вашому особистому кабінеті.
+          </p>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">🛰️</div>
+              <h3>Використовувана технологія</h3>
+              <p>
+                У пристрої застосовується технологія GPS-A,
+                яка визначає приблизні координати за сигналом
+                найближчих GSM-базових станцій.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📍</div>
+              <h3>Точність координат</h3>
+              <p>
+                Точність нижча, ніж у GPS, і може відрізнятися
+                на сотні метрів. Результат залежить від якості
+                GSM-мережі та розташування станцій.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🗺️</div>
+              <h3>Користь для пасічника</h3>
+              <p>
+                В особистому кабінеті bee.in.ua можна відкрити карту
+                та побачити останнє місцезнаходження ваг і вулика.
+              </p>
+            </article>
+          </div>
+
+          <div class="gps-sublist">
+            <div class="gps-subitem">🔐 Дистанційний контроль за пасікою</div>
+            <div class="gps-subitem">🛡️ Додатковий захист від втрат</div>
+            <div class="gps-subitem">🌍 Розуміння географічних умов медозбору</div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GRAPHICS -->
+      <section class="graphik">
+        <div class="container">
+
+          <div class="section-label">Графіки та дані</div>
+          <h2 class="section-title">Тренди допоміжних даних</h2>
+
+          <div class="grid-2">
+            <article class="card">
+              <div class="card-icon">📉</div>
+              <h3>Наглядова аналітика</h3>
+              <p>
+                Окрім таблиць, допоміжні параметри відображаються
+                у вигляді трендів — часових графіків.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🌡️</div>
+              <h3>Що можна відстежувати</h3>
+              <p>
+                Вага вулика, температура, вологість, заряд акумулятора
+                та рівень сигналу. Це допомагає комплексно
+                контролювати стан пасіки.
+              </p>
+            </article>
+          </div>
+
+          <div class="graphik-sublist">
+            <h3>Переваги графіків</h3>
+            <ul>
+              <li>✓ Швидке розуміння загальної картини за обраний період.</li>
+              <li>✓ Виявлення проблем та нестандартних ситуацій.</li>
+              <li>✓ Зручність аналізу з будь-якого пристрою онлайн.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ENERGY -->
+      <section class="energy">
+        <div class="container">
+
+          <div class="section-label">Автономність</div>
+          <h2 class="section-title">Живлення пасічних ваг</h2>
+          <p class="section-description">
+            Кілька варіантів живлення для різних умов використання.
+          </p>
+
+          <div class="grid-4">
+            <article class="card">
+              <div class="card-icon">🔋</div>
+              <h3>Літій-іонний акумулятор</h3>
+              <p>
+                Акумулятор формату 18650 (4,2 В). Від одного
+                повністю зарядженого елемента ваги здатні працювати
+                понад 20 днів.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">☀️</div>
+              <h3>Сонячна підзарядка</h3>
+              <p>
+                Можна використовувати сонячну панель потужністю
+                від 2 Вт з вихідною напругою 6–18 В.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">🔌</div>
+              <h3>Зарядка від мережі 220 В</h3>
+              <p>
+                Пристрій можна підключати до блоку живлення
+                9–12 В. Це зручно для стаціонарної установки.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">⚡</div>
+              <h3>Кислотний акумулятор</h3>
+              <p>
+                Підтримується підключення акумуляторів ємністю
+                від 2 А·год і напругою 6–12 В.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- MANAGEMENT -->
+      <section class="management">
+        <div class="container">
+
+          <div class="section-label">Керування</div>
+          <h2 class="section-title">Керування пасічними вагами</h2>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon">🎛️</div>
+              <h3>Пряме керування на приладі</h3>
+              <p>
+                На корпусі пристрою розташовані кнопки для ввімкнення,
+                тарування ваг і перемикання між робочим
+                та налаштувальним режимами.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">✉️</div>
+              <h3>Віддалені SMS-команди</h3>
+              <p>
+                Основні функції доступні через SMS-команди.
+                Можна віддалено змінювати налаштування та
+                керувати пристроєм через мобільний зв'язок.
+                <a href="./sms">Список команд →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon">📶</div>
+              <h3>Налаштування через Wi-Fi</h3>
+              <p>
+                При підключенні до локальної Wi-Fi мережі
+                налаштування можна редагувати через веб-кабінет.
+                Доступ до порталу безкоштовний.
+              </p>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq">
+        <div class="container">
+
+          <div class="section-label">Питання та відповіді</div>
+          <h2 class="section-title">Часті запитання</h2>
+          <p class="section-description">
+            Коротко про основні можливості пасічних ваг.
+          </p>
+
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Чи працюють ваги без Wi-Fi?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Так. Пристрої підтримують передачу даних через
+                    4G LTE, тому Wi-Fi не є обов'язковим.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Скільки вуликів можна контролювати?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    BH-01 призначені для одного вулика,
+                    а BH-04 — для чотирьох.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Скільки працюють ваги без підзарядки?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Заявлена автономність — понад 20 днів
+                    від повністю зарядженого акумулятора.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Чи можна переглядати дані з телефону?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                <div>
+                  <p>
+                    Так. Дані доступні в особистому кабінеті
+                    на сайті bee.in.ua з телефону або комп'ютера.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final-cta">
+        <div class="container">
+          <h2>Контролюйте медозбір розумніше разом із BeeHappy!</h2>
+          <p>
+            Оберіть комплектацію та отримуйте інформацію про свою пасіку онлайн.
+          </p>
+          <a href="./price.html" class="btn">Переглянути комплектації →</a>
+        </div>
+      </section>
+
+    </main>
+
+    <button class="back-top" id="backTop" aria-label="Повернутися нагору">
+      ↑
+    </button>
+
+    <script>
+      /* ==============================
+         SCROLL PROGRESS
+      ============================== */
+
+      const progressBar = document.getElementById("progressBar");
+
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const pageHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = pageHeight > 0
+          ? (scrollTop / pageHeight) * 100
+          : 0;
+
+        progressBar.style.width = progress + "%";
+      }
+
+      window.addEventListener("scroll", updateProgress);
+      updateProgress();
+
+
+      /* ==============================
+         BACK TO TOP
+      ============================== */
+
+      const backTop = document.getElementById("backTop");
+
+      window.addEventListener("scroll", () => {
+        backTop.classList.toggle("visible", window.scrollY > 500);
+      });
+
+      backTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+
+
+      /* ==============================
+         FAQ ACCORDION
+      ============================== */
+
+      document.querySelectorAll(".faq-question").forEach(button => {
+        button.addEventListener("click", () => {
+          const currentItem = button.closest(".faq-item");
+          const isActive = currentItem.classList.contains("active");
+
+          document.querySelectorAll(".faq-item").forEach(item => {
+            item.classList.remove("active");
+            item.querySelector(".faq-question")
+              .setAttribute("aria-expanded", "false");
+          });
+
+          if (!isActive) {
+            currentItem.classList.add("active");
+            button.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+
+      /* ==============================
+         REVEAL ANIMATION
+      ============================== */
+
+      const revealElements = document.querySelectorAll(
+        "section .card, section .advantage-card, " +
+        ".hero-feature, .product-card, .stat, " +
+        ".trend-other-item, .gps-subitem"
+      );
+
+      revealElements.forEach(element => {
+        element.classList.add("reveal");
+      });
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              obs.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12
+        });
+
+        revealElements.forEach(element => observer.observe(element));
+      } else {
+        revealElements.forEach(element => element.classList.add("show"));
+      }
+    </script>
+
     <load ="partials/footer.html" />
     <script type="module" src="/main.js"></script>
-</body>
+  </body>
 
 </html>
