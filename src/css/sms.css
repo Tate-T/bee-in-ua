@@ -17,6 +17,13 @@
     display: flex !important;
     flex-direction: column !important;
     margin: 0;
+
+    /* НОВИЙ ФОН СТОРІНКИ */
+    background-image: url('../img/fon/foto-fon1.webp') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
   }
   
   .main-content {
@@ -26,7 +33,12 @@
     overflow: visible !important;
     padding-top: 75px !important;
     padding-bottom: 30px !important;
+
+    /* Скидаємо можливий фон соняшників на контейнері контенту */
+    background: transparent !important;
+    background-image: none !important;
   }
+
   
   .bh-sms-wrapper {
     width: 100%;
@@ -450,11 +462,19 @@
   .bh-info-box p, .bh-steps { font-size: 15px; }
 
   /* Повертаємо повний вигляд демо-кабінету */
-  .bh-ui-mockup {
-    flex-direction: row;
-    margin-top: 22px;
-    font-size: 11px;
-  }
+.bh-ui-mockup {
+  flex-direction: row;
+  margin-top: 22px;
+  font-size: 11px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.bh-ui-main {
+  flex: 1;
+  min-width: 0;
+}
+
 
   .bh-ui-sidebar {
     width: 150px;
@@ -620,32 +640,108 @@
 /* =========================================================
    ДЕСКТОП (від 1200px і вище)
    ========================================================= */
-@media screen and (min-width: 1200px) {
-  .bh-sms-wrapper {
-    max-width: 1140px;
-    padding: 0 24px;
+   @media screen and (min-width: 1200px) {
+    .bh-sms-wrapper {
+      max-width: 1140px;
+      padding: 0 24px;
+    }
+  
+    .bh-title { font-size: 30px; }
+  
+    .bh-table th {
+      font-size: 14px;
+      padding: 16px 20px;
+    }
+  
+    .bh-table th:first-child { width: 240px; }
+  
+    .bh-table td {
+      padding: 16px 20px;
+      font-size: 15.5px;
+    }
+  
+    .bh-code { font-size: 15px; }
+  
+    .bh-info-box { padding: 28px 32px; }
+  
+    /* ОНОВЛЕНО: повертаємо початкові пропорції демо-кабінету на широкому екрані */
+    .bh-ui-mockup {
+      font-size: 13px;
+    }
+  
+    .bh-ui-sidebar {
+      width: 185px;
+    }
+  
+    .bh-ui-menu li {
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+  
+    .bh-ui-body {
+      padding: 16px 20px;
+    }
+  
+    .bh-ui-page-title {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+  
+    .bh-ui-card {
+      padding: 12px;
+    }
+  
+    .bh-ui-card-header {
+      font-size: 13px;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+  
+    .bh-ui-table-scroll {
+      overflow: visible;
+    }
+  
+    .bh-ui-table,
+    .bh-ui-table th,
+    .bh-ui-table td {
+      font-size: 13px;
+      padding: 6px 8px;
+    }
+  
+    .bh-ui-input,
+    .bh-ui-select {
+      padding: 4px 6px;
+      font-size: 12.5px;
+    }
+  
+    .bh-w-imei {
+      width: 95px !important;
+    }
+  
+    .bh-w-name {
+      width: 65px !important;
+    }
+  
+    .bh-ui-dropdown-wrap {
+      min-width: 135px;
+    }
+  
+    .bh-ui-select-active {
+      padding: 4px 8px;
+      font-size: 12.5px;
+    }
+  
+    .bh-ui-dropdown-list li {
+      padding: 4px 8px;
+      font-size: 12.5px;
+    }
+  
+    .bh-ui-btn {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
   }
-
-  .bh-title { font-size: 30px; }
-
-  .bh-table th {
-    font-size: 14px;
-    padding: 16px 20px;
-  }
-
-  .bh-table th:first-child { width: 240px; }
-
-  .bh-table td {
-    padding: 16px 20px;
-    font-size: 15.5px;
-  }
-
-  .bh-code { font-size: 15px; }
-
-  .bh-info-box { padding: 28px 32px; }
-
-  .bh-ui-sidebar { width: 165px; }
-}
+  
 /* =========================================================
    ВІЗУАЛЬНА СХЕМА SMS З ПОЯСНЕННЯМИ (Mobile First: від 320px)
    ========================================================= */
@@ -825,7 +921,6 @@
     }
   }
   
-=======
 /* =========================================
    BEEHAPPY — FULL RESPONSIVE FIX
    Desktop / Laptop / Tablet / Mobile
