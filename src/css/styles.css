@@ -48,766 +48,146 @@
    2. RESET
 ========================= */
 
-* {
-    box-sizing: border-box;
-}
-
 .main {
-    width: 100%;
-    max-width: 1200px;
+    min-height: 100vh;
+    background: #FFF9ED;
+}
+
+.stats {
+    width: min(1150px, calc(100% - 40px));
     margin: 0 auto;
-    overflow: hidden;
-
-    background: var(--cream);
-    color: var(--text);
-
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    padding: 60px 0 80px;
 }
 
-.main *,
-.main *::before,
-.main *::after {
-    box-sizing: border-box;
+.stats-title {
+    margin-bottom: 15px;
+    color: #57432B;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 800;
 }
 
-.main .container {
-    width: 100%;
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.main ul {
-    margin-top: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.main h1,
-.main h2,
-.main h3,
-.main h4,
-.main p {
-    margin-top: 0;
-    overflow-wrap: break-word;
-}
-
-.main p {
-    color: var(--text);
-}
-
-.main strong {
-    color: var(--text-dark);
-}
-
-.main a {
-    color: #B77A00;
-    text-decoration: none;
-    transition: 0.25s;
-}
-
-.main a:hover {
-    color: var(--yellow-dark);
-}
-
-.main button {
-    font-family: inherit;
-    cursor: pointer;
-}
-
-
-/* =========================
-   3. COMMON HEADINGS
-========================= */
-
-.main .hero-title,
-.main .advantages-title,
-.main .information-title,
-.main .sensor-title,
-.main .form-title,
-.main .instrument-title,
-.main .trend-title,
-.main .gps-title,
-.main .graphik-title,
-.main .energy-title,
-.main .management-title {
-    margin-bottom: 22px;
-
-    color: var(--text-dark);
-
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 1.25;
-}
-
-.main .hero-subtitle,
-.main .information-subtitle,
-.main .sensor-subtitle,
-.main .instrument-subtitle,
-.main .trend-subtitle,
-.main .gps-subtitle,
-.main .energy-subtitle,
-.main .management-subtitle {
-    margin-bottom: 14px;
-
-    color: var(--text-dark);
-
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.35;
-}
-
-
-/* =========================
-   4. HERO
-========================= */
-
-.main .hero {
-    padding: 35px 0 65px;
-    background: var(--cream);
-}
-
-.main .hero-listzsy {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-
+.wiki-description {
+    max-width: 800px;
     margin-bottom: 35px;
-}
-
-.main .hero-zsy {
-    margin: 0;
-    color: #9A6900;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.main .hero-title {
-    margin-bottom: 30px;
-    color: #B77A00;
-    font-size: 42px;
-}
-
-.main .hero-box {
-    width: 100%;
-    padding: 35px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 22px;
-
-    box-shadow: var(--shadow);
-}
-
-.main .hero-subbox {
-    width: 100%;
-}
-
-.main .hero-4g {
-    margin-bottom: 25px;
-    color: var(--text-dark);
-    font-size: 25px;
-    line-height: 1.4;
-}
-
-.main .hero-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-
-    margin: 0;
-}
-
-.main .hero-item {
-    padding: 24px;
-
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--yellow);
-    border-radius: var(--radius);
-
-    transition: 0.25s;
-}
-
-.main .hero-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-}
-
-.main .hero-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-
-/* =========================
-   5. ADVANTAGES
-========================= */
-
-.main .advantages {
-    padding: 65px 0;
-    background: #FFF3D5;
-}
-
-.main .advantages-title {
-    max-width: 800px;
-}
-
-.main .advantages-text {
-    max-width: 800px;
-    margin-bottom: 30px;
-    color: var(--text-light);
-    font-size: 17px;
-}
-
-.main .advantages-box {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.main .advantages-list,
-.main .advantages-lists {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-
-    margin: 0;
-}
-
-.main .advantages-item {
-    display: flex;
-    align-items: flex-start;
-
-    min-width: 0;
-    padding: 20px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-
-    box-shadow: var(--shadow);
-    transition: 0.25s;
-}
-
-.main .advantages-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
-}
-
-.main .advantages-subtext {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.main .advantages-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-
-    margin: 30px 0 20px;
-}
-
-.main .advantages-button {
-    margin: 0;
-}
-
-.main .advantages-cost,
-.main .advantages-demo {
-    display: inline-block;
-    padding: 14px 26px;
-
-    background: var(--yellow);
-    border: 1px solid var(--yellow-dark);
-    border-radius: 10px;
-
-    color: var(--text-dark);
-    font-size: 15px;
-    font-weight: 700;
-
-    transition: 0.25s;
-}
-
-.main .advantages-cost:hover,
-.main .advantages-demo:hover {
-    background: var(--yellow-dark);
-    color: var(--white);
-}
-
-.main .advantages-btn {
-    color: var(--text-light);
-    font-size: 15px;
-}
-
-
-/* =========================
-   6. INFORMATION
-========================= */
-
-.main .information {
-    padding: 65px 0;
-    background: var(--cream);
-}
-
-.main .information-list {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-
-    margin: 0;
-}
-
-.main .information-item {
-    min-width: 0;
-    padding: 23px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-    transition: 0.25s;
-}
-
-.main .information-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-}
-
-.main .information-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-
-/* =========================
-   7. SENSOR
-========================= */
-
-.main .sensor {
-    padding: 65px 0;
-    background: #FFF3D5;
-}
-
-.main .sensor-container,
-.main .sensor-box {
-    width: 100%;
-}
-
-.main .sensor-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-
-    margin: 0;
-}
-
-.main .sensor-item {
-    min-width: 0;
-    padding: 25px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-}
-
-.main .sensor-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-
-/* =========================
-   8. FORM AND TABLE
-========================= */
-
-.main .form {
-    padding: 65px 0;
-    background: var(--cream);
-}
-
-.main .form-text {
-    margin-bottom: 25px;
-    color: var(--text-light);
+    color: #806C52;
     font-size: 16px;
+    line-height: 1.8;
 }
 
-.main .table {
-    width: 100%;
-    overflow-x: auto;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-
-    box-shadow: var(--shadow);
+.wiki-description strong {
+    color: #57432B;
 }
 
-.main .table-header,
-.main .table-row {
-    display: grid;
-    grid-template-columns:
-        1.3fr
-        1fr
-        1.2fr
-        1.1fr
-        1fr
-        1fr
-        1.3fr;
-
-    align-items: center;
-    min-width: 1000px;
-}
-
-.main .table-header {
-    background: var(--yellow-light);
-    color: var(--text-dark);
+.wiki-description em {
+    color: #C58A00;
+    font-style: normal;
     font-weight: 700;
 }
 
-.main .table-header > div,
-.main .table-row > div {
-    min-width: 0;
-    padding: 18px 12px;
-    font-size: 14px;
-}
-
-.main .table-row {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-}
-
-.main .table-row > div {
-    color: var(--text-light);
-}
-
-.main .table-row button {
-    width: 100%;
-    padding: 11px 12px;
-
-    background: var(--yellow);
-    border: 0;
-    border-radius: 8px;
-
-    color: var(--text-dark);
-    font-size: 13px;
-    font-weight: 700;
-
-    transition: 0.25s;
-}
-
-.main .table-row button:hover {
-    background: var(--yellow-dark);
-    color: var(--white);
-}
-
-
-/* =========================
-   9. INSTRUMENT
-========================= */
-
-.main .instrument {
-    padding: 65px 0;
-    background: #FFF3D5;
-}
-
-.main .instrument-cont {
-    width: 100%;
-}
-
-.main .instrument-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-
-    margin: 0;
-}
-
-.main .instrument-item {
-    min-width: 0;
-    padding: 26px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-}
-
-.main .instrument-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-
-/* =========================
-   10. TREND
-========================= */
-
-.main .trend {
-    padding: 65px 0;
-    background: var(--cream);
-}
-
-.main .trend-container,
-.main .trend-subbox {
-    width: 100%;
-}
-
-.main .trend-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-
-    margin: 0;
-}
-
-.main .trend-item {
-    min-width: 0;
-    padding: 25px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-}
-
-.main .trend-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-.main .trend-other-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 15px;
-
-    margin: 25px 0 0;
-}
-
-.main .trend-other-item {
-    padding: 18px;
-
-    background: var(--yellow-light);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-}
-
-.main .trend-other-text {
-    margin: 0;
-    font-size: 14px;
-}
-
-
-/* =========================
-   11. GPS
-========================= */
-
-.main .gps {
-    padding: 65px 0;
-    background: #FFF3D5;
-}
-
-.main .gps-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-
-    margin: 0;
-}
-
-.main .gps-item {
-    min-width: 0;
-    padding: 25px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-}
-
-.main .gps-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
-}
-
-.main .gps-sublist {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 15px;
-
-    margin: 25px 0 0;
-}
-
-.main .gps-subitem {
-    padding: 18px;
-
-    background: var(--yellow-light);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-}
-
-.main .gps-subtext {
-    margin: 0;
-    font-size: 14px;
-}
-
-
-/* =========================
-   12. GRAPHIK
-========================= */
-
-.main .graphik {
-    padding: 65px 0;
-    background: var(--cream);
-}
-
-.main .graphik-container,
-.main .subbox {
-    width: 100%;
-}
-
-.main .graphik-list {
+.stats-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-
+    gap: 18px;
+    padding: 0;
     margin: 0;
+    list-style: none;
+    counter-reset: articles;
 }
 
-.main .graphik-item {
-    padding: 25px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
-}
-
-.main .graphik-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-}
-
-.main .graphik-sublist {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-
-    margin: 25px 0 0;
-    padding: 25px;
-
-    background: var(--yellow-light);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-}
-
-.main .graphik-sublist > h3 {
-    margin: 0 0 5px;
-}
-
-.main .graphik-sublist > li {
-    margin: 0;
-    color: var(--text);
-}
-
-.main .graphik-subtext {
-    margin: 0;
-    font-size: 15px;
-}
-
-
-/* =========================
-   13. ENERGY
-========================= */
-
-.main .energy {
-    padding: 65px 0;
-    background: #FFF3D5;
-}
-
-.main .energy-container {
-    width: 100%;
-}
-
-.main .energy-list {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-
-    margin: 0;
-}
-
-.main .energy-item {
+.stats-item {
+    position: relative;
     min-width: 0;
-    padding: 23px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
+    min-height: 125px;
+    padding: 23px 50px 23px 25px;
+    background: #fff;
+    border: 1px solid #EFDFC0;
+    border-radius: 18px;
+    counter-increment: articles;
+    transition: .25s ease;
 }
 
-.main .energy-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
+.stats-item::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    left: 0;
+    width: 4px;
+    background: #FFC21A;
+    border-radius: 0 5px 5px 0;
 }
 
-
-/* =========================
-   14. MANAGEMENT
-========================= */
-
-.main .management {
-    padding: 65px 0;
-    background: var(--cream);
+.stats-item a {
+    display: flex;
+    align-items: center;
+    min-height: 77px;
+    color: #57432B;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
 }
 
-.main .management-container,
-.main .management-subbox {
-    width: 100%;
+.stats-item a::after {
+    content: "↗";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    color: #D99B00;
+    font-size: 21px;
+    transform: translateY(-50%);
+    transition: .25s;
 }
 
-.main .management-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-
-    margin: 0;
+.stats-item:hover {
+    transform: translateY(-4px);
+    border-color: #F0C45B;
+    box-shadow: 0 12px 28px rgba(117, 81, 20, .09);
 }
 
-.main .management-item {
-    min-width: 0;
-    padding: 25px;
-
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    box-shadow: var(--shadow);
+.stats-item:hover a {
+    color: #B77A00;
 }
 
-.main .management-text {
-    margin-bottom: 0;
-    color: var(--text-light);
-    line-height: 1.7;
+.stats-item:hover a::after {
+    transform: translate(4px, -4px);
+}
+
+.stats-item a:focus-visible {
+    outline: 2px solid #D99B00;
+    outline-offset: 4px;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    .stats-list {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats {
+        width: calc(100% - 28px);
+        padding: 35px 0 50px;
+    }
+
+    .stats-title {
+        font-size: 29px;
+    }
+
+    .wiki-description {
+        font-size: 14px;
+    }
+
+    .stats-item {
+        min-height: 105px;
+        padding: 18px 42px 18px 20px;
+        border-radius: 15px;
+    }
+
+    .stats-item a {
+        font-size: 14px;
+    }
 }
