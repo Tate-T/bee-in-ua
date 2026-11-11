@@ -9,10 +9,15 @@
   }
   
   .price-page {
-    background-color: var(--bee-bg);
+    background-image: linear-gradient(rgba(248, 250, 252, 0.85), rgba(248, 250, 252, 0.85)), url('../img/fon/foto-fon2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фото залишається нерухомим */
     color: var(--bee-text);
     padding-bottom: 100px;
   }
+  
   
   .price-container {
     width: 100%;
@@ -181,7 +186,7 @@
     font-weight: 600;
     cursor: pointer;
     color: var(--bee-text);
-    transition: background 0.15s;
+    transition: background-color 0.15s; 
   }
   
   .price-qty-btn:hover {
