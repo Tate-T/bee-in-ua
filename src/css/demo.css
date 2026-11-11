@@ -8,7 +8,7 @@
 }
 
 body {
-    padding-top: 70px; 
+    padding-top: 65px; 
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ body {
     /* Перебиваємо будь-які білі фони інших файлів стилів за допомогою !important */
     background-color: #fcf6e8 !important;
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1)), 
-                      url('../img/fon/foto_fon1.webp') !important;
+                      url('../img/fon/foto-fon3.webp') !important;
     background-size: cover !important;
     background-position: center center !important;
     background-attachment: fixed !important;
