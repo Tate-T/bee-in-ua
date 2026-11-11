@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // ИЗОБРАЖЕНИЯ ТОВАРОВ
 // =====================================
 
-import bh01Img from './img/fon/gsm-vesy-dlia-paseki-BH-01.jpg';
-import bh04Img from './img/fon/vagy-pasichni-golovniy-pristriy-BH-04.jpg';
-import bhSth1Img from './img/fon/datchik-temperatury-vlazhnosti-dlia-paseki.jpg';
-import bhSt1Img from './img/fon/datchik-temperatury-dlia-paseki-BH-01.jpg';
-import bhSm1Img from './img/fon/pasechnie_vesy_01.jpg';
-import bhSm3Img from './img/fon/tenzo_sensor_BH-SM3.jpg';
-import ax10pImg from './img/fon/solar_panel_12V_polycrystal.jpg';
+import bh01Img from './img/fon/bh1.webp';
+import bh04Img from './img/fon/bh4.webp';
+import bhSth1Img from './img/fon/datchik-temperatury-vlazhnost.webp';
+import bhSt1Img from './img/fon/datchik-temperatury.webp';
+import bhSm1Img from './img/fon/platforma.webp';
+import bhSm3Img from './img/fon/tenzo-sensor.webp';
+import ax10pImg from './img/fon/solar-panel.webp';
 
 
 // =====================================
