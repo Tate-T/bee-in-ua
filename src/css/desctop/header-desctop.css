@@ -1,0 +1,80 @@
+/* ==========================================================================
+   ДЕСКТОПНА ВЕРСІЯ (від 1200px)
+   ========================================================================== */
+@media (min-width: 1200px) {
+    .main-header .container {
+        max-width: 1140px;
+        padding: 0 15px;
+    }
+
+    .main-header .heder-logo {
+        height: 40px;
+    }
+
+    /* Ховаємо бургер */
+    .main-header .burger-btn {
+        display: none;
+    }
+
+    /* Перемикач мов одразу після логотипа */
+    .main-header .lang-switcher {
+        margin: 0 0 0 25px;
+        gap: 8px;
+    }
+
+    /* Розгортаємо шторку у горизонтальне головне меню */
+    .main-header .header-menu-wrapper {
+        position: static;
+        width: auto;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        overflow: visible;
+        background-color: transparent;
+        border-bottom: none;
+        box-shadow: none;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .main-header .main-list {
+        flex-direction: row;
+        padding: 0;
+        gap: 22px;
+    }
+
+    .main-header .main-item {
+        width: auto;
+    }
+
+    /* Головне меню: плавна зміна кольору при наведенні на десктопі */
+    .main-header .main-link {
+        padding: 8px 4px;
+        font-size: 14px;
+        color: #555555;
+        background-color: transparent;
+        transition: color 0.3s ease;
+    }
+
+    .main-header .main-link:hover,
+    .main-header .main-link:focus {
+        color: #f5a623;
+        background-color: transparent;
+    }
+
+    /* Кнопки авторизації в рядок праворуч */
+    .main-header .auth-buttons {
+        margin: 0 0 0 28px;
+        padding: 0;
+        border-top: none;
+        gap: 10px;
+    }
+
+    .main-header .btn-login,
+    .main-header .btn-register {
+        min-width: auto;
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}

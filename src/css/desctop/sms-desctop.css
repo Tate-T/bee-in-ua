@@ -1,183 +1,78 @@
 
-/* =========================
-   GENERAL
-========================= */
+  
+/* =========================================
+   BEEHAPPY — FULL RESPONSIVE FIX
+   Desktop / Laptop / Tablet / Mobile
+========================================= */
+
+/* Защита от горизонтальной прокрутки */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.sms-page {
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #303b2c;
-  background: #fffaf0;
+img,
+video,
+iframe {
+    max-width: 100%;
 }
 
-.sms-page .container {
-  width: min(1200px, 92%);
-  margin: 0 auto;
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
 }
 
-/* =========================
-   SMS SECTION
-========================= */
-
-.sms {
-  padding: 65px 0 70px;
+/* Сетка из двух колонок — используется в GRAPHICS */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
 }
 
-.sms-title {
-  max-width: 850px;
-  margin: 0 auto 45px;
-  color: #303b2c;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700;
-  line-height: 1.25;
-  text-align: center;
+/* Карточки не должны сжимать содержимое */
+.card,
+.product-card,
+.advantage-card,
+.hero-feature {
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
-.sms-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  list-style: none;
+.card p,
+.product-card p,
+.advantage-card p {
+    overflow-wrap: anywhere;
 }
 
-.sms-item {
-  position: relative;
-  padding: 28px;
-  border: 1px solid #eadfc8;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 4px 15px rgba(48, 59, 44, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* Иконки информационных карточек */
+.information-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 27px;
 }
 
-.sms-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(48, 59, 44, 0.1);
+.information-card .card-icon {
+    position: static;
+    flex-shrink: 0;
+    margin: 0 0 18px;
 }
 
-.sms-sub-title {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 9px 15px;
-  border-radius: 6px;
-  background: #f5edda;
-  color: #bd8015;
-  font-family: monospace;
-  font-size: 18px;
-  font-weight: 700;
+.information-card h3 {
+    width: 100%;
+    margin-bottom: 12px;
 }
 
-.sms-text {
-  color: #666;
-  font-size: 15px;
-  line-height: 1.7;
+/* Кнопки */
+.btn {
+    max-width: 100%;
+    text-align: center;
+    white-space: normal;
 }
 
-/* =========================
-   EXPLANATION
-========================= */
-
-.explanation {
-  padding: 65px 0 75px;
-  background: #f5edda;
-}
-
-.explanation-title {
-  margin-bottom: 25px;
-  color: #303b2c;
-  font-size: clamp(25px, 3vw, 34px);
-  line-height: 1.3;
-}
-
-.explanation-text {
-  max-width: 1000px;
-  margin-bottom: 35px;
-  color: #555;
-  font-size: 16px;
-  line-height: 1.9;
-}
-
-.explanation-subtext {
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: #fff;
-  color: #bd8015;
-  font-weight: 700;
-}
-
-/* =========================
-   STEPS
-========================= */
-
-.explanation-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin: 35px 0;
-  list-style: none;
-}
-
-.explanation-item {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-height: 160px;
-  padding: 25px;
-  border: 1px solid #e6d8bb;
-  border-radius: 10px;
-  background: #fff;
-}
-
-.step-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #d99b24;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.explanation-cabinet-text {
-  color: #555;
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-/* =========================
-   NOTE
-========================= */
-
-.explanation-omission-text {
-  margin: 35px 0 55px;
-  padding: 20px 25px;
-  border-left: 5px solid #d99b24;
-  border-radius: 6px;
-  background: #fff8e8;
-  color: #74551c;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.7;
-}
-
-/* =========================
-   SMS MESSAGE TITLE
-========================= */
-
-.explanation-message-title {
-  padding-bottom: 18px;
-  border-bottom: 2px solid #d99b24;
-  color: #303b2c;
-  font-size: 27px;
-  font-weight: 700;
-}

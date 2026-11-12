@@ -1,0 +1,34 @@
+/* ==========================================================================
+   4. Адаптивність під мобільні телефони
+   ========================================================================== */
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .main-content {
+        padding: 25px 15px;
+    }
+
+    .demo-section {
+        padding: 25px 15px;
+    }
+
+    .outdoor-badge, .gsm-badge {
+        font-size: 11px;
+        padding: 4px 7px;
+    }
+
+    .pill-values {
+        font-size: 14px;
+    }
+
+    .weight-num {
+        font-size: 19px;
+    }
+
+    .cta-strip {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}

@@ -17,7 +17,7 @@
   }
 
   .bh-ui-sidebar {
-    width: 145px;
+    width: 145px; 
   }
 
   .bh-scheme-item {
@@ -42,6 +42,7 @@
     font-size: 24px;
     line-height: 1.3;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .bh-table th,
@@ -108,4 +109,269 @@
   .bh-scheme-item {
     flex: 1 1 calc(50% - 10px);
   }
+}
+
+@media (max-width: 900px) {
+    section {
+        padding: 65px 0;
+    }
+
+    .hero {
+        padding: 30px 0 65px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(38px, 5.5vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-visual {
+        min-height: 280px;
+    }
+
+    .honey-circle {
+        width: min(260px, 90%);
+        font-size: 85px;
+    }
+
+    .floating-note {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    .note-one {
+        left: -5px;
+    }
+
+    .note-two {
+        right: -5px;
+    }
+
+    .hero-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 45px;
+    }
+
+    .hero-features .hero-feature:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .grid-3,
+    .trend-other-list,
+    .gps-sublist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-4,
+    .advantages-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 15px;
+    }
+
+    .advantages-bottom {
+        align-items: flex-start;
+    }
+
+    .section-title {
+        font-size: clamp(28px, 4vw, 36px);
+    }
+}
+
+/* =========================================
+   SMALL TABLET — до 700px
+========================================= */
+
+@media (max-width: 700px) {
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        width: 100%;
+    }
+
+    .hero-visual {
+        min-height: 270px;
+        margin-top: 10px;
+    }
+
+    .honey-circle {
+        width: 220px;
+        font-size: 75px;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-features .hero-feature:last-child {
+        grid-column: auto;
+    }
+
+    .grid-3,
+    .grid-4,
+    .grid-2,
+    .advantages-box,
+    .product-list,
+    .trend-other-list,
+    .gps-sublist {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-notices {
+        justify-content: flex-start;
+        margin-bottom: 35px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 200px;
+    }
+
+    .product-card .btn {
+        width: 100%;
+    }
+
+    .advantages-bottom {
+        flex-direction: column;
+    }
+
+    .advantages-bottom .btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   MOBILE — до 480px
+========================================= */
+
+/* =========================
+   EXPLANATION
+========================= */
+
+.explanation {
+  padding: 65px 0 75px;
+  background: #f5edda;
+}
+
+.explanation-title {
+  margin-bottom: 25px;
+  color: #303b2c;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.3;
+}
+
+.explanation-text {
+  max-width: 1000px;
+  margin-bottom: 35px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.explanation-subtext {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: #fff;
+  color: #bd8015;
+  font-weight: 700;
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.explanation-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin: 35px 0;
+  list-style: none;
+}
+
+.explanation-item {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 160px;
+  padding: 25px;
+  border: 1px solid #e6d8bb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #d99b24;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.explanation-cabinet-text {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.explanation-omission-text {
+  margin: 35px 0 55px;
+  padding: 20px 25px;
+  border-left: 5px solid #d99b24;
+  border-radius: 6px;
+  background: #fff8e8;
+  color: #74551c;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* =========================
+   SMS MESSAGE TITLE
+========================= */
+
+.explanation-message-title {
+  padding-bottom: 18px;
+  border-bottom: 2px solid #d99b24;
+  color: #303b2c;
+  font-size: 27px;
+  font-weight: 700;
 }

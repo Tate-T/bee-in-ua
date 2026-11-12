@@ -1,0 +1,51 @@
+ 
+ 
+   /* =========================================
+     ЗБІЛЬШЕННЯ ФОТО ПРИ НАВЕДЕННІ МИШІ
+     ========================================= */
+ 
+ @media (hover: hover) and (min-width: 768px) {
+    .price-img-wrap {
+      position: relative;
+      cursor: zoom-in;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      z-index: 1;
+    }
+  
+    .price-img-wrap:hover {
+      transform: scale(2.4);
+      transform-origin: left center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      border-color: var(--bee-primary);
+      z-index: 50;
+    }
+  }
+  /* Бейджики для месенджерів */
+.messengers-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    color: #ffffff;
+  }
+  
+  .viber-badge {
+    background-color: #735f92;
+  }
+  
+  .wa-badge {
+    background-color: #25d366;
+  }
+  
+  .tg-badge {
+    background-color: #229ed9;
+  }
+  
+  
