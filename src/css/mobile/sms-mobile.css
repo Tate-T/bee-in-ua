@@ -1,218 +1,77 @@
-@media (max-width: 600px) {
-  .main-content {
-    padding-top: 60px !important;
-    padding-bottom: 24px !important;
-  }
 
-  .bh-sms-wrapper {
-    padding: 0 14px;
-    margin: 10px auto 25px;
-  }
 
-  .bh-title {
-    font-size: 22px;
-    line-height: 1.3;
-    margin-bottom: 18px;
-  }
-
-  /* Таблица SMS-команд */
-  .bh-table-container {
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-
-  .bh-table,
-  .bh-table tbody {
-    display: block;
-    width: 100%;
-  }
-
-  .bh-table thead {
-    display: none;
-  }
-
-  .bh-table tbody tr {
-    display: grid;
-    grid-template-columns: 105px minmax(0, 1fr);
-    border-bottom: 1px solid #f0e6d6;
-  }
-
-  .bh-table tbody tr:last-child {
-    border-bottom: none;
-  }
-
-  .bh-table td {
-    display: block;
-    padding: 13px 10px;
-    font-size: 13px;
-    overflow-wrap: anywhere;
-    border-bottom: none;
-  }
-
-  .bh-table td:first-child {
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .bh-code {
-    font-size: 12px;
-    padding: 4px 6px;
-    white-space: normal;
-    overflow-wrap: anywhere;
-  }
-
-  .bh-badge-warn {
-    display: table;
-    margin: 0 0 7px;
-    font-size: 11px;
-  }
-
-  /* Информационный блок */
-  .bh-info-box {
-    padding: 16px;
-    margin-bottom: 24px;
-  }
-
-  .bh-info-box h2 {
-    font-size: 18px;
-    line-height: 1.35;
-  }
-
-  .bh-info-box h3 {
-    font-size: 15px;
-    line-height: 1.4;
-  }
-
-  .bh-info-box p,
-  .bh-steps {
-    font-size: 14px;
-  }
-
-  .bh-steps {
-    margin-left: 18px;
-  }
-
-  .bh-note {
-    font-size: 12px;
-  }
-
-  /* Макет личного кабинета */
-  .bh-ui-mockup {
-    margin-top: 18px;
-    border-radius: 8px;
-  }
-
-  .bh-ui-menu {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .bh-ui-menu li {
-    font-size: 10px;
-    padding: 9px 7px;
-  }
-
-  .bh-ui-body {
-    padding: 10px;
-  }
-
-  .bh-ui-card {
-    padding: 7px;
-  }
-
-  .bh-ui-table {
-    min-width: 720px;
-  }
-
-  .bh-ui-table th,
-  .bh-ui-table td {
-    font-size: 10px;
-  }
-
-  /* Пример SMS */
-  .bh-sms-scheme {
-    padding: 15px;
-  }
-
-  .bh-scheme-title {
-    font-size: 17px;
-    line-height: 1.35;
-  }
-
-  .bh-sms-raw {
-    padding: 12px;
-    font-size: 12px;
-    gap: 6px;
-  }
-
-  .bh-hl {
-    padding: 3px 5px;
-    overflow-wrap: anywhere;
-  }
-
-  .bh-scheme-grid {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .bh-scheme-item {
-    flex: 1 1 100%;
-    min-width: 0;
-    width: 100%;
-    padding: 11px;
-  }
-
-  .bh-scheme-icon {
-    font-size: 19px;
-  }
-
-  .bh-scheme-text strong {
-    font-size: 13px;
-  }
-
-  .bh-scheme-text span {
-    font-size: 12px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Очень маленькие телефоны */
-@media (max-width: 380px) {
-  .bh-sms-wrapper {
-    padding: 0 10px;
-  }
+.sms-page {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #303b2c;
+  background: #fffaf0;
+}
 
-  .bh-title {
-    font-size: 20px;
-  }
+.sms-page .container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
 
-  .bh-table tbody tr {
-    grid-template-columns: 90px minmax(0, 1fr);
-  }
+/* =========================
+   SMS SECTION
+========================= */
 
-  .bh-table td {
-    padding: 11px 7px;
-    font-size: 12px;
-  }
+.sms {
+  padding: 65px 0 70px;
+}
 
-  .bh-code {
-    font-size: 11px;
-    padding: 3px 5px;
-  }
+.sms-title {
+  max-width: 850px;
+  margin: 0 auto 45px;
+  color: #303b2c;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
 
-  .bh-info-box {
-    padding: 13px;
-  }
+.sms-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  list-style: none;
+}
 
-  .bh-ui-menu li {
-    font-size: 9px;
-    padding: 8px 5px;
-  }
+.sms-item {
+  position: relative;
+  padding: 28px;
+  border: 1px solid #eadfc8;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(48, 59, 44, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-  .bh-sms-scheme {
-    padding: 12px;
-  }
+.sms-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(48, 59, 44, 0.1);
+}
 
-  .bh-sms-raw {
-    font-size: 11px;
-    padding: 10px;
-  }
+.sms-sub-title {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 9px 15px;
+  border-radius: 6px;
+  background: #f5edda;
+  color: #bd8015;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sms-text {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
 }
