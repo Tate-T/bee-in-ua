@@ -1,11 +1,14 @@
 /* Стилізація сторінки контактів BeeHAPPY */
 .beehappy-contacts-section {
   padding: 80px 20px;
-  background-image: url('../img/fon/foto-fon4.webp'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Ефект зафіксованого фону */
+  /* Перебиваємо будь-які білі фони інших файлів стилів за допомогою !important */
+  background-color: #fcf6e8 !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)), 
+                    url('../img/fon/foto-fon4.webp') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   display: flex;
   justify-content: center;

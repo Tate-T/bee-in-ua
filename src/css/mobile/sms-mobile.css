@@ -1,77 +1,320 @@
+/* =========================================================
+   МОБАЙЛ: БЛОК SMS И ДЕМО-КАБИНЕТ (до 767px)
+   ========================================================= */
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.sms-page {
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #303b2c;
-  background: #fffaf0;
-}
-
-.sms-page .container {
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
-
-/* =========================
-   SMS SECTION
-========================= */
-
-.sms {
-  padding: 65px 0 70px;
-}
-
-.sms-title {
-  max-width: 850px;
-  margin: 0 auto 45px;
-  color: #303b2c;
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700;
-  line-height: 1.25;
-  text-align: center;
-}
-
-.sms-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  list-style: none;
-}
-
-.sms-item {
-  position: relative;
-  padding: 28px;
-  border: 1px solid #eadfc8;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: 0 4px 15px rgba(48, 59, 44, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.sms-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(48, 59, 44, 0.1);
-}
-
-.sms-sub-title {
-  display: inline-block;
-  margin-bottom: 15px;
-  padding: 9px 15px;
-  border-radius: 6px;
-  background: #f5edda;
-  color: #bd8015;
-  font-family: monospace;
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.sms-text {
-  color: #666;
-  font-size: 15px;
-  line-height: 1.7;
-}
+   @media screen and (max-width: 767px) {
+    .main-content {
+      padding-top: 75px !important;
+      padding-bottom: 30px !important;
+    }
+  
+    .bh-sms-wrapper {
+      max-width: none;
+      margin: 12px auto 30px auto;
+      padding: 0 12px;
+    }
+  
+    .bh-title {
+      font-size: 21px;
+    }
+  
+    /* Таблица SMS-команд превращается в карточки */
+    .bh-table-container {
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      margin-bottom: 28px;
+    }
+  
+    .bh-table,
+    .bh-table tbody,
+    .bh-table tr,
+    .bh-table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .bh-table thead { display: none; }
+  
+    .bh-table tr {
+      background: #ffffff;
+      border: 1px solid #ece6dc;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      margin-bottom: 12px;
+      padding: 12px 14px;
+    }
+  
+    .bh-table tr.bh-row-warning {
+      background-color: #fffaf5;
+      border-color: #fed7aa;
+    }
+  
+    .bh-table td {
+      padding: 4px 0;
+      border-bottom: none;
+      font-size: 14px;
+      text-align: left;
+    }
+  
+    .bh-table td:first-child {
+      margin-bottom: 6px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #ece6dc;
+    }
+  
+    .bh-code {
+      font-size: 14px;
+      padding: 4px 8px;
+      white-space: normal;
+      word-break: break-word;
+    }
+  
+    /* Информационный блок */
+    .bh-info-box {
+      padding: 16px 14px;
+      margin-bottom: 24px;
+    }
+  
+    .bh-info-box h2 { font-size: 18px; }
+    .bh-info-box h3 { font-size: 15px; }
+    .bh-info-box p,
+    .bh-steps { font-size: 14px; }
+  
+    /* Макет демо-кабінету BeeHAPPY */
+    .bh-ui-mockup {
+      flex-direction: column;
+      margin-top: 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+  
+    .bh-ui-sidebar { width: 100%; }
+    .bh-ui-user,
+    .bh-ui-topbar { display: none; }
+  
+    .bh-ui-menu {
+      padding: 8px 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+  
+    .bh-ui-menu li {
+      padding: 5px 9px;
+      font-size: 12px;
+      border-radius: 4px;
+      background: #2c3b41;
+      border-left: none;
+    }
+  
+    .bh-ui-menu li.is-active {
+      border: 1px solid #f59e0b;
+    }
+  
+    .bh-ui-body { padding: 12px; }
+    .bh-ui-page-title { margin-bottom: 8px; }
+  
+    .bh-ui-card {
+      border-top-color: #f59e0b;
+      border-radius: 6px;
+      padding: 12px;
+    }
+  
+    .bh-ui-card-header {
+      font-size: 13px;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+  
+    .bh-ui-table-scroll { overflow: visible; padding: 0; }
+  
+    .bh-ui-table,
+    .bh-ui-table tbody,
+    .bh-ui-table tr,
+    .bh-ui-table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      border: none;
+    }
+  
+    .bh-ui-table thead,
+    .bh-ui-table tbody tr:first-child { display: none; }
+  
+    .bh-ui-table td:nth-child(1),
+    .bh-ui-table td:nth-child(2),
+    .bh-ui-table td:nth-child(4),
+    .bh-ui-table td:nth-child(5) {
+      display: none;
+    }
+  
+    .bh-ui-table td { padding: 6px 0; font-size: 13px; }
+    .bh-ui-table td:nth-child(3)::before { content: "Контролер:"; display: block; font-size: 11px; color: #666; margin-bottom: 2px; }
+    .bh-ui-table td:nth-child(6)::before { content: "Часовий пояс:"; display: block; font-size: 12px; font-weight: 600; color: #2c251d; margin-bottom: 4px; }
+  
+    .bh-ui-input,
+    .bh-ui-select {
+      padding: 6px 8px;
+      font-size: 13px;
+      border-radius: 4px;
+      background: #f9fafb;
+    }
+  
+    .bh-w-imei,
+    .bh-w-name { width: 100% !important; }
+  
+    .bh-ui-dropdown-wrap { width: 100%; min-width: 0; margin-top: 4px; }
+  
+    .bh-ui-select-active {
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+  
+    .bh-ui-dropdown-list li { padding: 5px 10px; font-size: 12.5px; }
+  
+    .bh-ui-btn {
+      padding: 7px 12px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      margin-top: 4px;
+      margin-right: 4px;
+    }
+  
+    /* Визуальная схема SMS — 1 колонка */
+    .bh-sms-scheme {
+      width: calc(100% - 24px);
+      max-width: none;
+      margin: 0 auto 30px auto;
+      padding: 16px 14px;
+    }
+  
+    .bh-scheme-title { font-size: 17px; margin-bottom: 12px; }
+    .bh-sms-raw { font-size: 13px; padding: 10px 12px; gap: 6px; margin-bottom: 14px; }
+    .bh-scheme-grid { flex-direction: column; gap: 10px; }
+    .bh-scheme-item { width: 100%; padding: 10px 12px; }
+    .bh-scheme-icon { font-size: 18px; }
+    .bh-scheme-text strong { font-size: 13.5px; margin-bottom: 2px; }
+    .bh-scheme-text span { font-size: 12px; }
+  }
+  
+  /* =========================================================
+     SMALL TABLET — до 700px
+     ========================================================= */
+  
+  @media (max-width: 700px) {
+    .container { width: calc(100% - 36px); }
+    section { padding: 55px 0; }
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-copy { width: 100%; }
+    .hero-visual { min-height: 270px; margin-top: 10px; }
+    .honey-circle { width: 220px; font-size: 75px; }
+    .hero-features { grid-template-columns: 1fr; }
+    .hero-features .hero-feature:last-child { grid-column: auto; }
+  
+    .grid-3,
+    .grid-4,
+    .grid-2,
+    .advantages-box,
+    .product-list,
+    .trend-other-list,
+    .gps-sublist {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-notices { justify-content: flex-start; margin-bottom: 35px; }
+    .hero-actions { flex-wrap: wrap; }
+    .hero-actions .btn { flex: 1 1 200px; }
+    .product-card .btn { width: 100%; }
+    .advantages-bottom { flex-direction: column; }
+    .advantages-bottom .btn { width: 100%; }
+  }
+  
+  /* =========================================================
+     MOBILE — до 480px
+     ========================================================= */
+  
+  @media (max-width: 480px) {
+    .container { width: calc(100% - 30px); }
+    section { padding: 45px 0; }
+    .hero { padding: 20px 0 45px; }
+  
+    .hero-notices {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+  
+    .notice { max-width: 100%; padding: 8px 12px; font-size: 11px; }
+    .section-label { padding: 6px 11px; font-size: 11px; }
+    .section-title { font-size: 27px; line-height: 1.2; margin-bottom: 14px; }
+    .section-description { font-size: 15px; line-height: 1.55; margin-bottom: 25px; }
+    .hero-title { font-size: clamp(34px, 10vw, 43px); line-height: 1.08; letter-spacing: -1px; margin-bottom: 17px; }
+    .hero-description { font-size: 15px; line-height: 1.6; margin-bottom: 22px; }
+    .hero-actions { flex-direction: column; gap: 10px; }
+    .hero-actions .btn { width: 100%; flex: auto; }
+    .hero-visual { min-height: 230px; overflow: hidden; }
+    .honey-circle { width: 185px; border-width: 8px; font-size: 65px; }
+    .honey-circle::before,
+    .honey-circle::after { font-size: 55px; }
+    .honey-circle::before { right: -35px; }
+    .honey-circle::after { left: -35px; }
+    .floating-note { font-size: 10px; padding: 8px 10px; }
+    .note-one { top: 10px; left: 0; }
+    .note-two { right: 0; bottom: 10px; }
+    .hero-features { margin-top: 25px; gap: 12px; }
+    .hero-feature { padding: 19px; }
+    .card { padding: 20px; border-radius: 17px; }
+    .card h3 { font-size: 18px; line-height: 1.35; }
+    .card p { font-size: 14px; line-height: 1.65; }
+    .card-icon { width: 44px; height: 44px; margin-bottom: 15px; font-size: 23px; }
+    .information-card { padding: 20px; }
+    .information-card .card-icon { position: static; margin-bottom: 14px; }
+    .information-card h3 { font-size: 19px; }
+    .advantage-card { padding: 19px; }
+    .advantage-card p { font-size: 14px; }
+    .stats { padding: 35px 0; }
+    .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 10px; }
+    .stat-number { font-size: 29px; }
+    .stat-label { display: block; font-size: 11px; line-height: 1.4; }
+    .product-card { padding: 20px; }
+    .product-card h3 { font-size: 19px; line-height: 1.35; }
+    .product-price { font-size: 25px; }
+    .product-details { font-size: 13px; line-height: 1.5; }
+    .product-card .btn { width: 100%; min-height: 48px; padding: 12px 15px; font-size: 14px; }
+    .trend-other-item,
+    .gps-subitem { padding: 17px; }
+    .graphik-sublist { padding: 19px; }
+    .faq-question { padding: 16px; font-size: 14px; }
+    .faq-answer p { font-size: 13px; line-height: 1.6; }
+    .final-cta { padding: 45px 0; }
+    .final-cta h2 { font-size: 27px; }
+    .final-cta p { font-size: 14px; }
+    .final-cta .btn { width: 100%; }
+    .back-top { right: 12px; bottom: 12px; width: 42px; height: 42px; }
+  }
+  
+  /* =========================================================
+     VERY SMALL MOBILE — до 360px
+     ========================================================= */
+  
+  @media (max-width: 360px) {
+    .container { width: calc(100% - 24px); }
+    .hero-title { font-size: 33px; }
+    .section-title { font-size: 24px; }
+    .card,
+    .product-card,
+    .information-card { padding: 16px; }
+    .card h3,
+    .product-card h3 { font-size: 17px; }
+    .card p { font-size: 13px; }
+    .stat-number { font-size: 25px; }
+    .honey-circle { width: 165px; }
+    .floating-note { font-size: 9px; padding: 7px 8px; }
+  }
+  
