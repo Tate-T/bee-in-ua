@@ -1,51 +1,103 @@
- 
- 
-   /* =========================================
-     ЗБІЛЬШЕННЯ ФОТО ПРИ НАВЕДЕННІ МИШІ
-     ========================================= */
- 
- @media (hover: hover) and (min-width: 768px) {
+/* =========================================================
+   ПЛАНШЕТ: 768px – 1199px (Компактна таблиця прайсу та сторінка покупки)
+   ========================================================= */
+
+   @media (max-width: 1199px) {
+    .price-page {
+      padding-bottom: 100px;
+    }
+  
+    .price-container {
+      padding: 20px;
+    }
+  
+    .price-title {
+      font-size: 1.65rem;
+    }
+  
+    .price-table-header,
+    .price-product-card {
+      grid-template-columns: 64px 1fr 85px 116px 85px 95px;
+      gap: 10px;
+      padding: 12px;
+    }
+  
+    .price-table-header {
+      font-size: 0.85rem;
+    }
+  
     .price-img-wrap {
-      position: relative;
-      cursor: zoom-in;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      z-index: 1;
+      width: 60px;
+      height: 60px;
     }
   
-    .price-img-wrap:hover {
-      transform: scale(2.4);
-      transform-origin: left center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      border-color: var(--bee-primary);
-      z-index: 50;
+    .price-product-title {
+      font-size: 0.95rem;
+    }
+  
+    .price-product-desc {
+      font-size: 0.8rem;
+    }
+  
+    .price-product-model {
+      font-size: 0.72rem;
+    }
+  
+    .price-qty-btn {
+      width: 34px;
+      height: 36px;
+      font-size: 1.1rem;
+    }
+  
+    .price-qty-input {
+      width: 38px;
+      height: 36px;
+      font-size: 0.95rem;
+    }
+  
+    .price-unit {
+      font-size: 0.9rem;
+    }
+  
+    .price-unit strong,
+    .price-row-subtotal {
+      font-size: 0.95rem;
+    }
+  
+    /* Фіксована нижня панель на планшеті */
+    .price-summary-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-top: 0;
+      border: none;
+      border-top: 2px solid var(--bee-primary);
+      border-radius: 0;
+      padding: 12px 16px;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    }
+  
+    .price-total-amount {
+      font-size: 1.25rem;
+    }
+  
+    .price-summary-bar .price-btn {
+      padding: 10px 18px;
+      font-size: 0.95rem;
+    }
+  
+    /* Адаптація сторінки покупки під планшет */
+    .buy-hero {
+      padding: 50px 0 35px;
+    }
+  
+    .products-section {
+      padding: 45px 0 60px;
+    }
+  
+    .quick-order-box {
+      padding: 28px;
     }
   }
-  /* Бейджики для месенджерів */
-.messengers-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  
-  .badge {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 12px;
-    color: #ffffff;
-  }
-  
-  .viber-badge {
-    background-color: #735f92;
-  }
-  
-  .wa-badge {
-    background-color: #25d366;
-  }
-  
-  .tg-badge {
-    background-color: #229ed9;
-  }
-  
   

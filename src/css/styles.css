@@ -9,11 +9,7 @@
 @import url('./header.css');
 @import url('./cabinet.css');
 @import url('./contact.css');
-@import url('./footer.css');
 @import url('./register.css');
-@import url('./sms.css');
-@import url('./demo.css');
-@import url('./price.css');
 @import url('./index.css');
 @import url('./desctop/header-desctop.css');
 @import url('./desctop/cabinet-desctop.css');
@@ -38,8 +34,8 @@
 @import url(./mobile/articles-mobile.css);
 @import url(./mobile/cabinet-mobile.css);
 @import url(./mobile/contacts-mobile.css);
-@import url(./mobile/demo-mobile.css);
-@import url(./mobile/footer-mobile.css);
+@import url('./mobile/demo-mobile.css');
+@import url('./mobile/footer-mobile.css');
 @import url(./mobile/header-mobile.css);
 @import url(./mobile/prise-mobile.css);
 @import url(./mobile/register-mobile.css);

@@ -1,0 +1,23 @@
+/* ==========================================================================
+   ПЛАНШЕТ (768px — 1023px): Адаптація картки та відступів
+   ========================================================================== */
+   @media screen and (max-width: 1023px) and (min-width: 768px) {
+    .main-content {
+        padding: 30px 16px;
+        /* На планшетах и мобильных fixed-фон может тормозить или обрезаться */
+        background-attachment: scroll !important;
+    }
+
+    .demo-section {
+        max-width: 440px;
+        padding: 28px 24px;
+    }
+
+    .demo-link.hive-assembly {
+        max-width: 340px;
+    }
+
+    footer, .main-footer, [load*="footer"] {
+        padding: 20px 0;
+    }
+}

@@ -1,0 +1,173 @@
+/* =========================================================
+   МОБІЛЬНА ВЕРСІЯ: 320px – 767px (Картки прайсу та мобільна покупка)
+   ========================================================= */
+
+   @media (max-width: 767px) {
+    .price-page {
+      background-attachment: scroll !important;
+      padding-bottom: 100px;
+    }
+  
+    .price-container {
+      padding: 16px;
+    }
+  
+    .price-title {
+      font-size: 1.4rem;
+    }
+  
+    .price-top-actions {
+      display: block;
+      margin-bottom: 12px;
+    }
+  
+    .price-btn {
+      width: 100%;
+    }
+  
+    /* Приховуємо шапку таблиці */
+    .price-table-header {
+      display: none;
+    }
+  
+    .price-product-list {
+      gap: 16px;
+      border: none;
+      border-radius: 0;
+    }
+  
+    .price-product-card {
+      background: var(--bee-card-bg);
+      border: 1px solid var(--bee-border);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+  
+    .price-product-card:last-child {
+      border-bottom: 1px solid var(--bee-border);
+      border-radius: 12px;
+    }
+  
+    .price-img-wrap {
+      width: 100%;
+      height: 150px;
+      padding: 8px;
+    }
+  
+    .price-product-info {
+      display: block;
+      flex: 1;
+    }
+  
+    .price-product-model {
+      font-size: 0.75rem;
+      margin-bottom: 6px;
+    }
+  
+    .price-product-title {
+      font-size: 1rem;
+    }
+  
+    .price-product-desc {
+      font-size: 0.85rem;
+    }
+  
+    .price-product-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--bee-border);
+    }
+  
+    .price-unit {
+      font-size: 0.95rem;
+    }
+  
+    .price-unit strong {
+      font-size: 1.05rem;
+    }
+  
+    .price-unit span {
+      display: inline;
+    }
+  
+    .price-qty-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.25rem;
+    }
+  
+    .price-qty-input {
+      width: 44px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  
+    .price-row-subtotal {
+      width: 100%;
+      justify-content: space-between;
+      font-size: 1rem;
+    }
+  
+    .price-row-subtotal span:first-child {
+      display: inline;
+    }
+  
+    .price-summary-bar .price-btn {
+      width: auto;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+    }
+  
+    /* Адаптація сторінки покупки (.buy-page) для смартфонів */
+    .buy-hero {
+      padding: 40px 0 30px;
+    }
+  
+    .notice {
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+  
+    .quick-order {
+      padding: 30px 0;
+    }
+  
+    .quick-order-box {
+      padding: 22px 16px;
+    }
+  
+    .quick-order-box h2 {
+      font-size: 22px;
+    }
+  
+    .products-section {
+      padding: 35px 0 55px;
+    }
+  
+    .products-table th,
+    .products-table td {
+      padding: 12px 10px;
+      font-size: 13px;
+    }
+  
+    .order-actions {
+      justify-content: stretch;
+      margin-top: 20px;
+    }
+  
+    .checkout-btn,
+    .quick-order-btn {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+  
