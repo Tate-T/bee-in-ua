@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 150" width="760" height="150">
+  <defs>
+    <!-- Стилизованный улей -->
+    <g id="hive" stroke="#FCC201" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- Крыша -->
+      <path d="M 4,24 L 30,12 L 56,24 L 56,31 L 4,31 Z" />
+      <!-- Корпус -->
+      <rect x="10" y="31" width="40" height="38" />
+      <!-- Леток (круг) -->
+      <circle cx="30" cy="50" r="6" />
+      <!-- Ножки -->
+      <line x1="16" y1="69" x2="16" y2="76" />
+      <line x1="44" y1="69" x2="44" y2="76" />
+    </g>
+    <!-- Стилизованная пчелка -->
+    <g id="bee" stroke="#FCC201" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <ellipse cx="22" cy="24" rx="11" ry="8" transform="rotate(-35 22 24)" />
+      <path d="M 18,14 C 14,5 24,3 26,12" />
+      <path d="M 27,20 C 36,16 38,26 29,28" />
+      <circle cx="13" cy="31" r="4" />
+    </g>
+  </defs>
+
+  <!-- Иконка пасеки слева -->
+  <g transform="translate(8, 8)">
+    <!-- Пчелы -->
+    <use href="#bee" x="4" y="2" />
+    <use href="#bee" x="132" y="2" />
+    <use href="#bee" x="72" y="102" />
+    <!-- Три улья -->
+    <use href="#hive" x="0" y="50" />
+    <use href="#hive" x="62" y="10" />
+    <use href="#hive" x="124" y="50" />
+  </g>
+
+  <!-- Основной заголовок BeeHAPPY -->
+  <text x="208" y="88" font-family="'Arial Black', 'Roboto Slab', Impact, sans-serif" font-weight="900" font-size="88" letter-spacing="-1" fill="#FCC201">BeeHAPPY</text>
+
+  <!-- Слоган -->
+  <text x="210" y="128" font-family="'Montserrat', 'Open Sans', Arial, sans-serif" font-weight="400" font-size="31" letter-spacing="2.2" fill="#FCC201">МАКСИМУМ ПРОДУКТИВНОСТІ</text>
+</svg>

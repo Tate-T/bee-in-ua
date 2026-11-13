@@ -1,0 +1,222 @@
+/* ==========================================================================
+   HEADER-MOBILE.CSS — Базові та мобільні стилі хедера (від 320px)
+   ========================================================================== */
+
+   .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 65px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+  
+  .main-header .container,
+  .main-header .u-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Логотип */
+  .main-header .logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .main-header .heder-logo {
+    height: 30px;
+    width: auto;
+    display: block;
+  }
+  
+  /* Перемикач мов */
+  .main-header .lang-switcher {
+    display: flex;
+    list-style: none;
+    margin: 0 8px 0 auto;
+    padding: 0;
+    gap: 6px;
+  }
+  
+  .main-header .lang-btn {
+    background: transparent;
+    border: none;
+    padding: 4px 2px;
+    font-size: 12px;
+    color: #999999;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.3s ease;
+  }
+  
+  .main-header .lang-btn.active,
+  .main-header .lang-btn:hover {
+    color: #f5a623;
+    font-weight: 700;
+  }
+  
+  /* Кнопка бургер-меню */
+  .main-header .burger-btn {
+    display: flex;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 8px;
+    margin-right: -8px;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+  }
+  
+  .main-header .burger-btn:hover {
+    background-color: #fdf8ee;
+  }
+  
+  /* Смужки бургера */
+  .main-header .burger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #333333;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .main-header .burger-btn:hover span {
+    background-color: #f5a623;
+  }
+  
+  /* Анімація бургера у хрестик */
+  .main-header .burger-btn.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .main-header .burger-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .main-header .burger-btn.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* Випадаюча шторка меню (320px - 1199px) */
+  .main-header .header-menu-wrapper {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease, visibility 0.35s ease;
+  }
+  
+  .main-header .header-menu-wrapper.open {
+    max-height: calc(100vh - 65px);
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto;
+  }
+  
+  /* Список посилань у мобільному меню */
+  .main-header .main-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 12px 0;
+  }
+  
+  .main-header .main-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Пункти меню */
+  .main-header .main-link {
+    display: block;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #444444;
+    text-decoration: none;
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .main-header .main-link:hover,
+  .main-header .main-link:focus {
+    color: #f5a623;
+    background-color: #fdf8ee;
+  }
+  
+  /* Кнопки авторизації всередині шторки (на 320px стоять стовпчиком) */
+  .main-header .auth-buttons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 16px 20px 24px;
+    gap: 10px;
+    border-top: 1px solid #f2f2f2;
+    box-sizing: border-box;
+  }
+  
+  .main-header .auth-item {
+    width: 100%;
+  }
+  
+  .main-header .btn-login,
+  .main-header .btn-register {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .main-header .btn-login {
+    color: #f5a623;
+    border: 1px solid #f5a623;
+    background-color: transparent;
+  }
+  
+  .main-header .btn-login:hover {
+    background-color: #fdf8ee;
+  }
+  
+  .main-header .btn-register {
+    color: #ffffff;
+    background-color: #f5a623;
+    border: 1px solid #f5a623;
+  }
+  
+  .main-header .btn-register:hover {
+    background-color: #e09216;
+    border-color: #e09216;
+  }
+  

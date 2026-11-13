@@ -1,0 +1,38 @@
+/* ==========================================================================
+   CONTACTS-TABLET.CSS — Планшетная адаптация страницы контактов (768px – 1199px)
+   ========================================================================== */
+
+   @media (max-width: 1199px) {
+    .beehappy-contacts-section {
+      padding: 50px 20px;
+    }
+  
+    .contacts-card,
+    .u-card--panel {
+      padding: 40px 35px;
+      border-radius: 20px;
+    }
+  
+    .contacts-heading,
+    .u-title--center {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+  
+    /* Сужаем левую колонку с 350px до 240px, чтобы помещалось на планшете */
+    .grid-row {
+      grid-template-columns: 240px 1fr;
+      padding: 20px 0;
+    }
+  
+    .highlight-row {
+      margin: 5px -15px;
+      padding: 22px 15px;
+    }
+  
+    .grid-label {
+      padding-right: 20px;
+      font-size: 15px;
+    }
+  }
+  

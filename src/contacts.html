@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/svg+xml" href="./img/favicon-rounded-1.svg" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon-rounded-1.svg" />
     <link rel="stylesheet" href="./css/styles.css">
     <title>Контакти — BeeHAPPY</title>
 </head>
@@ -12,11 +12,10 @@
 <body>
     <load ="partials/header.html" />
 
-
     <main>
         <section class="beehappy-contacts-section">
-            <div class="contacts-card">
-                <h1 class="contacts-heading">Наші контакти</h1>
+            <div class="u-card u-card--panel contacts-card">
+                <h1 class="u-title u-title--center contacts-heading">Наші контакти</h1>
 
                 <div class="contacts-grid">
                     <!-- Соціальні мережі -->
@@ -24,7 +23,7 @@
                         <div class="grid-label">Група Facebook</div>
                         <div class="grid-value">
                             <a href="https://www.facebook.com/groups/beehappy01" target="_blank"
-                                class="pulse-link fb-pulse">
+                                class="u-btn u-btn--sm pulse-link fb-pulse">
                                 🔷 Приєднатися до групи Facebook
                             </a>
                         </div>
@@ -34,7 +33,7 @@
                         <div class="grid-label">Канал Youtube</div>
                         <div class="grid-value">
                             <a href="https://www.youtube.com/channel/UCkMTjq_5VmOyk9w4IkCGn8A" target="_blank"
-                                class="pulse-link yt-pulse">
+                                class="u-btn u-btn--sm pulse-link yt-pulse">
                                 🔴 Дивитися наш канал на YouTube
                             </a>
                         </div>
@@ -52,7 +51,7 @@
                         <div class="grid-label">Замовлення пристрою <span class="sub-text">можна здійснити за
                                 телефонами</span></div>
                         <div class="grid-value">
-                            <div class="schedule-badge">🕒 Режим роботи: з 9:00 до 20:00 Пн-Сб</div>
+                            <div class="u-badge u-badge--neutral schedule-badge schedule-badge-spacing">🕒 Режим роботи: з 9:00 до 20:00 Пн-Сб</div>
 
                             <div class="phone-list">
                                 <div class="phone-item">
@@ -63,13 +62,12 @@
                                     <span class="operator">Kyivstar</span>
                                     <a href="tel:+380672879895" class="phone-number">+38 (067) 287-98-95</a>
                                     <div class="messengers-group">
-                                        <span class="badge viber-badge">Viber</span>
-                                        <span class="badge wa-badge">WhatsApp</span>
-                                        <span class="badge tg-badge">Telegram</span>
+                                        <span class="messenger-tag viber-badge">Viber</span>
+                                        <span class="messenger-tag wa-badge">WhatsApp</span>
+                                        <span class="messenger-tag tg-badge">Telegram</span>
                                     </div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
 
@@ -95,9 +93,9 @@
             </div>
         </section>
     </main>
+
     <load ="partials/footer.html" />
     <script type="module" src="/main.js"></script>
-
 </body>
 
 </html>

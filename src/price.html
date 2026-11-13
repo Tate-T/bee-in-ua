@@ -2,73 +2,72 @@
 <html lang="uk">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/svg+xml" href="./img/favicon-rounded-1.svg" />
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/price.css">
-    <title>Ціни - BeeHAPPY</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./img/favicon-rounded-1.svg" />
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Ціни - BeeHAPPY</title>
 </head>
 
 <body>
-    <load ="partials/header.html" />
+  <load ="partials/header.html" />
 
-    <main class="price-page">
-        <div class="price-container">
-            <div class="price-header">
-                <h1 class="price-title">Купити пасічні ваги BH-1</h1>
-                <div class="price-notice">
-                    Зараз можливі затримки з відправкою замовлення — в середньому 2–3 тижні.
-                </div>
-                <div class="price-top-actions">
-                    <button type="button" class="price-btn" id="openQuickOrderBtn">Замовити в один клік</button>
-                </div>
-            </div>
-
-            <div class="price-table-header">
-                <div>Фото</div>
-                <div>Найменування</div>
-                <div>Модель</div>
-                <div>Кількість</div>
-                <div>Ціна</div>
-                <div style="text-align: right;">Разом</div>
-            </div>
-
-            <div class="price-product-list" id="productList"></div>
-
-            <div class="price-summary-bar">
-                <div class="price-summary-inner">
-                    <div>
-                        <div class="price-total-label">Всього до сплати (<span id="totalItems">0</span> шт.):</div>
-                        <div class="price-total-amount"><span id="grandTotal">0</span> грн.</div>
-                    </div>
-                    <button type="button" class="price-btn" id="checkoutBtn" disabled>Оформити замовлення</button>
-                </div>
-            </div>
+  <main class="price-page">
+    <div class="u-container price-container">
+      <div class="price-header">
+        <h1 class="u-title price-title">Купити пасічні ваги BH-1</h1>
+        <div class="u-notice price-notice">
+          Зараз можливі затримки з відправкою замовлення — в середньому 2–3 тижні.
         </div>
-
-        <!-- Модальне вікно "Замовити в один клік" -->
-        <div class="price-modal" id="quickOrderModal" aria-hidden="true">
-            <div class="price-modal-content">
-                <button type="button" class="price-modal-close" id="closeQuickOrderBtn" aria-label="Закрити">&times;</button>
-                <h2 class="price-modal-title">Замовити в один клік</h2>
-                <form id="quickOrderForm" class="price-modal-form">
-                    <label class="price-form-label">
-                        Ім'я*
-                        <input type="text" name="name" class="price-form-input" required placeholder="Ваше ім'я">
-                    </label>
-                    <label class="price-form-label">
-                        Номер телефону*
-                        <input type="tel" name="phone" class="price-form-input" required placeholder="+38 (0__) ___-__-__">
-                    </label>
-                    <button type="submit" class="price-btn">Підтверджую замовлення</button>
-                </form>
-            </div>
+        <div class="price-top-actions">
+          <button type="button" class="u-btn price-btn" id="openQuickOrderBtn">Замовити в один клік</button>
         </div>
-    </main>
+      </div>
 
-    <load ="partials/footer.html" />
-    <script type="module" src="/main.js"></script>
+      <div class="price-table-header">
+        <div>Фото</div>
+        <div>Найменування</div>
+        <div>Модель</div>
+        <div>Кількість</div>
+        <div>Ціна</div>
+        <div style="text-align: right;">Разом</div>
+      </div>
+
+      <div class="price-product-list" id="productList"></div>
+
+      <div class="price-summary-bar">
+        <div class="price-summary-inner">
+          <div>
+            <div class="price-total-label">Всього до сплати (<span id="totalItems">0</span> шт.):</div>
+            <div class="price-total-amount"><span id="grandTotal">0</span> грн.</div>
+          </div>
+          <button type="button" class="u-btn price-btn" id="checkoutBtn" disabled>Оформити замовлення</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальне вікно "Замовити в один клік" -->
+    <div class="u-modal price-modal" id="quickOrderModal" aria-hidden="true">
+      <div class="u-modal-content price-modal-content">
+        <button type="button" class="u-modal-close price-modal-close" id="closeQuickOrderBtn" aria-label="Закрити">&times;</button>
+        <h2 class="price-modal-title">Замовити в один клік</h2>
+        <form id="quickOrderForm" class="price-modal-form">
+          <label class="u-form-label price-form-label">
+            Ім'я*
+            <input type="text" name="name" class="u-form-input price-form-input" required placeholder="Ваше ім'я">
+          </label>
+          <label class="u-form-label price-form-label">
+            Номер телефону*
+            <input type="tel" name="phone" class="u-form-input price-form-input" required placeholder="+38 (0__) ___-__-__">
+          </label>
+          <button type="submit" class="u-btn price-btn">Підтверджую замовлення</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <load ="partials/footer.html" />
+  <script type="module" src="/main.js"></script>
 </body>
 
 </html>

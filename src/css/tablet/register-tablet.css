@@ -1,0 +1,23 @@
+/* ==========================================================================
+   REGISTER-TABLET.CSS — Планшетная адаптация страницы регистрации (768px – 1199px)
+   ========================================================================== */
+
+   @media (max-width: 1199px) and (min-width: 768px) {
+    .auth-container {
+      padding: 40px 20px;
+    }
+  
+    .auth-card {
+      max-width: 440px;
+      padding: 32px 28px;
+    }
+  
+    .auth-title {
+      font-size: 23px;
+    }
+  
+    .auth-form {
+      gap: 16px;
+    }
+  }
+  
