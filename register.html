@@ -1,65 +1,56 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/svg+xml" href="/bee-in-ua/assets/favicon-rounded-1-8db6cf86.svg" />
-    <title>Реєстрація - BeeHAPPY</title>
-
-  <script type="module" crossorigin src="/bee-in-ua/assets/main-ea994d1b.js"></script>
-  <link rel="stylesheet" href="/bee-in-ua/assets/register-9b0ebd98.css">
+    <link rel="icon" type="image/svg+xml" href="/bee-in-ua/assets/favicon-rounded-1-8db6cf86.svg" />
+    <title>Реєстрація — BeeHAPPY</title>
+    
+  <script type="module" crossorigin src="/bee-in-ua/assets/main-1bdf142c.js"></script>
+  <link rel="stylesheet" href="/bee-in-ua/assets/main-f202cd75.css">
 </head>
 <body>
-    <main class="auth-container">
-        <div class="auth-card">
-            <!-- Жовта смуга, як у контактах -->
+    <main class="auth-container register-page">
+        <div class="auth-card u-card">
             <div class="auth-yellow-line"></div>
     
             <h1 class="auth-title">Форма реєстрації</h1>
             <p class="auth-subtitle">Заповніть форму реєстрації для створення акаунту в системі BeeHAPPY</p>
             
             <form action="#" method="POST" class="auth-form">
-                <!-- Поле: Ім'я -->
                 <div class="form-field">
-                    <label for="reg-name">Ваше ім'я та прізвище</label>
-                    <input type="text" id="reg-name" name="name" placeholder="Введіть ім'я" required>
+                    <label for="reg-name" class="u-form-label">Ваше ім'я та прізвище</label>
+                    <input type="text" id="reg-name" name="name" class="u-form-input" placeholder="Введіть ім'я" required>
                 </div>
     
-                <!-- Поле: Телефон -->
                 <div class="form-field">
-                    <label for="reg-phone">Номер телефону</label>
-                    <input type="tel" id="reg-phone" name="phone" placeholder="+38 (093) 000-00-00" required>
+                    <label for="reg-phone" class="u-form-label">Номер телефону</label>
+                    <input type="tel" id="reg-phone" name="phone" class="u-form-input" placeholder="+38 (093) 000-00-00" required>
                 </div>
     
-                <!-- Поле: Email -->
                 <div class="form-field">
-                    <label for="reg-email">E-mail адреса</label>
-                    <input type="email" id="reg-email" name="email" placeholder="example@bee.in.ua" required>
+                    <label for="reg-email" class="u-form-label">E-mail адреса</label>
+                    <input type="email" id="reg-email" name="email" class="u-form-input" placeholder="example@bee.in.ua" required>
                 </div>
     
-                <!-- Поле: Пароль -->
                 <div class="form-field">
-                    <label for="reg-password">Пароль</label>
-                    <input type="password" id="reg-password" name="password" placeholder="Мінімум 6 символів" required>
+                    <label for="reg-password" class="u-form-label">Пароль</label>
+                    <input type="password" id="reg-password" name="password" class="u-form-input" placeholder="Мінімум 6 символів" required>
                 </div>
     
-                <!-- Поле: Повтор пароля -->
                 <div class="form-field">
-                    <label for="reg-password-confirm">Підтвердження пароля</label>
-                    <input type="password" id="reg-password-confirm" name="password_confirmation" placeholder="Повторіть пароль" required>
+                    <label for="reg-password-confirm" class="u-form-label">Підтвердження пароля</label>
+                    <input type="password" id="reg-password-confirm" name="password_confirmation" class="u-form-input" placeholder="Повторіть пароль" required>
                 </div>
     
-                <!-- Кнопка реєстрації -->
-                <button type="submit" class="btn-submit-reg">Зареєструватися</button>
+                <button type="submit" class="btn-submit-reg u-btn">Зареєструватися</button>
             </form>
     
-            <!-- Нижній блок з посиланням на вхід та логотипом -->
             <div class="auth-footer">
                 <div class="auth-switch-text">
                     Вже маєте акаунт? <a href="./cabinet.html" class="auth-link">Увійти</a>
                 </div>
                 
-                <!-- Логотип, що перекидає на головну сторінку -->
                 <a href="./index.html" class="auth-logo-link" title="На головну">
                     <img src="/bee-in-ua/assets/logo-beehappy-49e9a51f.webp" alt="BeeHAPPY" class="auth-footer-logo">
                 </a>
