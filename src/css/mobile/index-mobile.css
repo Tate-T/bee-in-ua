@@ -1,722 +1,231 @@
-@media (max-width: 480px) {
+/* ==========================================================================
+   INDEX-MOBILE.CSS — Мобильная адаптация главной страницы (до 767px)
+   ========================================================================== */
 
-    /* Общие настройки */
-
-    .main {
-        width: 100%;
-        padding: 0;
+   @media (max-width: 767px) {
+    .u-container {
+      width: calc(100% - 30px);
     }
-
-    .main .container {
-        padding-left: 15px;
-        padding-right: 15px;
+  
+    .u-section {
+      padding: 42px 0;
     }
-
-    /* Секции */
-
-    .main .hero,
-    .main .advantages,
-    .main .information,
-    .main .sensor,
-    .main .form,
-    .main .instrument,
-    .main .trend,
-    .main .gps,
-    .main .graphik,
-    .main .energy,
-    .main .management {
-        padding-top: 38px;
-        padding-bottom: 38px;
+  
+    .u-title {
+      font-size: 26px;
+      line-height: 1.25;
+      margin-bottom: 14px;
     }
-
-    /* Заголовки */
-
-    .main .hero-title,
-    .main .advantages-title,
-    .main .information-title,
-    .main .sensor-title,
-    .main .form-title,
-    .main .instrument-title,
-    .main .trend-title,
-    .main .gps-title,
-    .main .graphik-title,
-    .main .energy-title,
-    .main .management-title {
-        font-size: 25px;
-        line-height: 1.25;
-        margin-bottom: 18px;
+  
+    .u-description {
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 24px;
     }
-
-    /* Первый экран */
-
-    .main .hero-listzsy {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        margin-bottom: 25px;
+  
+    /* Все сетки в 1 колонку на телефоне */
+    .u-grid-2,
+    .u-grid-3,
+    .u-grid-4,
+    .hero-features,
+    .advantages-box,
+    .stats-grid,
+    .product-list,
+    .trend-other-list,
+    .gps-sublist {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
     }
-
-    .main .hero-zsy {
-        font-size: 13px;
+  
+    .u-card {
+      padding: 20px;
+      border-radius: 16px;
     }
-
-    .main .hero-title {
-        font-size: 29px;
+  
+    .u-card-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 14px;
+      font-size: 21px;
     }
-
-    .main .hero-box {
-        padding: 20px;
-        border-radius: 16px;
+  
+    .u-card h3 {
+      font-size: 18px;
     }
-
-    .main .hero-4g {
-        font-size: 21px;
+  
+    .u-card p {
+      font-size: 14px;
+      line-height: 1.6;
     }
-
-    /* Все основные карточки в одну колонку */
-
-    .main .hero-list,
-    .main .information-list,
-    .main .sensor-list,
-    .main .instrument-list,
-    .main .trend-list,
-    .main .gps-list,
-    .main .graphik-list,
-    .main .energy-list,
-    .main .management-list {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 15px;
-        width: 100%;
+  
+    /* HERO */
+    .hero {
+      padding: 20px 0 45px;
     }
-
-    .main .hero-item,
-    .main .information-item,
-    .main .sensor-item,
-    .main .instrument-item,
-    .main .trend-item,
-    .main .gps-item,
-    .main .graphik-item,
-    .main .energy-item,
-    .main .management-item {
-        width: 100%;
-        min-width: 0;
-        padding: 20px;
-        border-radius: 14px;
+  
+    .hero-notices {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 28px;
     }
-
-    /* Преимущества */
-
-    .main .advantages-box {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+  
+    .notice {
+      font-size: 12px;
+      padding: 7px 12px;
     }
-
-    .main .advantages-list,
-    .main .advantages-lists {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 12px;
+  
+    .hero-title {
+      font-size: 32px;
+      letter-spacing: -1px;
     }
-
-    .main .advantages-item {
-        width: 100%;
-        padding: 17px;
+  
+    .hero-description {
+      font-size: 16px;
+      margin-bottom: 22px;
     }
-
-    .main .advantages-buttons {
-        flex-direction: column;
-        gap: 12px;
+  
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
     }
-
-    .main .advantages-button,
-    .main .advantages-cost,
-    .main .advantages-demo {
-        width: 100%;
+  
+    .hero-actions .u-btn {
+      width: 100%;
     }
-
-    .main .advantages-cost,
-    .main .advantages-demo {
-        display: block;
-        text-align: center;
+  
+    .hero-visual {
+      min-height: 240px;
     }
-
-    /* Заголовки карточек */
-
-    .main .hero-subtitle,
-    .main .information-subtitle,
-    .main .sensor-subtitle,
-    .main .instrument-subtitle,
-    .main .trend-subtitle,
-    .main .gps-subtitle,
-    .main .energy-subtitle,
-    .main .management-subtitle {
-        font-size: 19px;
-        line-height: 1.35;
+  
+    .honey-circle {
+      width: 200px;
+      border-width: 8px;
+      font-size: 68px;
     }
-
-    /* Текст */
-
-    .main .hero-text,
-    .main .advantages-text,
-    .main .advantages-subtext,
-    .main .information-text,
-    .main .sensor-text,
-    .main .form-text,
-    .main .instrument-text,
-    .main .trend-text,
-    .main .trend-other-text,
-    .main .gps-text,
-    .main .gps-subtext,
-    .main .graphik-text,
-    .main .graphik-subtext,
-    .main .energy-text,
-    .main .management-text {
-        font-size: 15px;
-        line-height: 1.65;
+  
+    .honey-circle::before,
+    .honey-circle::after {
+      font-size: 55px;
     }
-
-    /* Дополнительные списки */
-
-    .main .trend-other-list,
-    .main .gps-sublist {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
+  
+    .honey-circle::before {
+      right: -35px;
     }
-
-    .main .trend-other-item,
-    .main .gps-subitem {
-        padding: 16px;
+  
+    .honey-circle::after {
+      left: -30px;
     }
-
-    .main .graphik-sublist {
-        padding: 18px;
+  
+    .floating-note {
+      padding: 9px 12px;
+      font-size: 12px;
+      border-radius: 10px;
     }
-
-    /* Таблица — карточки */
-
-    .main .table {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        overflow: visible;
-        border: none;
-        box-shadow: none;
-        background: transparent;
+  
+    .note-one {
+      top: 15px;
+      left: 0;
     }
-
-    .main .table-header {
-        display: none;
+  
+    .note-two {
+      bottom: 15px;
+      right: 0;
     }
-
-    .main .table-row {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-width: 0;
-        margin-bottom: 15px;
-        padding: 12px 16px;
-
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 14px;
-        box-shadow: var(--shadow);
+  
+    .hero-features {
+      margin-top: 35px;
     }
-
-    .main .table-row > div {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 10px;
-
-        width: 100%;
-        min-width: 0;
-        padding: 12px 0;
-
-        border-bottom: 1px solid var(--border);
-        font-size: 14px;
-        line-height: 1.45;
-        text-align: right;
+  
+    .hero-feature {
+      padding: 18px;
     }
-
-    .main .table-row > div::before {
-        flex: 1 1 45%;
-        min-width: 0;
-        color: var(--text-light);
-        font-weight: 700;
-        text-align: left;
+  
+    /* ADVANTAGES & STATS */
+    .advantage-card,
+    .product-card {
+      padding: 18px;
     }
-
-    .main .table-row > div:nth-child(1)::before {
-        content: "Модель";
+  
+    .advantages-bottom {
+      padding: 18px;
     }
-
-    .main .table-row > div:nth-child(2)::before {
-        content: "Кількість вуликів";
+  
+    .advantages-bottom .u-btn {
+      width: 100%;
     }
-
-    .main .table-row > div:nth-child(3)::before {
-        content: "Тип датчика";
+  
+    .stats {
+      padding: 38px 0;
+      background-color: #F5B500;
     }
-
-    .main .table-row > div:nth-child(4)::before {
-        content: "Навантаження";
+  
+    .stat-number {
+      font-size: 30px;
     }
-
-    .main .table-row > div:nth-child(5)::before {
-        content: "Автономність";
+  
+    /* ДОПОЛНИТЕЛЬНЫЕ СПИСКИ И FAQ */
+    .trend-other-item,
+    .gps-subitem {
+      padding: 16px;
     }
-
-    .main .table-row > div:nth-child(6)::before {
-        content: "Ціна комплекту";
+  
+    .graphik-sublist {
+      padding: 18px;
     }
-
-    .main .table-row > div:nth-child(7) {
-        border-bottom: none;
-        padding-bottom: 4px;
+  
+    .faq-question {
+      padding: 16px;
+      font-size: 15px;
     }
-
-    .main .table-row > div:nth-child(7)::before {
-        content: none;
+  
+    .faq-answer p {
+      padding: 0 16px 16px;
+      font-size: 14px;
     }
-
-    .main .table-row button {
-        width: 100%;
-        padding: 13px;
-        background: var(--yellow);
-        border-radius: 9px;
-        font-size: 14px;
+  
+    /* FINAL CTA & BACK TO TOP */
+    .final-cta {
+      padding: 50px 0;
     }
-
-    /* Кнопки */
-
-    .main .advantages-cost,
-    .main .advantages-demo {
-        padding: 14px;
-        font-size: 15px;
+  
+    .final-cta h2 {
+      font-size: 26px;
     }
-}
-
-
-/* ==================================================
-   17. EXTRA SMALL — 320px–360px
-================================================== */
-
-@media (max-width: 360px) {
-
-    .main .container {
-        padding-left: 12px;
-        padding-right: 12px;
+  
+    .final-cta .u-btn {
+      width: 100%;
     }
-
-    .main .hero-title,
-    .main .advantages-title,
-    .main .information-title,
-    .main .sensor-title,
-    .main .form-title,
-    .main .instrument-title,
-    .main .trend-title,
-    .main .gps-title,
-    .main .graphik-title,
-    .main .energy-title,
-    .main .management-title {
-        font-size: 23px;
+  
+    .back-top {
+      right: 15px;
+      bottom: 15px;
+      width: 42px;
+      height: 42px;
+      font-size: 18px;
     }
-
-    .main .hero-box {
-        padding: 15px;
-    }
-
-    .main .hero-item,
-    .main .advantages-item,
-    .main .information-item,
-    .main .sensor-item,
-    .main .instrument-item,
-    .main .trend-item,
-    .main .gps-item,
-    .main .graphik-item,
-    .main .energy-item,
-    .main .management-item {
-        padding: 16px;
-    }
-
-    .main .hero-subtitle,
-    .main .information-subtitle,
-    .main .sensor-subtitle,
-    .main .instrument-subtitle,
-    .main .trend-subtitle,
-    .main .gps-subtitle,
-    .main .energy-subtitle,
-    .main .management-subtitle {
-        font-size: 17px;
-    }
-
-    .main .table-row {
-        padding: 10px 12px;
-    }
-
-    .main .table-row > div {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 600px) {
-  .information-card {
-    padding: 21px;
   }
-
-  .information-card .card-icon {
-    margin-bottom: 15px;
+  
+  /* EXTRA SMALL — 320px–360px */
+  @media (max-width: 360px) {
+    .u-container {
+      width: calc(100% - 24px);
+    }
+  
+    .hero-title {
+      font-size: 28px;
+    }
+  
+    .u-title {
+      font-size: 23px;
+    }
+  
+    .u-card {
+      padding: 16px;
+    }
+  
+    .honey-circle {
+      width: 175px;
+      font-size: 58px;
+    }
   }
-
-  .information-card h3 {
-    font-size: 19px;
-  }
-
-  .information-card p {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-}
-
-/* SENSOR */
-
-.sensor {
-  background: #FFF1CE;
-}
-
-.sensor .card {
-  border-top: 4px solid var(--yellow);
-}
-
-/* TABLE / PRODUCTS */
-
-.form {
-  background: var(--white);
-}
-
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.product-card {
-  padding: 25px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--cream);
-  transition: .25s;
-}
-
-.product-card:hover {
-  border-color: var(--yellow-dark);
-  box-shadow: var(--shadow);
-}
-
-.product-card h3 {
-  margin-bottom: 12px;
-  font-size: 20px;
-}
-
-.product-price {
-  margin: 15px 0;
-  color: #B77A00;
-  font-size: 27px;
-  font-weight: 900;
-}
-
-.product-details {
-  display: grid;
-  gap: 8px;
-  margin-bottom: 20px;
-  color: var(--brown-light);
-  font-size: 14px;
-}
-
-.product-details span::before {
-  content: "✓ ";
-  color: #D99B00;
-  font-weight: 900;
-}
-
-/* PARAMETERS */
-
-.instrument {
-  background: var(--cream);
-}
-
-.instrument .card {
-  border-bottom: 4px solid var(--yellow);
-}
-
-/* TREND */
-
-.trend {
-  background: #FFF1CE;
-}
-
-.trend-other-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
-  margin-top: 22px;
-}
-
-.trend-other-item {
-  padding: 20px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  font-size: 14px;
-}
-
-/* GPS */
-
-.gps {
-  background: var(--white);
-}
-
-.gps-sublist {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
-  margin-top: 22px;
-}
-
-.gps-subitem {
-  padding: 20px;
-  background: var(--yellow-light);
-  border-radius: 15px;
-  font-size: 14px;
-}
-
-/* GRAPHICS */
-
-.graphik {
-  background: var(--cream);
-}
-
-.graphik-sublist {
-  margin-top: 25px;
-  padding: 25px;
-  background: var(--yellow-light);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-}
-
-.graphik-sublist h3 {
-  margin-bottom: 15px;
-}
-
-.graphik-sublist li {
-  padding: 9px 0;
-  border-bottom: 1px solid #EBD8AE;
-}
-
-.graphik-sublist li:last-child {
-  border-bottom: 0;
-}
-
-/* ENERGY */
-
-.energy {
-  background: #FFF1CE;
-}
-
-.energy .card {
-  background: white;
-}
-
-/* MANAGEMENT */
-
-.management {
-  background: var(--white);
-}
-
-/* FAQ */
-
-.faq {
-  background: var(--cream);
-}
-
-.faq-list {
-  display: grid;
-  gap: 12px;
-  max-width: 850px;
-}
-
-.faq-item {
-  overflow: hidden;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-  padding: 20px;
-  background: transparent;
-  border: 0;
-  color: var(--brown);
-  text-align: left;
-  font-weight: 700;
-}
-
-.faq-question span:last-child {
-  color: #C18A00;
-  font-size: 23px;
-  transition: transform .25s;
-}
-
-.faq-answer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows .3s;
-}
-
-.faq-answer > div {
-  overflow: hidden;
-}
-
-.faq-answer p {
-  padding: 0 20px 20px;
-  color: var(--brown-light);
-  font-size: 15px;
-}
-
-.faq-item.active .faq-answer {
-  grid-template-rows: 1fr;
-}
-
-.faq-item.active .faq-question span:last-child {
-  transform: rotate(45deg);
-}
-
-/* FINAL CTA */
-
-.final-cta {
-  padding: 75px 0;
-  background: linear-gradient(135deg, #FFD95D, #F5B900);
-  text-align: center;
-}
-
-.final-cta h2 {
-  max-width: 750px;
-  margin: 0 auto 15px;
-  color: #493500;
-  font-size: clamp(28px, 4vw, 42px);
-  line-height: 1.2;
-}
-
-.final-cta p {
-  max-width: 600px;
-  margin: 0 auto 25px;
-  color: #6E5010;
-}
-
-.final-cta .btn {
-  background: white;
-  border-color: white;
-}
-
-/* BACK TO TOP */
-
-.back-top {
-  position: fixed;
-  z-index: 50;
-  right: 22px;
-  bottom: 22px;
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  background: var(--yellow);
-  border: 0;
-  border-radius: 50%;
-  color: var(--brown);
-  font-size: 22px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: .25s;
-}
-
-.back-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.back-top:hover {
-  background: var(--yellow-dark);
-}
-
-/* ANIMATION ON SCROLL */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity .65s, transform .65s;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* TABLET — 768px */
-
-
-
-/* SMALL MOBILE — 320px–360px */
-
-@media (max-width: 360px) {
-  .container {
-    width: calc(100% - 24px);
-  }
-
-  .hero-title {
-    font-size: 34px;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .card {
-    padding: 17px;
-    border-radius: 16px;
-  }
-
-  .hero-feature {
-    padding: 18px;
-  }
-
-  .stat-number {
-    font-size: 27px;
-  }
-
-  .honey-circle {
-    width: 185px;
-  }
-}
-
-/* Уважение к настройке уменьшения анимации */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    transition-duration: .01ms !important;
-  }
-}

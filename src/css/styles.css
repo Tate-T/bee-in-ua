@@ -1,45 +1,95 @@
 /**
   |============================
-  | include css partials with
-  | default @import url()
+  | 1. RESET & COMMON BASE
   |============================
 */
 @import url('./reset.css');
 @import url('./vite-promo.css');
-@import url('./header.css');
-@import url('./cabinet.css');
-@import url('./contact.css');
-@import url('./register.css');
-@import url('./index.css');
+@import url('./desctop/common-desctop.css');
+
+/**
+  |============================
+  | 2. HEADER (MOBILE-FIRST -> TABLET -> DESKTOP)
+  |============================
+*/
+@import url('./mobile/header-mobile.css');
+@import url('./tablet/header-tablet.css');
 @import url('./desctop/header-desctop.css');
-@import url('./desctop/cabinet-desctop.css');
+
+/**
+  |============================
+  | 3. PAGES STYLES (DESKTOP)
+  |============================
+*/
+@import url('./desctop/index-desctop.css');
 @import url('./desctop/contacts-desctop.css');
-@import url('./desctop/footer-desctop.css');
-@import url('./desctop/register-desctop.css');
+@import url('./desctop/articles-desctop.css');
 @import url('./desctop/sms-desctop.css');
 @import url('./desctop/demo-desctop.css');
 @import url('./desctop/prise-desctop.css');
-@import url('./desctop/index-desctop.css');
+@import url('./desctop/register-desctop.css');
+@import url('./desctop/cabinet-desctop.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-1.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-2.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-3.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-4.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-5.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-6.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-7.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-8.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-9.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-10.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-11.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-12.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-13.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-14.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-15.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-16.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-17.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-18.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-19.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-20.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-21.css');
+@import url('./desctop/desctop-articles-pages-css/articles-page-22.css');
+
+/**
+  |============================
+  | 4. TABLET STYLES (768px – 1199px)
+  |============================
+*/
+@import url('./tablet/index-tablet.css');
 @import url('./tablet/articles-tablet.css');
-@import url('./tablet/cabinet-tablet.css');
 @import url('./tablet/contacts-tablet.css');
 @import url('./tablet/demo-tablet.css');
-@import url('./tablet/footer-tablet.css');
-@import url('./tablet/header-tablet.css');
-@import url('./tablet/index-tablet.css');
 @import url('./tablet/prise-tablet.css');
-@import url('./tablet/register-tablet.css');
 @import url('./tablet/sms-tablet.css');
+@import url('./tablet/register-tablet.css');
+@import url('./tablet/cabinet-tablet.css');
+
+/**
+  |============================
+  | 5. MOBILE STYLES (до 767px)
+  |============================
+*/
 @import url('./mobile/index-mobile.css');
 @import url('./mobile/articles-mobile.css');
-@import url('./mobile/cabinet-mobile.css');
 @import url('./mobile/contacts-mobile.css');
 @import url('./mobile/demo-mobile.css');
-@import url('./mobile/footer-mobile.css');
-@import url('./mobile/header-mobile.css');
 @import url('./mobile/prise-mobile.css');
-@import url('./mobile/register-mobile.css');
 @import url('./mobile/sms-mobile.css');
+@import url('./mobile/register-mobile.css');
+@import url('./mobile/cabinet-mobile.css');
+
+/**
+  |============================
+  | 6. STICKY FOOTER (DESKTOP -> TABLET -> MOBILE)
+  |============================
+*/
+@import url('./desctop/footer-desctop.css');
+@import url('./tablet/footer-tablet.css');
+@import url('./mobile/footer-mobile.css');
+
+
 :root {
     --yellow: #F5B900;
     --yellow-dark: #E5A400;
@@ -88,6 +138,7 @@
     width: min(1150px, calc(100% - 40px));
     margin: 0 auto;
     padding: 60px 0 80px;
+    background-color: #F5B500;
 }
 
 .stats-title {

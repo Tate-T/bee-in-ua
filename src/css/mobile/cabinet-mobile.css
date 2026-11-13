@@ -1,0 +1,46 @@
+/* ==========================================================================
+   CABINET-MOBILE.CSS — Мобильная адаптация страницы входа (до 767px)
+   ========================================================================== */
+
+   @media (max-width: 767px) {
+    .cabinet-page {
+      padding: 30px 15px;
+    }
+  
+    .form-options {
+      font-size: 12.5px;
+    }
+  }
+  @media (max-width: 767px) {
+    .auth-container {
+      padding: 24px 12px;
+      overflow-x: hidden;
+    }
+  
+    .auth-card {
+      width: 100%;
+      max-width: 100%;
+      padding: 24px 16px;
+      box-sizing: border-box;
+    }
+  
+    .auth-form,
+    .form-field {
+      width: 100%;
+      min-width: 0;
+    }
+  
+    .form-field input,
+    .u-form-input {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+  
+    .auth-title {
+      font-size: 21px;
+    }
+  }
+  

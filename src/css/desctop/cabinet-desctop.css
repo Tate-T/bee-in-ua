@@ -1,0 +1,44 @@
+/* ==========================================================================
+   CABINET-DESCTOP.CSS — Уникальные стили страницы входа BeeHAPPY
+   ========================================================================== */
+
+   .cabinet-page {
+    background-color: var(--cream);
+  }
+  
+  /* Блок опций (Запомнить меня и Забыли пароль) */
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: -4px;
+    font-size: 13px;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--brown);
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .remember-me input {
+    cursor: pointer;
+    accent-color: var(--yellow-dark);
+  }
+  
+  .forgot-pass-link {
+    color: var(--brown-light);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  
+  .forgot-pass-link:hover {
+    color: #D49A00;
+    text-decoration: underline;
+  }
+  

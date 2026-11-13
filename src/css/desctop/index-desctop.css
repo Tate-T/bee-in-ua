@@ -1,74 +1,454 @@
 /* ==========================================================================
-   ДЕСКТОПНА ВЕРСІЯ INDEX (від 1200px)
+   INDEX-DESCTOP.CSS — Уникальные десктопные стили главной страницы BeeHAPPY
    ========================================================================== */
-   @media (min-width: 1200px) {
-    section {
-      padding: 90px 0;
-    }
+
+   .progress-bar {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--yellow);
+  }
   
-    .grid-3,
-    .hero-features {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
+  /* HERO */
+  .hero {
+    padding: 30px 0 90px;
+    background:
+      radial-gradient(circle at 85% 15%, #FFE9A9 0, transparent 25%),
+      linear-gradient(135deg, #FFF9ED, #FFF1CE);
+  }
   
-    .grid-4,
-    .stats-grid,
-    .product-list {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
+  .hero-notices {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 65px;
+  }
   
-    .advantages-box {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
+  .notice {
+    padding: 9px 15px;
+    background: rgba(255, 255, 255, .75);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--brown-light);
+    font-size: 13px;
+  }
   
-    .hero {
-      padding: 30px 0 90px;
-    }
+  .hero-content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+  }
   
-    .hero-notices {
-      margin-bottom: 65px;
-    }
+  .hero-title {
+    max-width: 700px;
+    margin-bottom: 23px;
+    color: var(--brown);
+    font-size: clamp(40px, 6vw, 67px);
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: -2px;
+  }
   
-    .hero-content {
-      grid-template-columns: 1.1fr .9fr;
-      text-align: left;
-      gap: 50px;
-    }
+  .hero-title span {
+    color: #E6A600;
+  }
   
-    .hero-title,
-    .hero-description {
-      margin-left: 0;
-      margin-right: 0;
-    }
+  .hero-description {
+    max-width: 580px;
+    margin-bottom: 30px;
+    color: var(--brown-light);
+    font-size: 18px;
+  }
   
-    .hero-title {
-      font-size: clamp(40px, 6vw, 67px);
-      letter-spacing: -2px;
-    }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
   
-    .hero-actions {
-      justify-content: flex-start;
-    }
+  .hero-visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 360px;
+  }
   
-    .note-one {
-      left: 0;
-    }
+  .honey-circle {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: min(310px, 80vw);
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #FFD65B, #F5AD00);
+    border: 12px solid rgba(255, 255, 255, .65);
+    border-radius: 50%;
+    box-shadow: 0 25px 60px rgba(191, 133, 0, .22);
+    font-size: 105px;
+    animation: u-float 4s ease-in-out infinite;
+  }
   
-    .note-two {
-      right: 0;
-    }
+  .honey-circle::before,
+  .honey-circle::after {
+    content: "⬡";
+    position: absolute;
+    color: rgba(255, 255, 255, .45);
+    font-size: 85px;
+  }
   
-    .hero-features {
-      margin-top: 75px;
-    }
+  .honey-circle::before {
+    top: 5px;
+    right: -60px;
+  }
   
-    .advantages-bottom {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .honey-circle::after {
+    bottom: 5px;
+    left: -55px;
+  }
+  
+  .floating-note {
+    position: absolute;
+    padding: 13px 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .note-one {
+    top: 40px;
+    left: 0;
+  }
+  
+  .note-two {
+    right: 0;
+    bottom: 45px;
+  }
+  
+  .hero-features {
+    margin-top: 75px;
+  }
+  
+  .hero-feature {
+    padding: 24px;
+    background: rgba(255, 255, 255, .85);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+  }
+  
+  .hero-feature h3 {
+    margin-bottom: 10px;
+    font-size: 19px;
+  }
+  
+  .hero-feature p {
+    color: var(--brown-light);
+    font-size: 14px;
+  }
+  
+  /* ADVANTAGES */
+  .advantages {
+    background: var(--white);
+  }
+  
+  .advantages-box {
+    gap: 16px;
+  }
+  
+  .advantage-card {
+    padding: 23px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    transition: .25s;
+  }
+  
+  .advantage-card:hover {
+    background: var(--yellow-light);
+    transform: translateY(-4px);
+  }
+  
+  .advantage-card strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--brown);
+  }
+  
+  .advantage-card p {
+    color: var(--brown-light);
+    font-size: 14px;
+  }
+  
+  .advantages-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 35px;
+    padding: 25px;
+    background: var(--yellow-light);
+    border-radius: 18px;
+  }
+  
+  .advantages-bottom p {
+    max-width: 600px;
+    color: var(--brown);
+  }
+  
+  /* STATISTICS */
+  .stats {
+    padding: 55px 0;
+    background: var(--yellow);
+  }
+  
+  .stat {
+    text-align: center;
+    color: #493500;
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+  }
+  
+  /* СЕКЦИИ С ЧЕРЕДОВАНИЕМ ФОНА */
+  .information,
+  .instrument,
+  .graphik,
+  .faq {
+    background: var(--cream);
+  }
+  
+  .sensor,
+  .trend,
+  .energy {
+    background: #FFF1CE;
+  }
+  
+  .form,
+  .gps,
+  .management {
+    background: var(--white);
+  }
+  
+  .sensor .u-card {
+    border-top: 4px solid var(--yellow);
+  }
+  
+  .instrument .u-card {
+    border-bottom: 4px solid var(--yellow);
+  }
+  
+  /* PRODUCTS */
+  .product-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--cream);
+    transition: .25s;
+  }
+  
+  .product-card:hover {
+    border-color: var(--yellow-dark);
+    box-shadow: var(--shadow);
+  }
+  
+  .product-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+  
+  .product-price {
+    margin: 15px 0;
+    color: #B77A00;
+    font-size: 27px;
+    font-weight: 900;
+  }
+  
+  .product-details {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: var(--brown-light);
+    font-size: 14px;
+  }
+  
+  .product-details span::before {
+    content: "✓ ";
+    color: #D99B00;
+    font-weight: 900;
+  }
+  
+  /* ДОПОЛНИТЕЛЬНЫЕ СПИСКИ */
+  .trend-other-list,
+  .gps-sublist {
+    gap: 15px;
+    margin-top: 22px;
+  }
+  
+  .trend-other-item {
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    font-size: 14px;
+  }
+  
+  .gps-subitem {
+    padding: 20px;
+    background: var(--yellow-light);
+    border-radius: 15px;
+    font-size: 14px;
+  }
+  
+  .graphik-sublist {
+    margin-top: 25px;
+    padding: 25px;
+    background: var(--yellow-light);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+  }
+  
+  .graphik-sublist h3 {
+    margin-bottom: 15px;
+  }
+  
+  .graphik-sublist li {
+    padding: 9px 0;
+    border-bottom: 1px solid #EBD8AE;
+  }
+  
+  .graphik-sublist li:last-child {
+    border-bottom: 0;
+  }
+  
+  /* FAQ */
+  .faq-list {
+    display: grid;
+    gap: 12px;
+    max-width: 850px;
+  }
+  
+  .faq-item {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    border: 0;
+    color: var(--brown);
+    text-align: left;
+    font-weight: 700;
+  }
+  
+  .faq-question span:last-child {
+    color: #C18A00;
+    font-size: 23px;
+    transition: transform .25s;
+  }
+  
+  .faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s;
+  }
+  
+  .faq-answer > div {
+    overflow: hidden;
+  }
+  
+  .faq-answer p {
+    padding: 0 20px 20px;
+    color: var(--brown-light);
+    font-size: 15px;
+  }
+  
+  .faq-item.active .faq-answer {
+    grid-template-rows: 1fr;
+  }
+  
+  .faq-item.active .faq-question span:last-child {
+    transform: rotate(45deg);
+  }
+  
+  /* FINAL CTA & BACK TO TOP */
+  .final-cta {
+    padding: 75px 0;
+    background: linear-gradient(135deg, #FFD95D, #F5B900);
+    text-align: center;
+  }
+  
+  .final-cta h2 {
+    max-width: 750px;
+    margin: 0 auto 15px;
+    color: #493500;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+  }
+  
+  .final-cta p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: #6E5010;
+  }
+  
+  .final-cta .u-btn {
+    background: var(--white);
+    border-color: var(--white);
+  }
+  
+  .back-top {
+    position: fixed;
+    z-index: 50;
+    right: 22px;
+    bottom: 22px;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    background: var(--yellow);
+    border: 0;
+    border-radius: 50%;
+    color: var(--brown);
+    font-size: 22px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: .25s;
+  }
+  
+  .back-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .back-top:hover {
+    background: var(--yellow-dark);
   }
   

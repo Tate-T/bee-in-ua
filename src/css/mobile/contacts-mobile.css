@@ -1,0 +1,63 @@
+/* ==========================================================================
+   CONTACTS-MOBILE.CSS — Мобильная адаптация страницы контактов (до 767px)
+   ========================================================================== */
+
+   @media (max-width: 767px) {
+    .beehappy-contacts-section {
+      padding: 30px 15px;
+      background-attachment: scroll !important;
+      overflow-x: hidden;
+    }
+  
+    .contacts-card,
+    .u-card--panel {
+      padding: 28px 18px;
+      border-radius: 16px;
+    }
+  
+    .contacts-heading,
+    .u-title--center {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  
+    /* Перестраиваем таблицу в 1 колонку, чтобы правая часть не уезжала за экран */
+    .grid-row {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      padding: 18px 0;
+    }
+  
+    .highlight-row {
+      margin: 8px 0;
+      padding: 18px 14px;
+      border-radius: 12px;
+    }
+  
+    .grid-label {
+      padding-right: 0;
+      font-size: 15px;
+    }
+  
+    .grid-value {
+      width: 100%;
+      min-width: 0;
+    }
+  
+    .styled-link {
+      word-break: break-all;
+    }
+  
+    .pulse-link,
+    .u-btn--sm {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+    }
+  
+    .phone-number {
+      font-size: 16px;
+    }
+  }
+  

@@ -1,129 +1,51 @@
 /* ==========================================================================
-   МОБАЙЛ (до 767px): Компактна картка вулика та адаптивні шрифти
+   DEMO-MOBILE.CSS — Мобильная адаптация демо-кабинета (до 767px)
    ========================================================================== */
-   @media screen and (max-width: 767px) {
-    body {
-        padding-top: 56px;
-    }
 
-    .main-content {
-        padding: 20px 12px;
-        background-attachment: scroll !important;
+   @media (max-width: 767px) {
+    .demo-page {
+      min-height: auto;
+      padding: 24px 14px;
+      background-attachment: scroll !important;
+      overflow-x: hidden;
     }
-
+  
     .demo-section {
-        padding: 20px 14px;
-        border-radius: 12px;
-        max-width: 100%;
+      padding: 20px 14px;
+      border-radius: 14px;
     }
-
+  
     .demo-link.hive-assembly {
-        max-width: 100%;
+      max-width: 100%;
     }
-
-    /* Верхняя панель: улица + GSM */
-    .hive-top-bar {
-        width: 92%;
-        padding: 0 2px;
+  
+    .outdoor-badge,
+    .gsm-badge {
+      padding: 4px 7px;
+      font-size: 11px;
     }
-
-    .outdoor-badge, .gsm-badge {
-        padding: 4px 7px;
-        font-size: 11px;
-    }
-
-    .antenna-rod {
-        height: 22px;
-    }
-
-    /* Дах и корпуси вулика */
-    .hive-cap {
-        width: 98%;
-        padding: 8px 10px;
-    }
-
-    .cap-label {
-        font-size: 12px;
-    }
-
+  
     .hive-tier {
-        width: 92%;
-        padding: 10px;
+      padding: 12px 10px;
     }
-
-    .tier-handle {
-        width: 4px;
-        height: 22px;
-    }
-
-    .tier-handle.left { left: -7px; }
-    .tier-handle.right { right: -7px; }
-
-    /* Мікроклімат */
-    .data-pill.indoor {
-        padding: 6px 8px;
-    }
-
+  
     .pill-values {
-        font-size: 14px;
-        gap: 6px;
+      font-size: 15px;
+      gap: 6px;
     }
-
-    /* АКБ та Баланс */
-    .system-row {
-        gap: 6px;
-    }
-
+  
     .sys-box {
-        padding: 5px 6px;
-        font-size: 11px;
+      padding: 5px 6px;
+      font-size: 11px;
     }
-
-    .sys-val {
-        font-size: 12px;
-    }
-
-    /* Вагова платформа та кнопка */
-    .platform-deck {
-        padding: 10px;
-    }
-
-    .weight-display {
-        padding: 6px 10px;
-        margin-bottom: 10px;
-    }
-
+  
     .weight-num {
-        font-size: 19px;
+      font-size: 20px;
     }
-
-    .daily-num {
-        font-size: 14px;
-    }
-
+  
     .cta-strip {
-        padding: 10px 14px;
-        font-size: 13.5px;
+      padding: 11px 14px;
+      font-size: 14px;
     }
-
-    footer, .main-footer, [load*="footer"] {
-        padding: 16px 12px;
-        font-size: 13px;
-    }
-}
-
-/* Для дуже вузьких екранів (до 360px) */
-@media screen and (max-width: 360px) {
-    .outdoor-badge, .gsm-badge {
-        font-size: 10px;
-        padding: 3px 5px;
-    }
-
-    .system-row {
-        grid-template-columns: 1fr;
-    }
-
-    .weight-num {
-        font-size: 17px;
-    }
-}
+  }
+  
