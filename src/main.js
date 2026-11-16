@@ -508,3 +508,140 @@ function initPriceCalculator() {
 }
 
 initPriceCalculator();
+
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.main-header');
+  
+    // 1. Автоматическая подсветка активного пункта меню
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.main-header .main-link');
+  
+    navLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+  
+      const cleanHref = href.replace(/^(\.\.\/|\.\/)+/, '');
+  
+      if (currentPath.includes('/articles-pages/') && cleanHref === 'articles.html') {
+        link.classList.add('active');
+        return;
+      }
+  
+      const isHomePage =
+        currentPath.endsWith('/') ||
+        currentPath.endsWith('/index.html') ||
+        currentPath.endsWith('/bee-in-ua');
+  
+      if (cleanHref === 'index.html' && isHomePage) {
+        link.classList.add('active');
+      } else if (cleanHref !== 'index.html' && currentPath.endsWith(cleanHref)) {
+        link.classList.add('active');
+      }
+    });
+  
+    // 2. Индикатор прогресса чтения страницы и эффект шапки при прокрутке
+    let progressBar = document.querySelector('.header-scroll-progress');
+    if (!progressBar && header) {
+      progressBar = document.createElement('div');
+      progressBar.className = 'header-scroll-progress';
+      header.appendChild(progressBar);
+    }
+  
+    const backTopBtn = document.querySelector('.back-top');
+  
+    const updateScrollUI = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+  
+      if (progressBar) {
+        progressBar.style.width = `${scrollPercent}%`;
+      }
+  
+      if (header) {
+        header.classList.toggle('is-scrolled', scrollTop > 20);
+      }
+  
+      if (backTopBtn) {
+        backTopBtn.classList.toggle('visible', scrollTop > 350);
+      }
+    };
+  
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+    updateScrollUI();
+  
+    // 3. Плавная прокрутка наверх и по якорным ссылкам (#...)
+    if (backTopBtn) {
+      backTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const targetId = anchor.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+  
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          event.preventDefault();
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - headerOffset,
+            behavior: 'smooth',
+          });
+        }
+      });
+    });
+  
+    // 4. Управление бургер-меню на смартфонах и планшетах
+    const burgerBtn = document.querySelector('.main-header .burger-btn');
+    const menuWrapper = document.querySelector('.main-header .header-menu-wrapper');
+  
+    if (burgerBtn && menuWrapper) {
+      const toggleMenu = (forceClose = false) => {
+        const isOpen = forceClose ? false : !menuWrapper.classList.contains('is-open');
+  
+        menuWrapper.classList.toggle('is-open', isOpen);
+        menuWrapper.classList.toggle('active', isOpen);
+        burgerBtn.classList.toggle('is-open', isOpen);
+        burgerBtn.classList.toggle('active', isOpen);
+        burgerBtn.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      };
+  
+      burgerBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleMenu();
+      });
+  
+      menuWrapper.querySelectorAll('a').forEach((item) => {
+        item.addEventListener('click', () => toggleMenu(true));
+      });
+  
+      document.addEventListener('click', (event) => {
+        if (
+          menuWrapper.classList.contains('is-open') &&
+          !menuWrapper.contains(event.target) &&
+          !burgerBtn.contains(event.target)
+        ) {
+          toggleMenu(true);
+        }
+      });
+  
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && menuWrapper.classList.contains('is-open')) {
+          toggleMenu(true);
+        }
+      });
+  
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1200 && menuWrapper.classList.contains('is-open')) {
+          toggleMenu(true);
+        }
+      });
+    }
+  });
+  

@@ -4,7 +4,6 @@
   |============================
 */
 @import url('./reset.css');
-@import url('./vite-promo.css');
 @import url('./desctop/common-desctop.css');
 
 /**
@@ -82,7 +81,7 @@
 
 /**
   |============================
-  | 6. STICKY FOOTER (DESKTOP -> TABLET -> MOBILE)
+  | 6. STICKY FOOTER & HEADER OFFSET (DESKTOP -> TABLET -> MOBILE)
   |============================
 */
 @import url('./desctop/footer-desctop.css');

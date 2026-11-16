@@ -1,222 +1,285 @@
 /* ==========================================================================
-   HEADER-MOBILE.CSS — Базові та мобільні стилі хедера (від 320px)
+   HEADER-MOBILE.CSS — Модернізована фіксована шапка (Mobile-First до 767px)
    ========================================================================== */
 
    .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    width: 100%;
-    height: 65px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #f0f0f0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    height: 65px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #EFDFC0;
+    box-shadow: 0 4px 20px rgba(117, 81, 20, 0.07);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .main-header .container,
-  .main-header .u-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 12px;
+  /* Фірмова верхня медово-оранжева лінія */
+  .main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFCC00, #FFA500);
+    z-index: 2;
+  }
+  
+  .main-header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
     box-sizing: border-box;
   }
   
   /* Логотип */
   .main-header .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+  
+  .main-header .logo:hover {
+    transform: scale(1.03);
   }
   
   .main-header .heder-logo {
-    height: 30px;
-    width: auto;
     display: block;
+    width: auto;
+    height: 36px;
   }
   
-  /* Перемикач мов */
+  /* Капсульний перемикач мов */
   .main-header .lang-switcher {
-    display: flex;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0 auto 0 6px;
+    padding: 3px;
+    background: #FFF9ED;
+    border: 1px solid #EFDFC0;
+    border-radius: 20px;
     list-style: none;
-    margin: 0 8px 0 auto;
-    padding: 0;
-    gap: 6px;
   }
   
   .main-header .lang-btn {
+    padding: 4px 8px;
     background: transparent;
     border: none;
-    padding: 4px 2px;
-    font-size: 12px;
+    border-radius: 16px;
     color: #595959;
-    cursor: pointer;
     font-family: inherit;
-    transition: color 0.3s ease;
-  }
-  
-  .main-header .lang-btn.active,
-  .main-header .lang-btn:hover {
-    color: #f5a623;
+    font-size: 11.5px;
     font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   }
   
-  /* Кнопка бургер-меню */
+  .main-header .lang-btn:hover {
+    color: #2C2519;
+  }
+  
+  .main-header .lang-btn.active {
+    background: #FFC21A;
+    color: #2C2519;
+    box-shadow: 0 2px 6px rgba(233, 169, 0, 0.28);
+  }
+  
+  /* Кнопка бургер-меню з анімацією хрестика */
   .main-header .burger-btn {
+    position: relative;
     display: flex;
-    background: transparent;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 5px;
-    padding: 8px;
-    margin-right: -8px;
-    z-index: 1001;
-    transition: background-color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: #FFF9ED;
+    border: 1px solid #EFDFC0;
+    border-radius: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
   
   .main-header .burger-btn:hover {
-    background-color: #fdf8ee;
+    background: #FFF0BD;
+    border-color: #E9A900;
   }
   
-  /* Смужки бургера */
   .main-header .burger-btn span {
     display: block;
-    width: 24px;
+    width: 20px;
     height: 2px;
-    background-color: #333333;
+    background: #57432B;
     border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
   }
   
-  .main-header .burger-btn:hover span {
-    background-color: #f5a623;
-  }
-  
-  /* Анімація бургера у хрестик */
-  .main-header .burger-btn.open span:nth-child(1) {
+  .main-header .burger-btn.active span:nth-child(1),
+  .main-header .burger-btn.is-open span:nth-child(1),
+  .main-header .burger-btn[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
   
-  .main-header .burger-btn.open span:nth-child(2) {
+  .main-header .burger-btn.active span:nth-child(2),
+  .main-header .burger-btn.is-open span:nth-child(2),
+  .main-header .burger-btn[aria-expanded="true"] span:nth-child(2) {
     opacity: 0;
   }
   
-  .main-header .burger-btn.open span:nth-child(3) {
+  .main-header .burger-btn.active span:nth-child(3),
+  .main-header .burger-btn.is-open span:nth-child(3),
+  .main-header .burger-btn[aria-expanded="true"] span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
   
-  /* Випадаюча шторка меню (320px - 1199px) */
-  .main-header .header-menu-wrapper {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #eaeaea;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    transition: max-height 0.35s ease, opacity 0.25s ease, visibility 0.35s ease;
-  }
+  /* Мобільна випадаюча панель навігації (до 1199px) */
+  @media (max-width: 1199px) {
+    .main-header .header-menu-wrapper {
+      position: fixed;
+      top: 65px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: calc(100vh - 65px);
+      padding: 20px 18px 28px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(14px);
+      border-bottom: 2px solid #FFC21A;
+      box-shadow: 0 18px 36px rgba(44, 37, 25, 0.14);
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+    }
   
-  .main-header .header-menu-wrapper.open {
-    max-height: calc(100vh - 65px);
-    opacity: 1;
-    visibility: visible;
-    overflow-y: auto;
-  }
+    .main-header .header-menu-wrapper.active,
+    .main-header .header-menu-wrapper.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   
-  /* Список посилань у мобільному меню */
-  .main-header .main-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 12px 0;
-  }
+    .main-header .main-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
   
-  .main-header .main-item {
-    width: 100%;
-    text-align: center;
-  }
+    .main-header .main-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: #FFFDF8;
+      border: 1px solid #F3E8D2;
+      border-radius: 12px;
+      color: #57432B;
+      font-size: 15.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
   
-  /* Пункти меню */
-  .main-header .main-link {
-    display: block;
-    padding: 12px 16px;
-    font-size: 16px;
-    color: #444444;
-    text-decoration: none;
-    background-color: transparent;
-    transition: color 0.3s ease, background-color 0.3s ease;
-  }
+    .main-header .main-link:hover,
+    .main-header .main-link.active {
+      background: #FFF0BD;
+      border-color: #F0C45B;
+      color: #2C2519;
+      transform: translateX(4px);
+    }
   
-  .main-header .main-link:hover,
-  .main-header .main-link:focus {
-    color: #f5a623;
-    background-color: #fdf8ee;
-  }
+    .main-header .auth-buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 0;
+      padding-top: 14px;
+      border-top: 1px solid #EFDFC0;
+      list-style: none;
+    }
   
-  /* Кнопки авторизації всередині шторки (на 320px стоять стовпчиком) */
-  .main-header .auth-buttons {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 16px 20px 24px;
-    gap: 10px;
-    border-top: 1px solid #f2f2f2;
-    box-sizing: border-box;
-  }
+    .main-header .btn-login,
+    .main-header .btn-register {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
   
-  .main-header .auth-item {
-    width: 100%;
-  }
+    .main-header .btn-login {
+      background: #FFF9ED;
+      border: 1px solid #E5CFA3;
+      color: #57432B;
+    }
   
-  .main-header .btn-login,
-  .main-header .btn-register {
-    display: block;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    .main-header .btn-register {
+      background: linear-gradient(135deg, #FFD65B, #FFC21A);
+      border: 1px solid #E9A900;
+      color: #2C2519;
+      box-shadow: 0 4px 12px rgba(233, 169, 0, 0.25);
+    }
   }
-  
-  .main-header .btn-login {
-    color: #f5a623;
-    border: 1px solid #f5a623;
-    background-color: transparent;
+  /* Компактная адаптация хедера для узких смартфонов (320px – 420px) */
+@media (max-width: 420px) {
+  .main-header .container {
+    gap: 6px;
+    padding: 0 10px;
   }
-  
-  .main-header .btn-login:hover {
-    background-color: #fdf8ee;
+
+  .main-header .heder-logo {
+    height: 26px; /* Уменьшаем логотип, чтобы освободить место справа */
   }
-  
-  .main-header .btn-register {
-    color: #ffffff;
-    background-color: #f5a623;
-    border: 1px solid #f5a623;
+
+  .main-header .lang-switcher {
+    margin: 0 auto 0 2px;
+    padding: 2px;
+    gap: 1px;
   }
-  
-  .main-header .btn-register:hover {
-    background-color: #e09216;
-    border-color: #e09216;
+
+  .main-header .lang-btn {
+    padding: 4px 6px;
+    font-size: 10.5px;
   }
+
+  .main-header .burger-btn {
+    width: 36px;
+    height: 36px;
+    margin-left: auto;
+  }
+
+  .main-header .burger-btn span {
+    width: 18px;
+  }
+}
+
   
