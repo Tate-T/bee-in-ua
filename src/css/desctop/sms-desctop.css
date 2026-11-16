@@ -5,9 +5,14 @@
 /* Изолированный приглушённый фон только для страницы SMS */
 .sms-page,
 main.main-content {
+  padding: 90px 0 70px;
+}
+/* Изолированный приглушённый фон только для страницы SMS с безопасным отступом от хедера */
+.sms-page,
+main.main-content {
   display: block;
   width: 100%;
-  padding: 50px 0 70px;
+  padding: 95px 0 70px !important; /* 65px высота хедера + 30px зазор с фоном */
   background-color: #FCF6E8 !important;
   background-image: linear-gradient(rgba(255, 249, 237, 0.2), rgba(255, 249, 237, 0.5)),
                     url('../../img/fon/foto-fon2.webp') !important;
@@ -17,6 +22,7 @@ main.main-content {
   background-repeat: no-repeat !important;
   color: var(--bee-text);
 }
+
 
 .bh-sms-wrapper {
   position: relative;

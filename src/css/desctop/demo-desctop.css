@@ -3,21 +3,23 @@
    ========================================================================== */
 
 /* Изолированный контейнер страницы с фоном подсолнухов */
+/* Изолированный контейнер страницы с фоном подсолнухов и безопасным отступом от хедера */
 .demo-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: calc(100vh - 140px);
-    width: 100%;
-    padding: 50px 20px;
-    background-color: #FCF6E8 !important;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-                      url('../../img/fon/foto-fon5.webp') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  padding: 95px 20px 50px !important; /* 65px высота хедера + 30px зазор */
+  background-color: #FCF6E8 !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+                    url('../../img/fon/foto-fon5.webp') !important;
+  background-size: cover !important; /* Растягивает фон ровно на весь экран без пустых полос по бокам */
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
   
   /* Центрированная стеклянная карточка поверх .u-card */
   .demo-section {

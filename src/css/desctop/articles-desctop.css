@@ -22,25 +22,25 @@
     }
   }
   
-  /* Задний фон только для страницы статей */
-  main:has(.stats-list),
-  main:has(.articles-list),
-  main.articles-bg {
-    display: block;
-    width: 100%;
-    min-height: 100%;
-    padding: 50px 20px 80px;
-    background-color: var(--cream, #FFF9ED) !important;
-    background-image:
-      radial-gradient(circle at 88% 12%, rgba(255, 233, 169, 0.55) 0, transparent 32%),
-      linear-gradient(rgba(255, 249, 237, 0.45), rgba(255, 249, 237, 0.2)),
-      url('../../img/fon/foto-fon3.webp') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-  }
-  
+ /* Задний фон только для страницы статей с безопасным отступом от хедера */
+main:has(.stats-list),
+main:has(.articles-list),
+main.articles-bg {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  padding: 95px 20px 80px !important; /* 65px высота хедера + 30px зазор с фоном */
+  background-color: var(--cream, #FFF9ED) !important;
+  background-image:
+    radial-gradient(circle at 88% 12%, rgba(255, 233, 169, 0.55) 0, transparent 32%),
+    linear-gradient(rgba(255, 249, 237, 0.45), rgba(255, 249, 237, 0.2)),
+    url('../../img/fon/foto-fon3.webp') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
   /* Главная панель-контейнер в стиле BeeHAPPY */
   main:has(.stats-list) .stats,
   .articles-section {

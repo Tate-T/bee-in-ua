@@ -6,7 +6,7 @@
     .beehappy-contacts-section {
       position: relative;
       z-index: 1;
-      padding: 30px 15px;
+      padding: 85px 15px 30px !important; /* 65px хедер + 20px зазор */
       background: transparent !important;
       overflow-x: hidden;
     }
