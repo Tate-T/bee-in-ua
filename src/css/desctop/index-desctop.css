@@ -433,33 +433,3 @@
   border-color: var(--white);
 }
 
-.back-top {
-  position: fixed;
-  z-index: 50;
-  right: 22px;
-  bottom: 22px;
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  background: var(--yellow);
-  border: 0;
-  border-radius: 50%;
-  color: var(--brown);
-  font-size: 22px;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: opacity 0.25s, visibility 0.25s, transform 0.25s, background-color 0.25s;
-}
-
-.back-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.back-top:hover {
-  background: var(--yellow-dark);
-}
