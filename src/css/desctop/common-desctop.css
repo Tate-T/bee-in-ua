@@ -453,3 +453,57 @@ body {
   width: auto;
   height: 40px;
 }
+
+/* Универсальная кнопка возврата наверх для всех страниц */
+.back-top {
+  position: fixed;
+  z-index: 95; /* Выше липкой панели заказа в прайсе (z-index: 90) */
+  right: 22px;
+  bottom: 22px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: var(--yellow, #FFC21A);
+  border: none;
+  border-radius: 50%;
+  color: var(--brown-dark, #2C2519);
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: var(--shadow, 0 8px 24px rgba(117, 81, 20, 0.18));
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+}
+
+.back-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-top:hover {
+  background: var(--yellow-dark, #E9A900);
+  transform: translateY(-3px);
+}
+
+/* На мобильном прайсе поднимаем кнопку чуть выше липкой панели заказа */
+@media (max-width: 1199px) {
+  body:has(.price-summary-bar) .back-top {
+    bottom: 86px;
+  }
+}
+/* Жёлтая полоска прогресса прокрутки в самом верху экрана для всех страниц */
+.progress-bar {
+  position: fixed;
+  z-index: 1001; /* Поверх фиксированной шапки (z-index: 1000) */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--yellow, #FFC21A);
+  pointer-events: none;
+  transition: width 0.1s linear;
+}

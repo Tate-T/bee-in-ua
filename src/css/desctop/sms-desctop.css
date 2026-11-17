@@ -1,12 +1,7 @@
 /* ==========================================================================
-   SMS-DESCTOP.CSS — Часть 1 из 2
+   SMS-DESCTOP.CSS — Десктопные стили страницы SMS-команд BeeHAPPY
    ========================================================================== */
 
-/* Изолированный приглушённый фон только для страницы SMS */
-.sms-page,
-main.main-content {
-  padding: 90px 0 70px;
-}
 /* Изолированный приглушённый фон только для страницы SMS с безопасным отступом от хедера */
 .sms-page,
 main.main-content {
@@ -23,7 +18,6 @@ main.main-content {
   color: var(--bee-text);
 }
 
-
 .bh-sms-wrapper {
   position: relative;
   overflow: hidden;
@@ -38,7 +32,7 @@ main.main-content {
   line-height: 1.5;
 }
 
-/* Фирменная градиентная полоска сверху (как на странице контактов) */
+/* Фирменная градиентная полоска сверху карточки */
 .bh-sms-wrapper::before {
   content: '';
   position: absolute;
@@ -64,6 +58,19 @@ main.main-content {
   text-align: center;
 }
 
+/* Короткий жёлтый акцент-подчёркивание по центру под заголовком */
+.bh-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFCC00, #FFA500);
+  border-radius: 2px;
+}
+
 /* Плотная белая карточка для таблицы SMS-команд */
 .bh-table-container {
   position: relative;
@@ -76,6 +83,7 @@ main.main-content {
   overflow: hidden;
   margin-bottom: 36px;
 }
+
 /* Короткий жёлтый акцент-подчёркивание по центру под заголовком */
 .bh-title::after {
   content: '';
