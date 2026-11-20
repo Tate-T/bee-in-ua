@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Document</title>
-  <script type="module" crossorigin src="/bee-in-ua/assets/main-0f382d9b.js"></script>
+  <script type="module" crossorigin src="/bee-in-ua/assets/main-ab7bbe3f.js"></script>
   <script type="module" crossorigin src="/bee-in-ua/assets/script-57860214.js"></script>
-  <link rel="stylesheet" href="/bee-in-ua/assets/main-8fc7525a.css">
+  <link rel="stylesheet" href="/bee-in-ua/assets/main-971d4ace.css">
 </head>
 
 <body>
@@ -59,477 +59,853 @@
         <article class="article">
 
             <h1 class="article__title">
-                Пасічні ваги з GSM-модулем LTE
+                Інструкція користувача пасічних GSM-вагів BH-01, BH-04
             </h1>
 
             <div class="article__intro">
-                Пасічні ваги BH-01 та BH-04 призначені для
-                автоматичного вимірювання ваги вуликів,
-                температури та вологості. Пристрій передає
-                отримані дані на вебсервер для подальшого
-                перегляду та аналізу.
+                Пристрій призначений для збору фізичних параметрів вуликів та реєстрації їх на вебсервері bee.in.ua.
+                BH-01 вимірює поточні значення ваги одного вулика, BH-04 — чотирьох вуликів,
+                температури та відносної вологості повітря всередині вулика, а також температури повітря зовні.
+                Прилади не призначені для використання як торгові ваги. Вони розроблені для відстеження тенденцій
+                у роботі та розвитку бджолиних сімей.
             </div>
 
-            <!-- Головне зображення -->
-            <figure class="article-hero">
-                <img
-                    src="https://bee.in.ua/bootstrap/img/pasechnye-vesy-4g-lte-na-1-i-4-ulya.jpg"
-                    alt="Пасічні GSM-ваги BH-01 та BH-04"
-                    loading="lazy"
-                >
-                <figcaption>
-                    Системи моніторингу пасіки BeeHappy BH-01 та BH-04
-                </figcaption>
-            </figure>
-
+            <!-- Схема пристрою -->
             <section class="article-section">
                 <h2 class="article-section__title">
-                    Загальна інформація про пристрій
+                    Схематичне зображення пристрою BH-01, BH-04
                 </h2>
 
-                <p class="article-section__text">
-                    Модель BH-01 призначена для вимірювання
-                    ваги одного вулика, а BH-04 дозволяє
-                    одночасно контролювати чотири вулики.
-                </p>
-
-                <p class="article-section__text">
-                    Пристрій оснащений GSM/LTE-модулем,
-                    який забезпечує передачу даних через
-                    мобільну мережу.
-                </p>
-
-                <p class="article-section__text">
-                    Основні можливості:
-                </p>
-
-                <ul class="article-list">
-                    <li class="article-list__item">Вимірювання ваги вулика.</li>
-                    <li class="article-list__item">Контроль температури.</li>
-                    <li class="article-list__item">Вимірювання вологості.</li>
-                    <li class="article-list__item">Передача даних через GSM/LTE.</li>
-                    <li class="article-list__item">Перегляд показників через вебсервер.</li>
-                    <li class="article-list__item">Автоматичне надсилання SMS-звітів.</li>
-                </ul>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Основні елементи пристрою
-                </h2>
-
-                <p class="article-section__text">
-                    Пристрій має такі основні елементи:
-                </p>
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-04.jpg"
+                        alt="Схема пасічних ваг BH-01 та BH-04"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Схема пристрою та основних елементів системи
+                    </figcaption>
+                </figure>
 
                 <ol class="number-list">
                     <li class="number-list__item">Кнопка живлення.</li>
                     <li class="number-list__item">Порт зовнішнього живлення.</li>
                     <li class="number-list__item">Кнопка тарування.</li>
                     <li class="number-list__item">OLED-екран.</li>
-                    <li class="number-list__item">Слот для SIM-карти.</li>
+                    <li class="number-list__item">Слот SIM-карти.</li>
                     <li class="number-list__item">Кнопка ECO-режиму.</li>
-                    <li class="number-list__item">Роз'єм GSM-антени.</li>
-                    <li class="number-list__item">Роз'єм датчика ваги.</li>
-                    <li class="number-list__item">Роз'єм датчика температури та вологості.</li>
+                    <li class="number-list__item">Порт GSM-антени.</li>
+                    <li class="number-list__item">Порт датчика ваги 1.</li>
+                    <li class="number-list__item">Порт датчика температури та вологості у вулику.</li>
+                    <li class="number-list__item">Порт зовнішнього датчика температури.</li>
+                    <li class="number-list__item">Болти кріплення прозорої кришки.</li>
+                    <li class="number-list__item">Болти кріплення плати.</li>
+                    <li class="number-list__item">Датчик ваги.</li>
+                    <li class="number-list__item">Датчик температури та вологості у вулику.</li>
+                    <li class="number-list__item">Зовнішній датчик температури.</li>
+                    <li class="number-list__item">GSM-антена.</li>
+                    <li class="number-list__item">Блок живлення.</li>
+                    <li class="number-list__item">Штекер для підключення сонячної батареї.</li>
+                    <li class="number-list__item">Порт датчика ваги 2.</li>
+                    <li class="number-list__item">Порт датчика ваги 3.</li>
+                    <li class="number-list__item">Порт датчика ваги 4.</li>
+                    <li class="number-list__item">Джампер вибору WiFi-GSM.</li>
                 </ol>
-
-                <figure class="article-figure">
-                    <img
-                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-04.jpg"
-                        alt="Схема пристрою BH-01 та BH-04"
-                        loading="lazy"
-                    >
-                    <figcaption>
-                        Схема основних елементів пристрою та підключення датчиків
-                    </figcaption>
-                </figure>
             </section>
 
+            <!-- OLED -->
             <section class="article-section">
                 <h2 class="article-section__title">
-                    Інформація на OLED-екрані
+                    Схематичне зображення OLED-екрану
                 </h2>
 
-                <p class="article-section__text">
-                    На екрані пристрою відображаються основні
-                    параметри його роботи:
-                </p>
-
-                <ul class="article-list">
-                    <li class="article-list__item">Рівень GSM/WiFi-зв'язку.</li>
-                    <li class="article-list__item">Рівень заряду акумулятора.</li>
-                    <li class="article-list__item">Поточна вага вулика.</li>
-                    <li class="article-list__item">Системний час.</li>
-                    <li class="article-list__item">Температура всередині вулика.</li>
-                    <li class="article-list__item">Зовнішня температура.</li>
-                </ul>
-
-                <figure class="article-figure">
+                <figure class="article-figure article-figure--medium">
                     <img
                         src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-LTE-ekran.jpg"
                         alt="OLED-екран пасічних ваг"
                         loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
                     >
                     <figcaption>
-                        Приклад інформації, яка відображається на OLED-екрані
+                        Інформація на OLED-екрані пристрою
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list">
+                    <li class="number-list__item">Рівень GSM/WiFi-зв’язку.</li>
+                    <li class="number-list__item">Заряд акумулятора.</li>
+                    <li class="number-list__item">Поточне значення ваги.</li>
+                    <li class="number-list__item">Поточний системний час.</li>
+                    <li class="number-list__item">Поточна температура у вулику.</li>
+                    <li class="number-list__item">Поточна температура ззовні.</li>
+                    <li class="number-list__item">Приріст ваги з минулого вечора 22:00.</li>
+                    <li class="number-list__item">Сума на рахунку GSM-оператора.</li>
+                    <li class="number-list__item">Найменування GSM-оператора, стан WiFi-зв’язку.</li>
+                    <li class="number-list__item">Номер IP у WiFi-мережі.</li>
+                </ol>
+            </section>
+
+            <!-- Підключення датчиків -->
+            <section class="article-section">
+                <h2 class="article-section__title">
+                    Підключення датчика ваги (13)
+                </h2>
+
+                <p class="article-section__text">
+                    При вимкненій кнопці (1) приєднайте штекер(и) датчика(ів) ваги (13)
+                    до порта (8, 19, 20, 21). Гайку штекера можна не закручувати.
+                    При необхідності пристрій може працювати і без датчика(ів) ваги (13), наприклад взимку.
+                </p>
+
+                <h2 class="article-section__title">
+                    Підключення датчика температури, вологості (14)
+                </h2>
+
+                <p class="article-section__text">
+                    При вимкненій кнопці (1) приєднайте штекер датчика (14) до порта (9)
+                    та закрутіть гайку штекера за годинниковою стрілкою.
+                    При необхідності пристрій може працювати і без цього датчика.
+                </p>
+
+                <h2 class="article-section__title">
+                    Підключення датчика температури ззовні (15)
+                </h2>
+
+                <p class="article-section__text">
+                    При вимкненій кнопці (1) приєднайте штекер датчика (15) до порта (10)
+                    та закрутіть гайку штекера за годинниковою стрілкою.
+                    При необхідності пристрій може працювати і без цього датчика.
+                </p>
+
+                <h2 class="article-section__title">
+                    Підключення GSM-антени (16)
+                </h2>
+
+                <p class="article-section__text">
+                    Під’єднайте штекер антени (16) до порта (7) та закрутіть гайку штекера за годинниковою стрілкою.
+                </p>
+            </section>
+
+            <!-- Вибір мережі -->
+            <section class="article-section">
+                <h2 class="article-section__title">
+                    Вибір мережі зв'язку GSM або WiFi (22)
+                </h2>
+
+                <p class="article-section__text">
+                    Джампер (22) дозволяє вибрати мережу GSM LTE (4G) чи WiFi для роботи пристрою.
+                    Режим WiFi дозволяє пристрою передавати зібрані дані на глобальний сервер через ваш WiFi-роутер.
+                    Також у цьому режимі можна проводити налаштування пристрою через локальний веб-кабінет.
+                    У режимі GSM LTE (4G) пристрій працює через мобільний інтернет.
+                    Також у цьому режимі стають доступні SMS-команди та отримання SMS-звітів.
+                </p>
+            </section>
+
+            <!-- Увімкнення -->
+            <section class="article-section">
+                <h2 class="article-section__title">Увімкнення пристрою</h2>
+
+                <p class="article-section__text">
+                    Кнопка (6) не натиснена. Усі потрібні датчики підключені.
+                    Акумулятор заряджений або пристрій на зарядці від зовнішнього джерела живлення.
+                    Натисніть кнопку (1) та почекайте на звуковий сигнал та відображення інформації на екрані.
+                    Пристрій увімкнено.
+                </p>
+
+                <h2 class="article-section__title">Вимкнення пристрою</h2>
+
+                <p class="article-section__text">
+                    Щоб вимкнути пристрій, відімкніть кнопку живлення (1).
+                    Пристрій можна заряджати і у вимкненому стані.
+                </p>
+            </section>
+
+            <!-- Режими -->
+            <section class="article-section">
+                <h2 class="article-section__title">Режими роботи пристрою</h2>
+
+                <p class="article-section__text">
+                    Передбачені два режими роботи пристрою: повний та ECO.
+                    Повний режим використовується для налаштування пристрою, перевірки зв’язку та тарування датчиків ваги,
+                    а ECO — для постійної цілодобової роботи.
+                    У повному режимі пристрій відображає інформацію на OLED-екрані (4),
+                    відправляє дані на вебсервер кожні 10 хв та періодично приймає SMS-команди.
+                    В ECO-режимі BH-01 (BH-04) не показує інформацію на екрані, періодично переводиться в режим сну
+                    та прокидається за внутрішнім будильником.
+                </p>
+
+                <p class="article-section__text">
+                    Після прокидання пристрій перевіряє SMS-команди, відправляє дані на вебсервер та переводиться у режим сну.
+                    ECO — це енергозаощадливий режим, розроблений для максимальної економії заряду акумулятора.
+                    Ви можете змінювати періодичність прокидання пристрою на такі значення:
+                    15 хв, 20 хв, 30 хв, 60 хв, 12 год, 24 год.
+                    Будильник для прокидання веде відлік від 0 хв поточної години.
+                </p>
+
+                <p class="article-section__text">
+                    Наприклад, при налаштуванні періоду 15 хв пристрій буде прокидатися рівно о ХХ:00,
+                    ХХ:15, ХХ:30, ХХ:45 кожної години доби.
+                </p>
+
+                <div class="article-gallery article-gallery--two">
+
+                    <figure class="article-figure">
+                        <img
+                            src="https://bee.in.ua/bootstrap/img/radio-datchik-wifi-connect.jpg"
+                            alt="Підключення до WiFi"
+                            loading="lazy"
+                            decoding="async"
+                            referrerpolicy="no-referrer"
+                        >
+                        <figcaption>
+                            Підключення до WiFi-мережі пристрою
+                        </figcaption>
+                    </figure>
+
+                    <figure class="article-figure">
+                        <img
+                            src="https://bee.in.ua/bootstrap/img/radio-datchik-pleace-login4.jpg"
+                            alt="Вхід до веб-кабінету"
+                            loading="lazy"
+                            decoding="async"
+                            referrerpolicy="no-referrer"
+                        >
+                        <figcaption>
+                            Сторінка входу до веб-кабінету
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </section>
+
+            <!-- Перше налаштування WiFi -->
+            <section class="article-section">
+                <h2 class="article-section__title">Перше налаштування WiFi</h2>
+
+                <p class="article-section__text">
+                    Спершу пристрій необхідно налаштувати на WiFi-мережу.
+                    Переключіть джампер (22) у положення WiFi.
+                    Відтисніть кнопку ECO та натисніть кнопку живлення.
+                    Під’єднайтеся за допомогою комп’ютера, планшета або мобільного телефона
+                    до створеної пристроєм WiFi-мережі. Вона без паролю.
+                    У назві мережі буде міститися унікальний номер пристрою.
+                </p>
+
+                <p class="article-section__text">
+                    Після вдалого підключення відкрийте інтернет-браузер та у полі адреси введіть IP-адресу:
+                </p>
+
+                <div class="article-code">192.168.4.1</div>
+
+                <p class="article-section__text">
+                    Логін: admin. Пароль: peremoga.
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_01.jpg"
+                        alt="Головна сторінка веб-кабінету"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Головна сторінка веб-кабінету пристрою
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    Після цього ви повинні потрапити на головну сторінку веб-кабінету пристрою.
+                    На головній сторінці можна побачити унікальний номер пристрою, внутрішній годинник,
+                    покази датчиків та рівень заряду внутрішнього акумулятора.
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_04.jpg"
+                        alt="Інформація веб-кабінету"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Відображення показників пристрою
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    Тепер зайдіть на вкладку WiFi для налаштування пристрою на вашу мережу.
+                    Тут введіть назву та пароль вашої WiFi-мережі та натисніть кнопку Submit для збереження.
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_05.jpg"
+                        alt="Налаштування WiFi"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Налаштування підключення до WiFi-мережі
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    При необхідності можна вручну налаштувати IP вашої мережі та натиснути кнопку Submit and RESET.
+                    Пристрій перезавантажиться.
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_06.jpg"
+                        alt="Ручне налаштування IP"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Додаткові параметри мережі
                     </figcaption>
                 </figure>
             </section>
 
+            <!-- Веб-кабінет -->
             <section class="article-section">
                 <h2 class="article-section__title">
-                    Підключення датчиків
-                </h2>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        Датчик ваги
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Підключіть штекер датчика ваги
-                        до відповідного роз'єму пристрою.
-                        Перед підключенням пристрій має бути вимкнений.
-                    </p>
-                </div>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        Датчик температури та вологості
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Підключіть датчик до відповідного порту
-                        та зафіксуйте з'єднання.
-                    </p>
-                </div>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        GSM-антена
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Під'єднайте антену до відповідного
-                        роз'єму для забезпечення мобільного зв'язку.
-                    </p>
-                </div>
-
-                <div class="article-gallery">
-                    <figure class="article-figure">
-                        <img
-                            src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-2.jpg"
-                            alt="Вагова платформа для вулика"
-                            loading="lazy"
-                        >
-                        <figcaption>Вагова платформа</figcaption>
-                    </figure>
-
-                    <figure class="article-figure">
-                        <img
-                            src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-5.jpg"
-                            alt="Датчик температури та вологості"
-                            loading="lazy"
-                        >
-                        <figcaption>Встановлення внутрішнього датчика</figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Вибір мережі GSM або WiFi
+                    Підключення до веб-кабінету пристрою
                 </h2>
 
                 <p class="article-section__text">
-                    Пристрій підтримує два способи передачі даних:
-                    через мобільну мережу GSM LTE (4G) або через WiFi.
+                    Тепер налаштування можна виконувати через вашу WiFi-мережу.
+                    Під’єднайтеся за допомогою комп’ютера, планшета або мобільного телефона до вашої WiFi-мережі.
+                    Відкрийте інтернет-браузер та у полі адреси введіть IP-адресу,
+                    яка відображається на екрані (30) пристрою.
                 </p>
 
-                <div class="article-note">
-                    <p class="article-note__text">
-                        Для роботи через GSM LTE необхідна SIM-карта
-                        з доступом до мобільного інтернету.
-                    </p>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Увімкнення пристрою
-                </h2>
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/radio-datchik-please-login200.jpg"
+                        alt="Підключення до веб-кабінету"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Вхід до локального веб-кабінету
+                    </figcaption>
+                </figure>
 
                 <p class="article-section__text">
-                    Перед увімкненням перевірте підключення
-                    всіх датчиків, GSM-антени та рівень заряду
-                    акумулятора.
+                    Логін: admin. Пароль: peremoga.
                 </p>
 
                 <p class="article-section__text">
-                    Натисніть кнопку живлення та дочекайтеся
-                    запуску пристрою.
+                    Після цього ви повинні потрапити на головну сторінку веб-кабінету пристрою.
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_01.jpg"
+                        alt="Головна сторінка веб-кабінету"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Головна сторінка веб-кабінету
+                    </figcaption>
+                </figure>
+            </section>
+
+            <!-- Налаштування датчиків -->
+            <section class="article-section">
+                <h2 class="article-section__title">Налаштування датчиків ваги</h2>
+
+                <p class="article-section__text">
+                    Для налаштування датчиків ваги перейдіть за посиланням
+                    Scales1 (Scales2, Scales3, Scales4).
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_02.jpg"
+                        alt="Налаштування датчиків ваги"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Сторінка налаштування датчиків ваги
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    При пустій тарі вагів натисніть кнопку Reset tare.
+                    Зачекайте перезавантаження вебсторінки та звукового сигналу пристрою.
+                </p>
+
+                <p class="article-section__text">
+                    Покладіть на ваги відому вагу та введіть її значення в нижнє поле Weight,
+                    натисніть кнопку Submit та зачекайте перезавантаження вебсторінки.
+                    Перевірте, чи відповідає значення виміряної ваги заданому.
+                </p>
+
+                <p class="article-section__text">
+                    Для тарування (скидання на нуль) вагів натисніть кнопку Reset tare
+                    та зачекайте перезавантаження сторінки та звукового сигналу пристрою.
+                    Також тарування можна здійснити фізичними кнопками (3) на приладі.
+                    При цьому масштабування та вимірювання залишаються коректними.
                 </p>
             </section>
 
+            <!-- Загальні налаштування -->
             <section class="article-section">
-                <h2 class="article-section__title">
-                    Режими роботи пристрою
-                </h2>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        Повний режим
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Використовується для налаштування пристрою,
-                        перевірки датчиків та контролю з'єднання.
-                    </p>
-                </div>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        ECO-режим
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Енергозберігальний режим, призначений
-                        для тривалої автономної роботи пристрою.
-                    </p>
-                </div>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Початкове налаштування WiFi
-                </h2>
+                <h2 class="article-section__title">Загальні налаштування</h2>
 
                 <p class="article-section__text">
-                    Для початкового налаштування підключіться
-                    до WiFi-мережі пристрою.
+                    Перейдіть на вкладку Settings у WiFi-вебкабінеті.
                 </p>
 
-                <p class="article-section__text">
-                    Після підключення відкрийте браузер
-                    та введіть адресу:
-                </p>
-
-                <div class="article-code">
-                    192.168.4.1
-                </div>
-
-                <p class="article-section__text">
-                    Після цього відкриється сторінка налаштувань,
-                    де можна змінити параметри підключення.
-                </p>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Налаштування датчиків ваги
-                </h2>
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_03.jpg"
+                        alt="Загальні налаштування пристрою"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Вкладка Settings — загальні налаштування
+                    </figcaption>
+                </figure>
 
                 <p class="article-section__text">
-                    Для налаштування датчиків перейдіть
-                    до відповідного розділу налаштувань.
-                </p>
-
-                <p class="article-section__text">
-                    Для моделі BH-04 доступні окремі налаштування
-                    чотирьох каналів вимірювання:
-                </p>
-
-                <ul class="article-list">
-                    <li class="article-list__item">Scales1 — перший датчик.</li>
-                    <li class="article-list__item">Scales2 — другий датчик.</li>
-                    <li class="article-list__item">Scales3 — третій датчик.</li>
-                    <li class="article-list__item">Scales4 — четвертий датчик.</li>
-                </ul>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Загальні налаштування
-                </h2>
-
-                <p class="article-section__text">
-                    У розділі Settings можна змінити основні
-                    параметри роботи пристрою.
-                </p>
-
-                <ul class="article-list">
-                    <li class="article-list__item">Період сну пристрою.</li>
-                    <li class="article-list__item">USSD-код мобільного оператора.</li>
-                    <li class="article-list__item">Номери телефонів для SMS-звітів.</li>
-                    <li class="article-list__item">Параметри з'єднання.</li>
-                </ul>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Налаштування сервера даних
-                </h2>
-
-                <p class="article-section__text">
-                    У розділі MQTT можна налаштувати параметри
-                    сервера, на який передаватимуться дані
-                    з пристрою.
-                </p>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Оновлення прошивки
-                </h2>
-
-                <p class="article-section__text">
-                    Для оновлення програмного забезпечення
-                    використовується розділ Firmware.
-                </p>
-
-                <p class="article-section__text">
-                    У цьому розділі можна завантажити файл
-                    нової версії прошивки пристрою.
-                </p>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Планові SMS-повідомлення
-                </h2>
-
-                <p class="article-section__text">
-                    Пристрій може автоматично надсилати
-                    SMS-повідомлення з інформацією про стан
-                    вулика та поточні показники вимірювання.
-                </p>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Живлення пристрою
-                </h2>
-
-                <p class="article-section__text">
-                    Пристрій обладнаний акумулятором,
-                    який забезпечує автономну роботу.
-                    Для заряджання використовується
-                    зовнішній порт живлення.
-                </p>
-            </section>
-
-            <section class="article-section">
-                <h2 class="article-section__title">
-                    Встановлення ваг на пасіці
-                </h2>
-
-                <p class="article-section__text">
-                    Для початку роботи необхідно правильно
-                    встановити вагову платформу та підготувати
-                    пристрій до вимірювання.
+                    На цій сторінці можна налаштувати наступні параметри:
                 </p>
 
                 <ol class="number-list">
+                    <li class="number-list__item">Час періоду сну приладу.</li>
                     <li class="number-list__item">
-                        Зарядіть пристрій.
+                        USSD-код мобільного оператора для визначення залишку коштів на рахунку.
                     </li>
                     <li class="number-list__item">
-                        Підключіть датчики та антену.
-                    </li>
-                    <li class="number-list__item">
-                        Встановіть вагову платформу.
-                    </li>
-                    <li class="number-list__item">
-                        Розмістіть вулик на платформі.
-                    </li>
-                    <li class="number-list__item">
-                        Виконайте тарування.
-                    </li>
-                    <li class="number-list__item">
-                        Переведіть пристрій у робочий режим.
+                        Три номери телефонів для отримання SMS-звітів.
+                        Зайві поля для вводу номерів телефону можна залишити порожніми.
                     </li>
                 </ol>
 
-                <div class="article-gallery">
-                    <figure class="article-figure">
-                        <img
-                            src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-3.jpg"
-                            alt="Вулик на ваговій платформі"
-                            loading="lazy"
-                        >
-                        <figcaption>
-                            Вулик, встановлений на ваговій платформі
-                        </figcaption>
-                    </figure>
-
-                    <figure class="article-figure">
-                        <img
-                            src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-7.jpg"
-                            alt="Розміщення контролера"
-                            loading="lazy"
-                        >
-                        <figcaption>Розміщення контролера</figcaption>
-                    </figure>
-
-                    <figure class="article-figure">
-                        <img
-                            src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-9.jpg"
-                            alt="Встановлення GSM-антени"
-                            loading="lazy"
-                        >
-                        <figcaption>Встановлення GSM-антени</figcaption>
-                    </figure>
-
-                    <figure class="article-figure">
-                        <img
-                            src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-10.jpg"
-                            alt="Сонячна панель для живлення ваг"
-                            loading="lazy"
-                        >
-                        <figcaption>
-                            Автономне живлення від сонячної панелі
-                        </figcaption>
-                    </figure>
-                </div>
+                <p class="article-section__text">
+                    Після зміни значення параметра натисніть відповідну кнопку Save
+                    та дочекайтеся перезавантаження вебсторінки.
+                </p>
             </section>
 
+            <!-- Сервер -->
+            <section class="article-section">
+                <h2 class="article-section__title">Налаштування сервера даних</h2>
+
+                <p class="article-section__text">
+                    Перейдіть на вкладку Mqtt у WiFi-вебкабінеті.
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_07.jpg"
+                        alt="Налаштування сервера даних MQTT"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Налаштування передачі даних на сервер
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    На цій сторінці можна вибрати, куди будуть надсилатися дані пристрою.
+                    За замовчуванням усі дані надсилаються на сервер bee.in.ua
+                    (активний прапорець HTTP active, інші поля введення можна залишити порожніми).
+                    Синхронізація часу системного годинника відбувається автоматично.
+                </p>
+
+                <p class="article-section__text">
+                    Якщо зняти прапорець HTTP active, передавання даних на сервер буде припинено.
+                    Активними залишаться SMS-повідомлення в режимі GSM.
+                    Синхронізацію часу необхідно буде налаштувати на сторінці Settings.
+                </p>
+
+                <p class="article-section__text">
+                    За потреби надсилати дані на ваш MQTT-сервер активуйте прапорець MQTT active
+                    та заповніть поля налаштувань. Ця функція пристрою працює в режимах WiFi та GSM.
+                </p>
+
+                <p class="article-section__text">
+                    Поля введення на цій сторінці призначені виключно для налаштування підключення до вашого MQTT-сервера.
+                    Після будь-якої зміни налаштувань необхідно натиснути кнопку Save
+                    та дочекатися повного перезавантаження вебсторінки.
+                </p>
+            </section>
+
+            <!-- Прошивка -->
+            <section class="article-section">
+                <h2 class="article-section__title">Завантаження нової прошивки</h2>
+
+                <p class="article-section__text">
+                    Маючи файл прошивки пристрою, ви можете завантажити його на вкладці Firmware
+                    (попередньо проконсультуйтесь у дистриб’ютора).
+                </p>
+
+                <figure class="article-figure article-figure--wide">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/BH04_LTE_menu_06.jpg"
+                        alt="Розділ Firmware"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Розділ завантаження прошивки
+                    </figcaption>
+                </figure>
+            </section>
+
+            <!-- SMS -->
+            <section class="article-section">
+                <h2 class="article-section__title">Планові SMS</h2>
+
+                <p class="article-section__text">
+                    Пристрій кожну добу надсилає три SMS з основними даними
+                    на номери (до 3 номерів телефонів) власника.
+                    Ці SMS повинні надходити о 7:00, 15:00 та 21:00.
+                </p>
+
+                <p class="article-section__text">
+                    Також у Telegram-боті можна дивитися останні дані,
+                    які у тегах позначені «На карті».
+                    Бот називається beeinua. Увійшовши до бота, прочитайте подальші дії.
+                </p>
+            </section>
+
+            <!-- ECO -->
             <section class="article-section">
                 <h2 class="article-section__title">
-                    Можливі несправності
+                    Налаштування періоду сну в ECO-режимі
                 </h2>
+
+                <p class="article-section__text">
+                    Якщо вам потрібно змінити період сну, відправте SMS на телефонний номер SIM-карти пристрою
+                    з однією з команд, які задають період у хвилинах:
+                </p>
+
+                <div class="article-code">
+                    d1=15<br>
+                    d1=20<br>
+                    d1=30<br>
+                    d1=60<br>
+                    d1=720<br>
+                    d1=1440
+                </div>
+
+                <p class="article-section__text">
+                    Коли пристрій отримає та виконає SMS-команду, то подасть звуковий сигнал
+                    і короткочасно відобразить на екрані (4) текст з отриманою командою.
+                </p>
+
+                <p class="article-section__text">
+                    Також період сну можна налаштувати у власному кабінеті на сайті
+                    та локально у WiFi-вебкабінеті.
+                </p>
+            </section>
+
+            <!-- Живлення -->
+            <section class="article-section">
+                <h2 class="article-section__title">Живлення</h2>
+
+                <p class="article-section__text">
+                    Прилад усередині корпусу містить один основний літій-іонний акумулятор
+                    типорозміру 18650 ємністю 2900 mAh 3,7 В, та малий годинниковий
+                    літій-іонний акумулятор типорозміру CR2032 3 В для роботи системного годинника.
+                </p>
+
+                <figure class="article-figure article-figure--medium">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-acumulator.jpg"
+                        alt="Акумулятор пасічних ваг"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Акумулятор всередині пристрою
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    Для зарядки цих акумуляторів передбачено порт (2),
+                    до якого можна підключати джерела постійного струму з напругою 6–18 В,
+                    такі як блоки живлення, кислотні акумулятори та сонячні батареї.
+                    Заряджати пристрій можна як періодично, так і залишаючи зовнішнє джерело живлення підключеним.
+                    Порт зарядки (2) має захист від неправильної полярності зарядного пристрою.
+                </p>
+
+                <p class="article-section__text">
+                    Зарядка відбувається незалежно від положення кнопки живлення (1),
+                    але швидше пристрій буде заряджатися у вимкненому стані або в ECO-режимі.
+                </p>
+
+                <p class="article-section__text">
+                    Для заміни акумуляторів необхідно звернутися до інструкції виробника або дистриб’ютора.
+                </p>
+            </section>
+
+            <!-- Встановлення -->
+            <section class="article-section">
+                <h2 class="article-section__title">
+                    Встановлення приладу BH-01 на пасіці
+                </h2>
+
+                <ol class="number-list">
+                    <li class="number-list__item">
+                        Перед встановленням вулика на вагову платформу підготуйте пристрій,
+                        датчики та антену, перевірте заряд акумулятора.
+                    </li>
+                    <li class="number-list__item">
+                        При вимкненій кнопці ECO (6) натисніть кнопку живлення (1).
+                    </li>
+                    <li class="number-list__item">
+                        Після короткого звукового сигналу відобразяться дані на дисплеї.
+                    </li>
+                    <li class="number-list__item">
+                        За допомогою регулюючих ніжок виставте горизонт вагової платформи.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-2.jpg"
+                        alt="Вагова платформа пасічних ваг"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Вагова платформа для встановлення вулика
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list" start="5">
+                    <li class="number-list__item">
+                        Встановіть на вагову платформу вулик.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-3.jpg"
+                        alt="Вулик на ваговій платформі"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Вулик, встановлений на ваговій платформі
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list" start="6">
+                    <li class="number-list__item">
+                        Виконайте тарування ваг.
+                    </li>
+                    <li class="number-list__item">
+                        Тепер на дисплеї буде відображатися вага в реальному часі.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-4.jpg"
+                        alt="Показники ваги на пристрої"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Відображення показників після тарування
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list" start="8">
+                    <li class="number-list__item">
+                        Встановіть внутрішній датчик температури та вологості у відповідному місці вулика.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-5.jpg"
+                        alt="Встановлення внутрішнього датчика"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Встановлення внутрішнього датчика
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list" start="9">
+                    <li class="number-list__item">
+                        Зовнішній датчик температури розмістіть під навісом так, щоб на нього не потрапляли сонячні промені.
+                    </li>
+                    <li class="number-list__item">
+                        Прилад BH-01 розташуйте над гніздом бджолиної сім’ї.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-7.jpg"
+                        alt="Розміщення контролера"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Розміщення контролера
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list" start="11">
+                    <li class="number-list__item">
+                        Переведіть прилад у режим ECO відповідною кнопкою.
+                        У цьому режимі екран вимикається, а пристрій після передачі даних на сервер переходить у сон.
+                    </li>
+                    <li class="number-list__item">
+                        Накрийте дах вулика та встановіть антену.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-9.jpg"
+                        alt="Встановлення GSM-антени"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Встановлення GSM-антени
+                    </figcaption>
+                </figure>
+
+                <ol class="number-list" start="13">
+                    <li class="number-list__item">
+                        Прилад BH-01 (BH-04) готовий до роботи.
+                    </li>
+                    <li class="number-list__item">
+                        Періодично перевіряйте заряд акумулятора та стан пристрою.
+                    </li>
+                </ol>
+
+                <figure class="article-figure">
+                    <img
+                        src="https://bee.in.ua/bootstrap/img/vesy-pasechnye-s-gsm-modulem-BH-01-10.jpg"
+                        alt="Сонячна панель для живлення пасічних ваг"
+                        loading="lazy"
+                        decoding="async"
+                        referrerpolicy="no-referrer"
+                    >
+                    <figcaption>
+                        Автономне живлення від сонячної панелі
+                    </figcaption>
+                </figure>
+
+                <p class="article-section__text">
+                    Сонячну панель можна підключати до роз’єму живлення.
+                    Для інших варіантів живлення дотримуйтеся рекомендацій виробника.
+                </p>
+
+                <p class="article-section__text">
+                    Дані з пристрою у вигляді графіків можна знайти на сайті bee.in.ua у власному кабінеті.
+                </p>
+            </section>
+
+            <!-- Зберігання -->
+            <section class="article-section">
+                <h2 class="article-section__title">
+                    Зберігання приладу BH-01 (BH-04)
+                </h2>
+
+                <ul class="article-list">
+                    <li class="article-list__item">Вимкнути прилад.</li>
+                    <li class="article-list__item">Від’єднати усі датчики.</li>
+                    <li class="article-list__item">Зняти вулик з вагової платформи.</li>
+                    <li class="article-list__item">Скласти компоненти у підготовлену ємність.</li>
+                    <li class="article-list__item">Перемістити прилад у приміщення на зберігання.</li>
+                </ul>
+
+                <p class="article-section__text">
+                    Прилад потрібно зберігати в сухому місці з температурою +5...20 ºС.
+                    Усі компоненти мають бути обережно складені та недоступні для дітей і тварин.
+                </p>
+            </section>
+
+            <!-- Грозозахист -->
+            <section class="article-section">
+                <h2 class="article-section__title">Грозозахист</h2>
+
+                <p class="article-section__text">
+                    При влучанні блискавки в антену пристрій може повністю вийти з ладу.
+                    Питання блискавкозахисту та встановлення громовідводу має вирішуватися
+                    відповідно до правил електробезпеки та за допомогою кваліфікованого фахівця.
+                </p>
+            </section>
+
+            <!-- Несправності -->
+            <section class="article-section">
+                <h2 class="article-section__title">Можливі несправності</h2>
+
+                <div class="article-subsection">
+                    <h3 class="article-subsection__title">
+                        Пристрій не прокидається в режимі ECO
+                    </h3>
+                    <p class="article-subsection__text">
+                        Можлива проблема з годинниковим акумулятором або живленням.
+                        Зверніться до інструкції виробника чи сервісного спеціаліста.
+                    </p>
+                </div>
+
+                <div class="article-subsection">
+                    <h3 class="article-subsection__title">
+                        Не надходять планові SMS
+                    </h3>
+                    <p class="article-subsection__text">
+                        Перевірте правильність налаштування номера телефону власника
+                        у WiFi-вебкабінеті та стан мобільного зв’язку.
+                    </p>
+                </div>
+
+                <div class="article-subsection">
+                    <h3 class="article-subsection__title">
+                        Низький GSM-сигнал
+                    </h3>
+                    <p class="article-subsection__text">
+                        Причиною може бути несправність антени або слабкий зв’язок у місці встановлення.
+                        Перевірку обладнання доручіть фахівцю.
+                    </p>
+                </div>
 
                 <div class="article-subsection">
                     <h3 class="article-subsection__title">
                         Пристрій не вмикається
                     </h3>
-
                     <p class="article-subsection__text">
-                        Перевірте рівень заряду акумулятора
-                        та підключення живлення.
-                    </p>
-                </div>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        Не надходять SMS-повідомлення
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Перевірте наявність мобільного зв'язку,
-                        роботу SIM-карти та правильність
-                        налаштування номера телефону.
-                    </p>
-                </div>
-
-                <div class="article-subsection">
-                    <h3 class="article-subsection__title">
-                        Неправильно відображається вага
-                    </h3>
-
-                    <p class="article-subsection__text">
-                        Перевірте підключення датчика ваги
-                        та правильність його налаштування.
+                        Перевірте стан живлення та заряд акумулятора.
+                        Якщо проблема не зникає, зверніться до сервісного спеціаліста.
                     </p>
                 </div>
             </section>
