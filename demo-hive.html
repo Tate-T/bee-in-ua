@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Інтерактивний демо-кабінет BeeHAPPY — переглядайте вагу вулика, привіс за добу, мікроклімат та графіки медозбору в реальному часі."
+    />
+    <title>Демо-кабінет — BeeHAPPY</title>
+    <link rel="icon" type="image/svg+xml" href="/bee-in-ua/assets/favicon-rounded-1-8db6cf86.svg" />
+    
+    
+    <script type="module" crossorigin src="/bee-in-ua/assets/main-6e89df82.js"></script>
+    <link rel="stylesheet" href="/bee-in-ua/assets/main-971d4ace.css">
+    <link rel="stylesheet" href="/bee-in-ua/assets/demo-hive-94b77d3d.css">
+  </head>
+  <body>
+    <header class="main-header">
+    <div class="container">
+        <!-- Логотип -->
+        <a href="./index.html" class="logo">
+            <img class="heder-logo" src="/bee-in-ua/assets/logo-beehappy-3406e315.svg" alt="BeeHAPPY Логотип">
+        </a>
+        
+        <!-- Перемикач мов (видимий на всіх екранах) -->
+        <ul class="lang-switcher">
+            <li class="leng-item"><button class="lang-btn active">UA</button></li>
+            <li class="leng-item"><button class="lang-btn">RU</button></li>
+            <li class="leng-item"><button class="lang-btn">EN</button></li>
+        </ul>
+
+        <!-- Кнопка бургер-меню (для 320px і 768px) -->
+        <button class="burger-btn" aria-label="Відкрити меню" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Єдиний блок меню (випадає на мобільних/планшетах, в рядок на десктопі) -->
+        <div class="header-menu-wrapper">
+            <nav class="main-nav">
+                <ul class="main-list">
+                    <li class="main-item"><a class="main-link" href="./index.html">Головна</a></li>
+                    <li class="main-item"><a class="main-link" href="./price.html">Ціни</a></li>
+                    <li class="main-item"><a class="main-link" href="./sms.html">SMS-команди</a></li>
+                    <li class="main-item"><a class="main-link" href="./articles.html">Статті</a></li>
+                    <li class="main-item"><a class="main-link" href="./demo.html">Демо</a></li>
+                    <li class="main-item"><a class="main-link" href="./contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <ul class="auth-buttons">
+                <li class="auth-item"><a class="btn-login" href="./cabinet.html">Увійти</a></li>
+                <li class="auth-item"><a class="btn-register" href="./register.html">Зареєструватися</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+    <main class="demo-page">
+      <div class="demo-dashboard">
+        <!-- Верхня панель керування вуликом -->
+        <section class="demo-card demo-hive-bar">
+          <div class="demo-hive-left">
+            <div class="demo-hive-icon">📡</div>
+            <div class="demo-hive-meta">
+              <div class="demo-hive-title-row">
+                <h1>Вулик № 12</h1>
+                <span class="demo-tag-pill">Демонстраційні дані</span>
+              </div>
+              <p class="demo-hive-sub">
+                Сонячна пасіка · <strong>BH-01</strong> ·
+                <span id="demoSyncTime">Оновлено щойно</span>
+              </p>
+            </div>
+          </div>
+
+          <button type="button" class="u-btn demo-sync-btn" id="demoSyncBtn">
+            <span class="sync-icon">↻</span> Синхронізувати
+          </button>
+        </section>
+
+        <!-- Центральна візуальна сцена: фото вулика + 6 плаваючих карток показників поверх нього -->
+        <section class="demo-hive-showcase" aria-label="Показники вулика на пасіці">
+          <img
+            src="/bee-in-ua/assets/hive-bh1-5d00cc24.jpg"
+            alt="Розумний вулик BeeHAPPY на ваговій платформі"
+            class="demo-showcase-bg"
+          />
+
+          <!-- Темна плашка статусу зверху по центру -->
+          <div class="demo-status-pill" id="demoSystemStatus">
+            <i class="status-dot"></i> Усі системи в нормі
+          </div>
+
+          <!-- Ліва колонка карток (3 шт.) -->
+          <div class="demo-hud-col hud-left">
+            <article class="demo-hud-card">
+              <span class="hud-label">🌡️ ЗЗОВНІ</span>
+              <div class="hud-value" id="metricOutdoor">23,5 <small>°C</small></div>
+            </article>
+
+            <article class="demo-hud-card">
+              <span class="hud-label">⚖️ ВАГА ВУЛИКА</span>
+              <div class="hud-value" id="metricWeight">64,28 <small>кг</small></div>
+            </article>
+
+            <article class="demo-hud-card hud-gain">
+              <span class="hud-label">📈 ЗА ДОБУ</span>
+              <div class="hud-value" id="metricDaily">+2,4 <small>кг</small></div>
+            </article>
+          </div>
+
+          <!-- Права колонка карток (3 шт.) -->
+          <div class="demo-hud-col hud-right">
+            <article class="demo-hud-card">
+              <span class="hud-label">🔋 АКУМУЛЯТОР / GSM</span>
+              <div class="hud-value" id="metricPower">88% · 74%</div>
+            </article>
+
+            <article class="demo-hud-card">
+              <span class="hud-label">💧 ВСЕРЕДИНІ / ВОЛОГІСТЬ</span>
+              <div class="hud-value" id="metricIndoor">34,6°C · 53%</div>
+            </article>
+
+            <article class="demo-hud-card">
+              <span class="hud-label">💳 БАЛАНС SIM</span>
+              <div class="hud-value" id="metricBalance">8 <small>грн</small></div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Блок двох графіків -->
+        <section class="demo-charts-grid">
+          <!-- Графік динаміки ваги -->
+          <article class="demo-card demo-chart-card">
+            <div class="demo-card-top">
+              <h3>Динаміка ваги</h3>
+              <div class="demo-period-tabs" data-chart="weight">
+                <button type="button" class="period-btn active" data-period="24h">24 год</button>
+                <button type="button" class="period-btn" data-period="7d">7 днів</button>
+                <button type="button" class="period-btn" data-period="30d">30 днів</button>
+              </div>
+            </div>
+            <div class="demo-svg-wrap" id="weightChartBox"></div>
+            <div class="demo-chart-footer-legend">
+              <span><i class="dot-weight"></i> Вага вулика, кг</span>
+            </div>
+          </article>
+
+          <!-- Графік мікроклімату -->
+          <article class="demo-card demo-chart-card">
+            <div class="demo-card-top">
+              <h3>Мікроклімат</h3>
+              <div class="demo-period-tabs" data-chart="climate">
+                <button type="button" class="period-btn active" data-period="24h">24 год</button>
+                <button type="button" class="period-btn" data-period="7d">7 днів</button>
+                <button type="button" class="period-btn" data-period="30d">30 днів</button>
+              </div>
+            </div>
+            <div class="demo-svg-wrap" id="climateChartBox"></div>
+            <div class="demo-chart-footer-legend">
+              <span><i class="dot-in"></i> Всередині, °C</span>
+              <span><i class="dot-out"></i> Ззовні, °C</span>
+              <span><i class="dot-hum"></i> Вологість, %</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- Нижній ряд: Налаштування демо + Останні події -->
+        <section class="demo-bottom-grid">
+          <article class="demo-card">
+            <h3 class="demo-block-title">⚙️ Налаштування демо</h3>
+            <p class="demo-card-note">
+              Зміни зберігаються лише в цьому браузері й не надсилаються на прилад.
+            </p>
+
+            <div class="demo-settings-list">
+              <div class="setting-row">
+                <div class="setting-text">
+                  <strong>Період передачі даних</strong>
+                </div>
+                <select id="demoIntervalSelect" class="demo-select" aria-label="Період передачі даних">
+                  <option value="15 хв" selected>15 хв</option>
+                  <option value="30 хв">30 хв</option>
+                  <option value="1 год">1 год</option>
+                  <option value="6 год">6 год</option>
+                </select>
+              </div>
+
+              <label class="setting-row setting-toggle">
+                <div class="setting-text">
+                  <strong>Аварійні сповіщення</strong>
+                  <span>Показувати важливі відхилення на головному екрані</span>
+                </div>
+                <input type="checkbox" id="demoAlertsToggle" checked />
+                <span class="toggle-switch"></span>
+              </label>
+
+              <label class="setting-row setting-toggle">
+                <div class="setting-text">
+                  <strong>Денний звіт</strong>
+                  <span>Короткий підсумок медозбору в демо-стрічці</span>
+                </div>
+                <input type="checkbox" id="demoReportToggle" checked />
+                <span class="toggle-switch"></span>
+              </label>
+            </div>
+          </article>
+
+          <article class="demo-card">
+            <h3 class="demo-block-title">🔔 Останні події</h3>
+
+            <ul class="demo-events-list" id="demoEventsList">
+              <li class="event-item">
+                <span class="event-badge ok">✓</span>
+                <div class="event-body">
+                  <strong>Дані успішно передано</strong>
+                  <span>2 хв тому</span>
+                </div>
+              </li>
+              <li class="event-item" id="dailyReportEvent">
+                <span class="event-badge honey">🍯</span>
+                <div class="event-body">
+                  <strong>Денний приріст ваги підтверджено</strong>
+                  <span>1 год тому</span>
+                </div>
+              </li>
+              <li class="event-item">
+                <span class="event-badge info">🔋</span>
+                <div class="event-body">
+                  <strong>Рівень акумулятора достатній</strong>
+                  <span>3 год тому</span>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- Нижня центральна кнопка дії -->
+        <div class="demo-cta-bottom">
+          <a href="./price.html" class="u-btn demo-main-cta-btn">Під’єднати свій вулик</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+    <p>Copyright © BeeHAPPY since 2018-2026</p>
+</footer>
+<!-- Голосовий консультант ElevenLabs -->
+
+<elevenlabs-convai agent-id="agent_4101m7r1f9x4fsjrqj16w1d27wa0"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    
+  </body>
+</html>
+
