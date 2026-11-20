@@ -197,3 +197,90 @@
     font-size: 17px;
     color: #bd8500;
 }
+
+
+
+/* ===== ОФОРМЛЕНИЕ ИЗОБРАЖЕНИЙ В СТАТЬЕ ===== */
+
+.article-image {
+    width: 100%;
+    max-width: 760px;
+    margin: 32px auto;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid #e9ece5;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(35, 55, 30, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(35, 55, 30, 0.13);
+}
+
+.article-image__img {
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f7f8f4;
+}
+
+.article-image__caption {
+    padding: 13px 10px 3px;
+    color: #687365;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* ===== ОТСТУПЫ МЕЖДУ РАЗДЕЛАМИ ===== */
+
+.article-section {
+    margin-bottom: 55px;
+}
+
+.article-section__title {
+    margin-bottom: 20px;
+}
+
+/* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
+
+@media (max-width: 768px) {
+    .article-image {
+        max-width: 100%;
+        margin: 24px auto;
+        padding: 8px;
+        border-radius: 14px;
+    }
+
+    .article-image__img {
+        max-height: 350px;
+        border-radius: 9px;
+    }
+
+    .article-image__caption {
+        font-size: 13px;
+        padding-top: 10px;
+    }
+
+    .article-section {
+        margin-bottom: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-image {
+        margin: 20px auto;
+        padding: 6px;
+    }
+
+    .article-image__img {
+        max-height: 280px;
+    }
+}
