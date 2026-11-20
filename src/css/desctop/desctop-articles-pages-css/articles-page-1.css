@@ -545,3 +545,166 @@ body {
         min-width: 34px !important;
     }
 }
+
+/* ===================================
+   ЗОБРАЖЕННЯ СТАТТІ
+=================================== */
+
+.article-figure {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto;
+    overflow: hidden;
+    border: 1px solid #e8ece5;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(30, 50, 30, 0.06);
+}
+
+.article-figure img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    background: #f7f8f5;
+    transition: transform .3s ease;
+}
+
+.article-figure:hover img {
+    transform: scale(1.015);
+}
+
+.article-figure figcaption {
+    padding: 14px 18px;
+    color: #687367;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    border-top: 1px solid #edf0eb;
+}
+
+/* Широкі схеми та скриншоти */
+
+.article-figure--wide {
+    max-width: 950px;
+}
+
+.article-figure--wide img {
+    height: 420px;
+}
+
+/* Середні фотографії */
+
+.article-figure--medium {
+    max-width: 650px;
+}
+
+.article-figure--medium img {
+    height: 320px;
+}
+
+/* Галереї */
+
+.article-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.article-gallery .article-figure {
+    margin: 0;
+}
+
+/* Загальні відступи статті */
+
+.article-section {
+    margin-bottom: 45px;
+}
+
+.article-section__title {
+    margin-bottom: 18px;
+}
+
+.article-section__text {
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+/* Код та IP-адреси */
+
+.article-code {
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 12px;
+    background: #f2f5ed;
+    border: 1px solid #e1e8da;
+    color: #344b31;
+    font-family: monospace;
+    font-size: 17px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* Списки */
+
+.article-list,
+.number-list {
+    padding-left: 28px;
+    margin: 18px 0 24px;
+}
+
+.article-list__item,
+.number-list__item {
+    padding-left: 6px;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* Планшети */
+
+@media (max-width: 768px) {
+    .article-figure img {
+        height: 280px;
+    }
+
+    .article-figure--wide img {
+        height: 330px;
+    }
+
+    .article-gallery {
+        gap: 16px;
+    }
+}
+
+/* Телефони */
+
+@media (max-width: 540px) {
+    .article-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .article-figure {
+        margin: 22px auto;
+        border-radius: 12px;
+    }
+
+    .article-figure img,
+    .article-figure--wide img,
+    .article-figure--medium img {
+        height: 240px;
+    }
+
+    .article-figure figcaption {
+        padding: 11px 12px;
+        font-size: 13px;
+    }
+
+    .article-section {
+        margin-bottom: 32px;
+    }
+
+    .article-code {
+        font-size: 15px;
+    }
+}
